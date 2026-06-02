@@ -1,4 +1,4 @@
-/* The Ninth Life — site interactions */
+/* Ninth Life - site interactions */
 (function () {
   "use strict";
 
@@ -32,7 +32,76 @@
     });
   }
 
-  /* ---- placeholder form submit ---- */
+  /* ---- contact intent from internal links ---- */
+  function initContactIntent() {
+    var form = document.querySelector("form[aria-label='Waitlist form']");
+    if (!form || !window.URLSearchParams) return;
+    var params = new URLSearchParams(window.location.search);
+    var interest = (params.get("interest") || "").replace(/-/g, " ").toLowerCase();
+    var type = params.get("type") || params.get("tier") || "";
+    if (!interest && !type) return;
+
+    var aliases = {
+      "visit": "visit waitlist",
+      "visit waitlist": "join visit waitlist",
+      "join visit waitlist": "join visit waitlist",
+      "visiting": "join visit waitlist",
+      "cafe": "cafe updates",
+      "cafe updates": "cafe updates",
+      "sponsoring": "sponsor a resident",
+      "sponsor": "sponsor a resident",
+      "sponsor a resident": "sponsor a resident",
+      "sponsor ninth life live": "sponsor ninth life live",
+      "local partnership": "bakery partnership",
+      "partnership": "bakery partnership",
+      "bakery partnership": "bakery partnership",
+      "rescue partnership": "rescue/care partner",
+      "rescue care partner": "rescue/care partner",
+      "helping operate": "help operate",
+      "help operate": "help operate",
+      "sponsor window seat live": "sponsor the window seat live",
+      "sponsor the window seat": "sponsor the window seat live",
+      "sponsor the window seat live": "sponsor ninth life live",
+      "livestream updates": "general updates",
+      "founding breeder partnership": "discuss a founding breeder partnership",
+      "breeder partnership": "discuss a founding breeder partnership",
+      "breeder partnerships": "discuss a founding breeder partnership",
+      "discuss a founding breeder partnership": "discuss a founding breeder partnership",
+      "maine coon breeder inquiry": "maine coon breeder inquiry",
+      "private visit": "join visit waitlist",
+      "schedule a private visit": "join visit waitlist",
+      "general updates": "general updates"
+    };
+    var normalized = aliases[interest] || interest;
+    var typeAliases = {
+      "bakery": "bakery partnership",
+      "drink": "bakery partnership",
+      "downtown": "property / space conversation",
+      "business": "sponsor a resident",
+      "standard": "join visit waitlist",
+      "kids": "join visit waitlist",
+      "private": "join visit waitlist",
+      "founding-supporter": "sponsor a resident"
+    };
+    var normalizedType = typeAliases[type] || "";
+
+    form.querySelectorAll(".chip").forEach(function (chip) {
+      var label = chip.textContent.trim().toLowerCase();
+      if (normalized && (label === normalized || label.indexOf(normalized) !== -1 || normalized.indexOf(label) !== -1)) {
+        chip.classList.add("on");
+      }
+      if (normalizedType && label === normalizedType) chip.classList.add("on");
+      if (interest === "visit" && label === "join visit waitlist") chip.classList.add("on");
+      if (interest === "private visit" && label === "join visit waitlist") chip.classList.add("on");
+    });
+
+    var note = form.querySelector("#note");
+    if (note && type) {
+      note.value = "I am interested in: " + type.replace(/-/g, " ") + ".";
+    }
+  }
+
+  /* ---- form submit ---- */
   function initForms() {
     document.querySelectorAll("form[data-demo]").forEach(function (form) {
       form.addEventListener("submit", function (e) {
@@ -84,6 +153,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initDrawer(); initChips(); initForms(); initReveal();
+    initDrawer(); initChips(); initContactIntent(); initForms(); initReveal();
   });
 })();
