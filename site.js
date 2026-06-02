@@ -2,6 +2,8 @@
 (function () {
   "use strict";
 
+  document.documentElement.classList.add("js");
+
   /* ---- mobile drawer ---- */
   function initDrawer() {
     var toggle = document.querySelector(".nav-toggle");
@@ -140,7 +142,7 @@
 
   /* ---- reveal on scroll ---- */
   function initReveal() {
-    var els = document.querySelectorAll(".reveal");
+    var els = document.querySelectorAll(".reveal, .stagger");
     if (!els.length) return;
 
     function showInView() {
@@ -172,6 +174,10 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initDrawer(); initChips(); initContactIntent(); initForms(); initFaq(); initReveal();
+    try {
+      initDrawer(); initChips(); initContactIntent(); initForms(); initFaq();
+    } finally {
+      initReveal();
+    }
   });
 })();

@@ -182,9 +182,10 @@
 }
 
 /* staggered reveal */
-.stagger { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-.stagger.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .stagger { opacity: 1; transform: none; } }
+.stagger { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+.js .stagger { opacity: 0; transform: translateY(22px); }
+.js .stagger.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .stagger { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
