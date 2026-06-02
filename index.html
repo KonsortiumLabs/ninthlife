@@ -3,189 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ninth Life Cafe - Cafe in front. Sanctuary in back.</title>
-<meta name="description" content="Ninth Life is a small cat cafe with a chill cafe in front and a protected cat Sanctuary in back, coming to Downtown Alliance, Ohio.">
+<title>Ninth Life Cafe - Modern cafe in front. Sanctuary in back.</title>
+<meta name="description" content="Ninth Life is a modern cafe in front with a protected cat Sanctuary in back, coming to Downtown Alliance, Ohio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360;0,6..72,420;0,6..72,500;1,6..72,360;1,6..72,420&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
 <style id="home-style">
-/* ============ homepage - architectural refinement ============ */
-.home-main { --rule: var(--line-2); }
-.brk { display: none; }
-@media (min-width: 760px) { .brk { display: inline; } }
-.cond { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -0.015em; line-height: 0.9; }
-
-/* hero */
-.home-hero { padding-top: clamp(26px, 3.5vw, 46px); padding-bottom: clamp(60px, 8vw, 120px); }
-.hero-rule {
-  display: grid; grid-template-columns: auto repeat(4, 1fr); gap: 0;
-  border-top: 1px solid var(--line-3); border-bottom: 1px solid var(--line);
-  margin-bottom: clamp(40px, 6vw, 84px);
-}
-.hero-rule span {
-  min-height: 48px; display: flex; align-items: center; padding: 12px 16px;
-  border-left: 1px solid var(--line); font-family: var(--mono); font-size: 0.62rem;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ivory-faint);
-}
-.hero-rule span:first-child { border-left: none; color: var(--ivory); }
-.home-hero-grid { display: grid; grid-template-columns: 1.18fr 0.82fr; gap: clamp(40px, 5vw, 84px); align-items: stretch; }
-@media (max-width: 920px) { .home-hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+/* ============ homepage reset ============ */
+.home-main { overflow-x: hidden; }
+.home-hero { padding-top: clamp(42px, 7vw, 96px); padding-bottom: clamp(56px, 8vw, 110px); border-bottom: 1px solid var(--line); }
+.home-hero-inner { max-width: 1180px; }
 .home-display {
   font-family: var(--sans); font-weight: 800; text-transform: uppercase;
-  font-size: clamp(3.2rem, 8.8vw, 8.4rem); line-height: 0.82; letter-spacing: -0.045em; color: var(--ivory);
-  max-width: 15ch;
+  font-size: clamp(2.65rem, 7vw, 7.4rem); line-height: .86; letter-spacing: -0.045em;
+  color: var(--ivory); max-width: 18ch;
 }
-.home-display .line { display: block; white-space: nowrap; }
-.home-lede { margin-top: clamp(26px, 3vw, 40px); max-width: 46ch; color: var(--ivory-dim); font-size: clamp(1.04rem, 1.4vw, 1.22rem); line-height: 1.62; text-wrap: pretty; }
+.home-display .line { display: block; }
+.home-lede {
+  margin-top: clamp(24px, 3vw, 36px); max-width: 58ch; color: var(--ivory-dim);
+  font-size: clamp(1.04rem, 1.35vw, 1.24rem); line-height: 1.58; text-wrap: pretty;
+}
 .hero-note {
-  margin-top: 26px; display: flex; align-items: center; gap: 0.95em;
-  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ivory-dim);
+  margin-top: 24px; font-family: var(--mono); font-size: .68rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--ivory-dim);
 }
-.hero-note .r { width: 26px; height: 1px; background: var(--line-3); flex: none; }
-.home-hero .btn-row { margin-top: clamp(30px, 3.5vw, 42px); }
-
-/* quiet status object */
-.held-frame {
-  min-height: 540px; position: relative; border: 1px solid var(--line-2);
-  background:
-    linear-gradient(90deg, transparent 0 49.8%, var(--line) 49.8% 50.2%, transparent 50.2%),
-    linear-gradient(180deg, transparent 0 50%, var(--line) 50% calc(50% + 1px), transparent calc(50% + 1px)),
-    var(--ink-1);
-  overflow: hidden;
-}
-.held-frame::before {
-  content: ""; position: absolute; inset: clamp(28px, 4vw, 52px);
-  border: 1px solid var(--line-2);
-}
-.held-frame-inner {
-  position: absolute; inset: clamp(28px, 4vw, 52px);
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding: clamp(20px, 3vw, 34px);
-}
-.held-frame-top,
-.held-frame-bottom {
-  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--ivory-faint);
-}
-.held-frame-bottom { max-width: 24ch; color: var(--ivory-dim); line-height: 1.65; }
-.status-list { border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
-.status-list div {
-  display: flex; justify-content: space-between; gap: 18px; padding: 15px 0;
-  border-top: 1px solid var(--line); font-family: var(--mono); text-transform: uppercase;
-}
-.status-list div:first-child { border-top: none; }
-.status-list span { color: var(--ivory-faint); font-size: 0.58rem; letter-spacing: 0.2em; }
-.status-list b { color: var(--ivory); font-size: 0.72rem; letter-spacing: 0.14em; font-weight: 500; text-align: right; }
-
-/* section labels */
-.lbl { display: flex; align-items: center; gap: 0.9em; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ivory-faint); }
+.home-hero .btn-row { margin-top: clamp(28px, 3vw, 40px); }
+.lbl { display: flex; align-items: center; gap: .9em; font-family: var(--mono); font-size: .66rem; letter-spacing: .24em; text-transform: uppercase; color: var(--ivory-faint); }
 .lbl .ln { width: 30px; height: 1px; background: var(--line-3); }
 .lbl b { color: var(--ivory); font-weight: 500; }
-.sec-title { font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(2.15rem, 4.4vw, 4.4rem); line-height: .86; letter-spacing: -0.04em; color: var(--ivory); }
-
-/* ====== architectural plan ====== */
-.plan-head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 70px); align-items: end; margin-bottom: clamp(30px, 4vw, 48px); }
-@media (max-width: 820px) { .plan-head { grid-template-columns: 1fr; gap: 22px; } }
-.plan-head .sec-title { text-transform: none; }
-.plan-head p { color: var(--ivory-dim); max-width: 42ch; text-wrap: pretty; }
-.plan { border: 1px solid var(--line-2); position: relative; }
-.plan::before { content: ""; position: absolute; inset: 7px; border: 1px solid var(--line); pointer-events: none; z-index: 2; }
-.plan-top { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
-.plan-bottom { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-2); }
-.zone { position: relative; padding: clamp(26px, 3.4vw, 46px); min-height: 250px; display: flex; flex-direction: column; transition: background .3s ease; }
-.zone:hover { background: var(--ink-raise); }
-.zone::after { content: ""; position: absolute; inset: 0; border: 1px solid transparent; pointer-events: none; transition: border-color .3s ease; }
-.zone:hover::after { border-color: var(--line-2); }
-.plan-top .zone:last-child { border-left: 1px solid var(--line-2); }
-.plan-bottom .zone:last-child { border-left: 1px solid var(--line-2); }
-.zone-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
-.zone-no { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory); margin-top: 4px; }
-.zone h3 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.005em; font-size: clamp(1.3rem, 1.9vw, 1.7rem); color: var(--ivory); margin-top: 16px; }
-.zone p { color: var(--ivory-dim); font-size: 0.96rem; margin-top: 12px; max-width: 34ch; text-wrap: pretty; }
-.zone .z-arr { margin-top: auto; padding-top: 22px; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-faint); display: inline-flex; align-items: center; gap: 0.6em; transition: color .3s ease, gap .3s ease; }
-.zone:hover .z-arr { color: var(--ivory); gap: 0.95em; }
-/* threshold line */
-.plan-threshold { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); z-index: 3; background: linear-gradient(var(--line-3) 0 36%, transparent 36% 64%, var(--line-3) 64% 100%); }
-.plan-threshold span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--ink); padding: 7px 9px; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ivory-dim); white-space: nowrap; }
-@media (max-width: 720px) {
-  .plan-top, .plan-bottom { grid-template-columns: 1fr; }
-  .plan-top .zone:last-child, .plan-bottom .zone:last-child { border-left: none; border-top: 1px solid var(--line-2); }
-  .plan-threshold { left: 0; right: 0; top: 50%; bottom: auto; width: auto; height: 1px; transform: translateY(-50%); background: linear-gradient(90deg, var(--line-3) 0 36%, transparent 36% 64%, var(--line-3) 64% 100%); }
+.sec-title {
+  font-family: var(--sans); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2.1rem, 4.5vw, 4.7rem); line-height: .88; letter-spacing: -0.04em; color: var(--ivory);
 }
-
-/* ====== index list ====== */
-.index-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
-.index-list a { display: grid; grid-template-columns: 78px 0.85fr 1.7fr auto; gap: clamp(14px, 3vw, 44px); align-items: baseline; padding: clamp(24px, 3vw, 36px) 6px; border-bottom: 1px solid var(--line-2); transition: padding-left .3s ease, background .3s ease; }
-.index-list a:hover { background: var(--ink-raise); padding-left: 18px; }
-.ix-no { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--ivory-faint); }
-.ix-name { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.005em; font-size: clamp(1.5rem, 2.5vw, 2.3rem); color: var(--ivory); line-height: 1; }
-.ix-desc { color: var(--ivory-dim); font-size: 0.98rem; max-width: 46ch; text-wrap: pretty; }
-.ix-arr { justify-self: end; font-family: var(--mono); color: var(--ivory-faint); transition: transform .3s ease, color .3s ease; }
-.index-list a:hover .ix-arr { transform: translateX(6px); color: var(--ivory); }
-@media (max-width: 780px) {
-  .index-list a { grid-template-columns: 50px 1fr; gap: 6px 16px; }
-  .ix-desc { grid-column: 1 / -1; margin-top: 6px; }
-  .ix-arr { display: none; }
-}
-
-/* Sanctuary status ledger */
-.ledger { border: 1px solid var(--line-2); display: grid; grid-template-columns: repeat(4, 1fr); }
-.ledger > div { padding: clamp(18px, 2vw, 24px) clamp(18px, 2vw, 24px); border-left: 1px solid var(--line); }
-.ledger > div:first-child { border-left: none; }
-.ledger span { font-family: var(--mono); font-size: 0.57rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ivory-faint); }
-.ledger b { display: block; margin-top: 10px; font-family: var(--serif); font-weight: 400; font-size: clamp(1.25rem, 1.8vw, 1.5rem); color: var(--ivory); }
-@media (max-width: 600px) {
-  .ledger { grid-template-columns: 1fr 1fr; }
-  .ledger > div:nth-child(odd) { border-left: none; }
-  .ledger > div:nth-child(n+3) { border-top: 1px solid var(--line); }
-}
-
-/* why alliance band */
-.alliance { text-align: center; }
+.two-room-head { display: grid; grid-template-columns: .9fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: end; margin-bottom: clamp(28px, 4vw, 44px); }
+.two-room-head p { color: var(--ivory-dim); max-width: 52ch; }
+.room-grid { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--line-2); }
+.room-card { padding: clamp(28px, 4vw, 52px); min-height: 260px; display: flex; flex-direction: column; }
+.room-card + .room-card { border-left: 1px solid var(--line); }
+.room-card .k, .support-card .k { font-family: var(--mono); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ivory-faint); }
+.room-card h3, .support-card h3 { margin-top: 16px; font-family: var(--sans); font-weight: 800; text-transform: uppercase; color: var(--ivory); font-size: clamp(1.8rem, 2.8vw, 2.7rem); line-height: .9; letter-spacing: -0.03em; }
+.room-card p, .support-card p { color: var(--ivory-dim); margin-top: 16px; text-wrap: pretty; }
+.room-card .btn-row { margin-top: auto; padding-top: 26px; }
+.simple-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
+.simple-list li { display: grid; grid-template-columns: 150px 1fr; gap: clamp(18px, 4vw, 72px); padding: clamp(20px, 2.7vw, 32px) 0; border-bottom: 1px solid var(--line-2); }
+.simple-list b { font-family: var(--mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ivory); font-weight: 500; }
+.simple-list p { color: var(--ivory-dim); max-width: 62ch; }
+.alliance { text-align: center; padding-block: clamp(56px, 7vw, 84px); }
 .alliance .big {
-  font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(2.4rem, 5.4vw, 5.4rem); line-height: .88;
-  letter-spacing: -0.045em; color: var(--ink); margin: 26px auto 0; max-width: 16ch;
+  font-family: var(--sans); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2.25rem, 5.2vw, 5.2rem); line-height: .9; letter-spacing: -0.045em;
+  color: var(--ink); margin: 22px auto 0; max-width: 17ch;
 }
-.alliance p { margin: clamp(26px, 3vw, 38px) auto 0; max-width: 52ch; color: #4c473e; text-wrap: pretty; }
-.alliance .lbl { justify-content: center; }
-.alliance .lbl .ln { background: var(--cream-line-2); }
-.alliance .lbl { color: #8a8475; }
+.alliance p { margin: 24px auto 0; max-width: 54ch; color: #4c473e; text-wrap: pretty; }
+.alliance .lbl { justify-content: center; color: #8a8475; }
 .alliance .lbl b { color: var(--ink); }
-
-/* partners line grid */
-.pgrid { border: 1px solid var(--line-2); display: grid; grid-template-columns: repeat(3, 1fr); }
-.pgrid > article { padding: clamp(26px, 3vw, 40px); border-left: 1px solid var(--line); min-height: 300px; display: flex; flex-direction: column; transition: background .3s ease, transform .3s ease; }
-.pgrid > article:first-child { border-left: none; }
-.pgrid > article:hover { background: var(--ink-raise); transform: translateY(-3px); }
-.pgrid .p-k { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
-.pgrid h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(1.65rem, 2.3vw, 2.25rem); line-height: .92; letter-spacing: -0.03em; color: var(--ivory); margin-top: 16px; }
-.pgrid p { color: var(--ivory-dim); font-size: 0.95rem; margin-top: 12px; text-wrap: pretty; }
-.pgrid .tlink { margin-top: auto; align-self: flex-start; }
-@media (max-width: 720px) {
-  .pgrid { grid-template-columns: 1fr; }
-  .pgrid > article { border-left: none; border-top: 1px solid var(--line); min-height: 240px; }
-  .pgrid > article:first-child { border-top: none; }
+.alliance .lbl .ln { background: var(--cream-line-2); }
+.support-head { display: grid; grid-template-columns: .9fr 1fr; gap: clamp(28px, 5vw, 80px); align-items: end; margin-bottom: clamp(28px, 4vw, 44px); }
+.support-head p { color: var(--ivory-dim); max-width: 58ch; }
+.support-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line-2); }
+.support-card { padding: clamp(26px, 3vw, 40px); min-height: 230px; display: flex; flex-direction: column; }
+.support-card + .support-card { border-left: 1px solid var(--line); }
+.support-card .tlink { margin-top: auto; align-self: flex-start; padding-top: 24px; }
+.home-final h2 {
+  font-family: var(--sans); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2.5rem, 6vw, 5.6rem); line-height: .88; letter-spacing: -0.045em;
 }
-
-/* final cta */
-.home-final h2 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(2.45rem, 5.8vw, 5.4rem); line-height: 0.86; letter-spacing: -0.045em; }
 .home-final h2 .line { display: block; }
-
-@media (max-width: 760px) {
-  .hero-rule { grid-template-columns: 1fr 1fr; }
-  .hero-rule span { min-height: 42px; }
-  .hero-rule span:first-child { grid-column: 1 / -1; border-bottom: 1px solid var(--line); }
-  .home-display { font-size: clamp(2.35rem, 11.2vw, 4.7rem); }
-  .held-frame { min-height: 380px; }
+@media (max-width: 840px) {
+  .two-room-head, .support-head { grid-template-columns: 1fr; gap: 22px; }
+  .room-grid, .support-grid { grid-template-columns: 1fr; }
+  .room-card + .room-card, .support-card + .support-card { border-left: none; border-top: 1px solid var(--line); }
+  .simple-list li { grid-template-columns: 1fr; gap: 10px; }
 }
-
-/* staggered reveal */
-.stagger { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
-.js .stagger { opacity: 0; transform: translateY(22px); }
-.js .stagger.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .js .stagger { opacity: 1; transform: none; } }
+@media (max-width: 520px) {
+  .home-display { font-size: clamp(2.25rem, 13vw, 4rem); }
+  .home-display .line { overflow-wrap: anywhere; }
+}
 </style>
 </head>
 <body>
@@ -238,195 +133,112 @@
 
 <!-- ============ HERO ============ -->
 <section class="home-hero wrap">
-  <div class="hero-rule reveal">
-    <span>Status</span>
-    <span>Cafe opens first</span>
-    <span>Sanctuary in preparation</span>
-    <span>First cats not revealed</span>
-    <span>Support open</span>
-  </div>
-  <div class="home-hero-grid">
-    <div class="hero-copy reveal">
-      <h1 class="home-display"><span class="line">A CAFE FOR PEOPLE.</span><span class="line">A SANCTUARY FOR CATS.</span></h1>
-      <p class="home-lede">Ninth Life Cafe is a mission-driven cat cafe coming to Downtown Alliance, Ohio, with a chill cafe in front and a protected cat Sanctuary in back. The cafe opens first. The Sanctuary opens carefully, with limited visits built around the cats' comfort.</p>
-      <p class="hero-note"><span class="r"></span> Cafe in front. Sanctuary in back.</p>
-      <div class="btn-row">
-        <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
-        <a class="btn btn-line" href="contact.html?interest=partner-with-us">Partner With Us</a>
-        <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
-      </div>
+  <div class="home-hero-inner reveal">
+    <h1 class="home-display"><span class="line">A modern cafe in front.</span><span class="line">A protected cat Sanctuary in back.</span></h1>
+    <p class="home-lede">Ninth Life is coming to Downtown Alliance: house teas, lemonade, music, seating, local goods, and a protected back room for cats. The cafe opens first. The Sanctuary opens when the room is ready.</p>
+    <p class="hero-note">Cafe first. Cats when ready.</p>
+    <div class="btn-row">
+      <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
+      <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
+      <a class="btn btn-line" href="contact.html?interest=partner-with-us">Partner With Us</a>
     </div>
-    <aside class="held-frame reveal" aria-label="Ninth Life status">
-      <div class="held-frame-inner">
-        <div class="held-frame-top">Status</div>
-        <div class="status-list" aria-label="Launch status">
-          <div><span>01</span><b>Cafe opens first</b></div>
-          <div><span>02</span><b>Sanctuary in preparation</b></div>
-          <div><span>03</span><b>First cats not revealed</b></div>
-          <div><span>04</span><b>Support open</b></div>
-        </div>
-        <div class="held-frame-bottom">The cafe supports The Sanctuary. The back room opens carefully.</div>
-      </div>
-    </aside>
   </div>
 </section>
 
-<!-- ============ ARCHITECTURAL PLAN ============ -->
+<!-- ============ TWO ROOMS ============ -->
 <section class="pad tone-ink2">
   <div class="wrap">
-    <div class="plan-head">
+    <div class="two-room-head">
       <div class="reveal">
         <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>01</b> The model</div>
-        <h2 class="sec-title">A public counter.<br>A protected room.</h2>
+        <h2 class="sec-title">Two rooms.<br>One small idea.</h2>
       </div>
-      <p class="reveal">Ninth Life is a small cat cafe with a chill cafe in front and a protected cat Sanctuary in back. The front room offers simple drinks and seating. The Sanctuary offers limited visits with cats welcomed through the right care path, kept separate from the cafe side for comfort, cleanliness, and care.</p>
+      <p class="reveal">The front is for people: drinks, seating, music, and local goods. The back is for cats: care, quiet, rest, and limited visits. Connected, but not the same.</p>
     </div>
-
-    <div class="plan">
-      <div class="plan-top">
-        <div class="zone stagger" style="transition-delay:0s">
-          <div class="zone-tag">Front room</div>
-          <div class="zone-no">01 / The Cafe</div>
-          <h3>The Cafe</h3>
-          <p>Simple drinks, seating, limited merch, and partner-supported goods in the front of the space.</p>
-          <span class="z-arr">Cafe side &rarr;</span>
-        </div>
-        <div class="zone stagger" style="transition-delay:.09s">
-          <div class="zone-tag">Back room</div>
-          <div class="zone-no">02 / The Sanctuary</div>
-          <h3>The Sanctuary</h3>
-          <p>The protected back room, designed for cats, care, and limited access.</p>
-          <span class="z-arr">Protected room &rarr;</span>
-        </div>
-        <div class="plan-threshold" aria-hidden="true"><span>Threshold</span></div>
+    <div class="room-grid reveal">
+      <div class="room-card">
+        <div class="k">The Cafe</div>
+        <h3>The Cafe</h3>
+        <p>Come in for a drink. Sit for a while. Hear something good. The front room should work before anything else does.</p>
+        <div class="btn-row"><a class="btn btn-line" href="cafe.html">See The Cafe <span class="arr">&rarr;</span></a></div>
       </div>
-      <div class="plan-bottom">
-        <div class="zone stagger" style="transition-delay:.16s">
-          <div class="zone-tag">The boundary</div>
-          <div class="zone-no">03 / The Threshold</div>
-          <h3>The Threshold</h3>
-          <p>The cafe and Sanctuary are connected, but separate. Sanctuary access requires a pass, reservation, or approved visit.</p>
-          <span class="z-arr">Timed access &rarr;</span>
-        </div>
-        <div class="zone stagger" style="transition-delay:.24s">
-          <div class="zone-tag">The pace</div>
-          <div class="zone-no">04 / The Rhythm</div>
-          <h3>The Rhythm</h3>
-          <p>The cats set the pace. Visits stay limited, calm, and care-first.</p>
-          <span class="z-arr">Cats set the pace &rarr;</span>
-        </div>
+      <div class="room-card">
+        <div class="k">The Sanctuary</div>
+        <h3>The Sanctuary</h3>
+        <p>The cats live in the back. The room opens slowly, with limited visits and care-first rules.</p>
+        <div class="btn-row"><a class="btn btn-line" href="sanctuary.html">Inside The Sanctuary <span class="arr">&rarr;</span></a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ HOW NINTH LIFE BEGINS ============ -->
+<!-- ============ FIRST VERSION ============ -->
 <section class="pad wrap">
   <div class="reveal" style="margin-bottom:clamp(26px,4vw,44px);">
     <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>02</b> The first version</div>
-    <h2 class="sec-title" style="max-width:18ch;">How Ninth Life begins.</h2>
+    <h2 class="sec-title" style="max-width:18ch;">The first version<br>is simple.</h2>
   </div>
-  <ol class="index-list reveal">
-    <li><a href="cafe.html">
-      <span class="ix-no">01</span>
-      <span class="ix-name">Cafe</span>
-      <span class="ix-desc">Simple drinks, seating, limited merch, and partner-supported goods in the front of the space.</span>
-      <span class="ix-arr">&rarr;</span>
-    </a></li>
-    <li><a href="sanctuary.html">
-      <span class="ix-no">02</span>
-      <span class="ix-name">Sanctuary</span>
-      <span class="ix-desc">A protected Sanctuary in back, with cats, care, and limited access.</span>
-      <span class="ix-arr">&rarr;</span>
-    </a></li>
-    <li><a href="live.html">
-      <span class="ix-no">03</span>
-      <span class="ix-name">Live</span>
-      <span class="ix-desc">A future online view from The Sanctuary, only after the cats are settled.</span>
-      <span class="ix-arr">&rarr;</span>
-    </a></li>
-    <li><a href="support.html">
-      <span class="ix-no">04</span>
-      <span class="ix-name">Support</span>
-      <span class="ix-desc">Founding support prepares The Sanctuary, care systems, supplies, Ninth Life Live, and the first months of operation.</span>
-      <span class="ix-arr">&rarr;</span>
-    </a></li>
+  <ol class="simple-list reveal">
+    <li><b>01 / Cafe first</b><p>The counter opens before The Sanctuary does.</p></li>
+    <li><b>02 / Cats later</b><p>The first cats arrive when the room, routine, and care plan are ready.</p></li>
+    <li><b>03 / Visits limited</b><p>Cat access is separate from cafe purchases.</p></li>
+    <li><b>04 / Support open</b><p>Founding support helps prepare the space before opening.</p></li>
   </ol>
-</section>
-
-<!-- ============ FIRST RESIDENT ============ -->
-<section class="pad tone-ink2">
-  <div class="wrap">
-    <div class="split lean" style="align-items:start;gap:clamp(34px,5vw,80px);margin-bottom:clamp(30px,4vw,46px);">
-      <div class="reveal">
-        <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>03</b> Future cats</div>
-        <h2 class="sec-title" style="max-width:16ch;">The first cats<br class="brk">have not been revealed.</h2>
-      </div>
-      <div class="reveal" style="align-self:center;">
-        <p class="body" style="max-width:44ch;">No stock cats. No fake names. No rushed reveal. Ninth Life will announce the first cats only after the room, care plan, and daily rhythm are ready.</p>
-        <div class="btn-row" style="margin-top:26px;">
-          <a class="btn btn-line" href="sanctuary.html">Inside the Sanctuary <span class="arr">&rarr;</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="ledger reveal">
-      <div><span>Sanctuary</span><b>Preparing</b></div>
-      <div><span>Care plan</span><b>In progress</b></div>
-      <div><span>Status</span><b>Not announced</b></div>
-      <div><span>Live</span><b>Later</b></div>
-    </div>
-  </div>
 </section>
 
 <!-- ============ WHY ALLIANCE ============ -->
 <section class="pad tone-cream on-cream">
   <div class="wrap-narrow alliance">
-    <div class="lbl reveal"><span class="ln"></span><b>04</b> Why Alliance</div>
+    <div class="lbl reveal"><span class="ln"></span><b>03</b> Why Alliance</div>
     <h2 class="big reveal">Downtown Alliance deserves<br class="brk">rooms people remember.</h2>
-    <p class="reveal">Ninth Life begins in Alliance because small towns deserve places with presence. A real counter. A good cup. A protected room. A reason to walk in and care what happens next.</p>
+    <p class="reveal">Small towns need places that feel cared for. A good cup. Good music. A reason to sit down. A room people talk about after they leave.</p>
   </div>
 </section>
 
 <!-- ============ SUPPORT & PARTNERS ============ -->
 <section class="pad wrap">
-  <div class="split lean" style="align-items:end;margin-bottom:clamp(28px,4vw,44px);gap:clamp(28px,4vw,70px);">
+  <div class="support-head">
     <div class="reveal">
-      <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>05</b> Support &amp; partners</div>
-      <h2 class="sec-title" style="max-width:17ch;">The room needs<br class="brk">its first believers.</h2>
+      <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>04</b> Support</div>
+      <h2 class="sec-title">Help make the<br>first version real.</h2>
     </div>
-    <p class="body reveal" style="max-width:48ch;">Before the first cats are announced, Ninth Life needs the people and partners who help make the room real: care, supplies, local goods, launch support, and thoughtful visibility.</p>
+    <p class="reveal">We have the space. Now it needs the things people will actually feel: the counter, the cups, the seating, the light, the back room, the cat furniture, the cleaning setup, and enough room to open carefully.</p>
   </div>
-  <div class="pgrid reveal">
-    <article>
-      <div class="p-k">01 / Care Partners</div>
-      <h3>Care Partners</h3>
-      <p>For responsible rescue partners, foster partners, breeders, and care partners, this is a care-first conversation. The right fit matters more than speed.</p>
-      <a class="tlink" href="contact.html?interest=care-partner">Start Care Partner Conversation <span class="arr">&rarr;</span></a>
-    </article>
-    <article>
-      <div class="p-k">02 / The Room Backer</div>
-      <h3>The Room Backer</h3>
-      <p>For supporters and sponsors who want to help fund The Sanctuary, cat care, supplies, Ninth Life Live setup, and the first months of operation.</p>
+  <div class="support-grid reveal">
+    <article class="support-card">
+      <div class="k">Supporters</div>
+      <h3>Supporters</h3>
+      <p>Help fund the first build.</p>
       <a class="tlink" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
     </article>
-    <article>
-      <div class="p-k">03 / The Local Piece</div>
-      <h3>The Local Piece</h3>
-      <p>For bakeries, drink partners, product partners, care partners, operators, and local businesses that can help the first version feel real.</p>
+    <article class="support-card">
+      <div class="k">Partners</div>
+      <h3>Partners</h3>
+      <p>Bring drinks, goods, supplies, media, or sponsorship.</p>
       <a class="tlink" href="contact.html?interest=partner-with-us">Partner With Us <span class="arr">&rarr;</span></a>
     </article>
+    <article class="support-card">
+      <div class="k">Care partners</div>
+      <h3>Care Partners</h3>
+      <p>Help shape the cat side responsibly.</p>
+      <a class="tlink" href="contact.html?interest=care-partner">Start the Conversation <span class="arr">&rarr;</span></a>
+    </article>
+  </div>
+  <div class="btn-row reveal" style="margin-top:30px;">
+    <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
+    <a class="btn btn-line" href="contact.html?interest=partner-with-us">Partner With Us</a>
   </div>
 </section>
 
 <!-- ============ FINAL CTA ============ -->
 <section class="pad-sm wrap">
   <div class="cta home-final reveal">
-    <span class="lbl" style="justify-content:center;"><span class="ln"></span>Before the first reveal</span>
-    <h2 style="margin-top:18px;"><span class="line">Be here before</span><span class="line">the first reveal.</span></h2>
-    <p>Join the list for cafe updates, future cat announcements, founding visits, Ninth Life Live updates, and support openings.</p>
+    <span class="lbl" style="justify-content:center;"><span class="ln"></span>Before opening</span>
+    <h2 style="margin-top:18px;"><span class="line">Be here</span><span class="line">before it opens.</span></h2>
+    <p>Join the list for opening updates, first menu notes, Sanctuary progress, and the first cats when the room is ready.</p>
     <div class="btn-row" style="justify-content:center;">
-      <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
-      <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
+      <a class="btn btn-solid" href="contact.html?interest=join-waitlist">Join the List <span class="arr">&rarr;</span></a>
+      <a class="btn btn-line" href="support.html">Support the Mission</a>
     </div>
   </div>
 </section>
@@ -438,4 +250,4 @@
     <div class="footer-top">
       <div>
         <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
-        <p class="footer-tag">A chill cafe in front. A protected cat Sanctuary in back.</p>
+        <p class="footer-tag">A modern cafe in front. A protected cat Sanctuary in back.</p>
