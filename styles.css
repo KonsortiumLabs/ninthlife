@@ -1,7 +1,7 @@
 /* ============================================================
-   NINTH LIFE CAFE — editorial design system
+   NINTH LIFE CAFE - editorial design system
    Black + warm cream. Serif display, mono labels, hairline grids.
-   A quiet institution, not a cat cafe.
+   A small cat cafe with a protected back room.
    ============================================================ */
 
 :root {
@@ -28,7 +28,7 @@
   --line-2: rgba(241,234,217,.26);
   --line-3: rgba(241,234,217,.42);
 
-  /* neutral warm-bone accent — no color, linework only */
+  /* neutral warm-bone accent - no color, linework only */
   --ember:  #B7AF9F;
   --ember-dim: rgba(183,175,159,.12);
 
@@ -302,7 +302,7 @@ section { position: relative; }
 .phead .display { max-width: 15ch; }
 
 /* ============================================================
-   frame placeholder (abstract room — no fake photos)
+   frame placeholder (abstract room - no fake photos)
    ============================================================ */
 .frame {
   position: relative; border: 1px solid var(--line-2); background:
@@ -391,7 +391,7 @@ section { position: relative; }
 a.card:hover { background: var(--ink-raise); border-color: var(--line-3); }
 a.card:hover .more .arr { transform: translateX(4px); }
 
-/* hairline grid module — model / care grids */
+/* hairline grid module - model / care grids */
 .linegrid { border: 1px solid var(--line-2); display: grid; }
 .linegrid.c2 { grid-template-columns: repeat(2, 1fr); }
 .linegrid.c3 { grid-template-columns: repeat(3, 1fr); }
