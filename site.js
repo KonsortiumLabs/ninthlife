@@ -48,10 +48,12 @@
       "visiting": "join visit waitlist",
       "cafe": "cafe updates",
       "cafe updates": "cafe updates",
-      "sponsoring": "sponsor a resident",
-      "sponsor": "sponsor a resident",
-      "sponsor a resident": "sponsor a resident",
-      "sponsor ninth life live": "sponsor ninth life live",
+      "sponsoring": "support the mission",
+      "sponsor": "support the mission",
+      "support cat care": "support the mission",
+      "sponsor ninth life live": "support the mission",
+      "support ninth life live": "support the mission",
+      "ninth life live": "general updates",
       "local partnership": "bakery partnership",
       "partnership": "bakery partnership",
       "bakery partnership": "bakery partnership",
@@ -59,10 +61,7 @@
       "rescue care partner": "rescue/care partner",
       "helping operate": "help operate",
       "help operate": "help operate",
-      "sponsor window seat live": "sponsor the window seat live",
-      "sponsor the window seat": "sponsor the window seat live",
-      "sponsor the window seat live": "sponsor ninth life live",
-      "livestream updates": "general updates",
+      "ninth life live updates": "general updates",
       "founding breeder partnership": "discuss a founding breeder partnership",
       "breeder partnership": "discuss a founding breeder partnership",
       "breeder partnerships": "discuss a founding breeder partnership",
@@ -77,11 +76,11 @@
       "bakery": "bakery partnership",
       "drink": "bakery partnership",
       "downtown": "property / space conversation",
-      "business": "sponsor a resident",
+      "business": "support the mission",
       "standard": "join visit waitlist",
       "kids": "join visit waitlist",
       "private": "join visit waitlist",
-      "founding-supporter": "sponsor a resident"
+      "founding-supporter": "support the mission"
     };
     var normalizedType = typeAliases[type] || "";
 

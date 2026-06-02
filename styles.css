@@ -332,7 +332,7 @@ section { position: relative; }
 .frame .f-tag b { display: block; color: var(--ivory-faint); font-weight: 500; margin-bottom: 7px; font-size: 0.58rem; letter-spacing: 0.24em; }
 
 /* ============================================================
-   sealed resident card (signature element)
+   care status card
    ============================================================ */
 .seal {
   position: relative; border: 1px solid var(--line-2); background: var(--ink-1);
@@ -457,7 +457,7 @@ a.card:hover .more .arr { transform: translateX(4px); }
 }
 .proof span::before { content: ""; width: 4px; height: 4px; background: var(--ivory-ghost); border-radius: 50%; }
 
-/* hero sealed panel */
+/* hero status panel */
 .hero-seal { display: flex; }
 .hero-seal .seal { flex: 1; }
 
