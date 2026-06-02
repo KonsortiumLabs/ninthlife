@@ -4,12 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact - Ninth Life Cafe</title>
-<meta name="description" content="Start the right conversation: visit updates, sponsor interest, partnerships, founding breeder conversations, media, or general questions.">
+<meta name="description" content="Start the right Ninth Life conversation: updates, support, cafe partners, care partners, rescue partners, operators, media, or general questions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360;0,6..72,420;0,6..72,500;1,6..72,360;1,6..72,420&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* Contact page only: cleaner intake spacing and mail draft behavior. */
+.contact-panel { position: sticky; top: 120px; }
+.contact-form { display: grid; gap: clamp(22px, 3vw, 30px); }
+.contact-form .field { gap: 12px; }
+.contact-form .chip-set { gap: 10px 12px; align-items: flex-start; }
+.contact-form .chip { line-height: 1.15; padding: 10px 14px; }
+.contact-form .chip input { position: absolute; opacity: 0; pointer-events: none; }
+.contact-form textarea { min-height: 170px; }
+.contact-actions { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.contact-actions .btn { min-width: 132px; justify-content: center; }
+.mail-note {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ivory-faint); line-height: 1.55;
+}
+@media (max-width: 880px) { .contact-panel { position: static; } }
+@media (max-width: 560px) {
+  .contact-actions { display: grid; gap: 14px; }
+  .contact-actions .btn { width: 100%; }
+}
+</style>
 </head>
 <body>
 
@@ -52,7 +73,7 @@
     </nav>
     <div class="drawer-foot">
       <a class="btn btn-solid" href="contact.html?interest=join-waitlist">Join Waitlist</a>
-      <a class="btn btn-line" href="support.html">Help Build the Room</a>
+      <a class="btn btn-line" href="support.html">Support the Mission</a>
     </div>
   </aside>
 </div>
@@ -63,8 +84,8 @@
 <section class="phead wrap">
   <div class="crumb"><a href="index.html">Ninth Life</a> <span>/</span> Contact</div>
   <div class="phead-grid">
-    <h1 class="display reveal">Start the right conversation.</h1>
-    <p class="lede reveal">Use this page for visit updates, sponsor interest, local partnerships, founding breeder conversations, care partners, media, or general questions.</p>
+    <h1 class="display reveal">Start the right<br>conversation.</h1>
+    <p class="lede reveal">Use this page to join the list, support the mission, partner with the cafe, discuss care/rescue partnerships, or reach the Ninth Life team directly.</p>
   </div>
 </section>
 
@@ -72,23 +93,23 @@
 <section class="pad-sm wrap">
   <div class="split lean" style="align-items:start;gap:clamp(34px,5vw,72px);">
 
-    <div class="reveal" style="position:sticky;top:120px;">
+    <div class="reveal contact-panel">
       <div class="stack-3">
         <div>
           <div class="faq-cat-label" style="padding-bottom:8px;">Direct</div>
-          <p class="body">We read everything and follow up to the people and partners who fit the mission. The room comes before the reveal - thoughtful notes are always welcome.</p>
+          <p class="body">Ninth Life is pre-opening. We are collecting the right conversations now: early supporters, local partners, care partners, operators, media, and people who want to be here before the first reveal.</p>
         </div>
         <div class="linegrid c2">
           <div><div class="lg-k">Location</div><h4 style="font-size:1.05rem;">Downtown Alliance, OH</h4></div>
           <div><div class="lg-k">Status</div><h4 style="font-size:1.05rem;">Pre-opening</h4></div>
-          <div><div class="lg-k">Residents</div><h4 style="font-size:1.05rem;">Not announced</h4></div>
-          <div><div class="lg-k">Best for</div><h4 style="font-size:1.05rem;">Waitlist · Support · Partners</h4></div>
+          <div><div class="lg-k">Sanctuary</div><h4 style="font-size:1.05rem;">Not open yet</h4></div>
+          <div><div class="lg-k">Best for</div><h4 style="font-size:1.05rem;">Support · Partners · Updates</h4></div>
         </div>
       </div>
     </div>
 
     <div class="reveal">
-      <form class="form-card stack-3" data-demo aria-label="Waitlist form" novalidate>
+      <form class="form-card contact-form" id="contactForm" aria-label="Contact form">
         <div class="field-row">
           <div class="field">
             <label for="fname">First name</label>
@@ -103,17 +124,17 @@
         <div class="field">
           <label>I'm interested in</label>
           <div class="chip-set" role="group" aria-label="Interest">
-            <button type="button" class="chip">Join waitlist</button>
-            <button type="button" class="chip">Cafe updates</button>
-            <button type="button" class="chip">Visit list</button>
-            <button type="button" class="chip">Support / sponsor</button>
-            <button type="button" class="chip">Maine Coon breeder inquiry</button>
-            <button type="button" class="chip">Bakery partnership</button>
-            <button type="button" class="chip">Care/vet partner</button>
-            <button type="button" class="chip">Opening supplies partner</button>
-            <button type="button" class="chip">Local operator</button>
-            <button type="button" class="chip">Press / local media</button>
-            <button type="button" class="chip">General question</button>
+            <label class="chip"><input type="checkbox" name="interest" value="Join the List">Join the List</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Visit Updates">Visit Updates</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Support the Mission">Support the Mission</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Partner / Sponsor">Partner / Sponsor</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Cafe / Local Goods Partner">Cafe / Local Goods Partner</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Care / Vet Partner">Care / Vet Partner</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Rescue / Foster Partner">Rescue / Foster Partner</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Breeder Conversation">Breeder Conversation</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Local Operator">Local Operator</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Press / Local Media">Press / Local Media</label>
+            <label class="chip"><input type="checkbox" name="interest" value="General Question">General Question</label>
           </div>
         </div>
 
@@ -122,14 +143,9 @@
           <textarea id="note" name="note" placeholder="Tell us who you are, what you're interested in, and the best way to follow up."></textarea>
         </div>
 
-        <div class="btn-row" style="justify-content:space-between;">
-          <button class="btn btn-solid" type="submit" data-success-label="Sent - thank you">Send <span class="arr">&rarr;</span></button>
-          <span class="muted" style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;">No spam · Just opening news</span>
-        </div>
-
-        <div class="form-success">
-          <span class="check">&#10003;</span>
-          <span>Thank you - we'll be in touch before the first reveal.</span>
+        <div class="contact-actions">
+          <button class="btn btn-solid" type="submit">Send <span class="arr">&rarr;</span></button>
+          <span class="mail-note">Opens an email draft with your message.</span>
         </div>
       </form>
     </div>
@@ -160,9 +176,9 @@
       <div class="footer-col">
         <h4>Start here</h4>
         <a href="contact.html?interest=join-waitlist">Join Waitlist</a>
-        <a href="support.html">Support the Room</a>
+        <a href="support.html">Support the Mission</a>
         <a href="contact.html?interest=partner-with-us">Partner With Us</a>
-        <a href="contact.html?interest=founding-breeder-partnership">Discuss a Founding Breeder Partnership</a>
+        <a href="contact.html?interest=care-partner">Start a Care Partner Conversation</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -172,6 +188,102 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("contactForm");
+  if (!form) return;
+
+  var aliases = {
+    "join waitlist": "Join the List",
+    "join list": "Join the List",
+    "join the list": "Join the List",
+    "visit": "Visit Updates",
+    "visit list": "Visit Updates",
+    "visit updates": "Visit Updates",
+    "support": "Support the Mission",
+    "support sponsor": "Support the Mission",
+    "monthly support": "Support the Mission",
+    "founding support": "Support the Mission",
+    "partner with us": "Partner / Sponsor",
+    "partnership": "Partner / Sponsor",
+    "local partnership": "Partner / Sponsor",
+    "presenting partner": "Partner / Sponsor",
+    "bakery partnership": "Cafe / Local Goods Partner",
+    "cafe updates": "Cafe / Local Goods Partner",
+    "cafe": "Cafe / Local Goods Partner",
+    "care partner": "Care / Vet Partner",
+    "care vet partner": "Care / Vet Partner",
+    "rescue partnership": "Rescue / Foster Partner",
+    "rescue foster partner": "Rescue / Foster Partner",
+    "breeder conversation": "Breeder Conversation",
+    "founding breeder partnership": "Breeder Conversation",
+    "local operator": "Local Operator",
+    "press local media": "Press / Local Media",
+    "general question": "General Question"
+  };
+
+  function setChip(label) {
+    form.querySelectorAll(".chip").forEach(function (chip) {
+      var input = chip.querySelector("input");
+      if (!input) return;
+      if (input.value.toLowerCase() === label.toLowerCase()) {
+        input.checked = true;
+        chip.classList.add("on");
+      }
+    });
+  }
+
+  if (window.URLSearchParams) {
+    var params = new URLSearchParams(window.location.search);
+    var interest = (params.get("interest") || "").replace(/-/g, " ").toLowerCase();
+    if (interest && aliases[interest]) setChip(aliases[interest]);
+  }
+
+  var chipSet = form.querySelector(".chip-set");
+  if (chipSet) {
+    chipSet.addEventListener("click", function (e) {
+      var chip = e.target.closest(".chip");
+      if (!chip) return;
+      var input = chip.querySelector("input");
+      if (!input) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      input.checked = !input.checked;
+      chip.classList.toggle("on", input.checked);
+    }, true);
+  }
+
+  form.addEventListener("change", function (e) {
+    var chip = e.target.closest(".chip");
+    if (!chip) return;
+    var input = chip.querySelector("input");
+    chip.classList.toggle("on", !!(input && input.checked));
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (typeof form.reportValidity === "function" && !form.reportValidity()) return;
+    var name = (form.querySelector("#fname").value || "").trim();
+    var email = (form.querySelector("#email").value || "").trim();
+    var note = (form.querySelector("#note").value || "").trim();
+    var selected = Array.prototype.slice.call(form.querySelectorAll("input[name='interest']:checked")).map(function (input) {
+      return input.value;
+    });
+
+    var body = [
+      "Name: " + name,
+      "Email: " + email,
+      "Interest: " + (selected.length ? selected.join(", ") : "Not selected"),
+      "",
+      "Message:",
+      note
+    ].join("\n");
+    var subject = "Ninth Life contact";
+    window.location.href = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+})();
+</script>
 <script src="site.js"></script>
 </body>
 </html>
