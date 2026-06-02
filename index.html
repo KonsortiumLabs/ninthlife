@@ -34,16 +34,11 @@
 @media (max-width: 920px) { .home-hero-grid { grid-template-columns: 1fr; gap: 48px; } }
 .home-display {
   font-family: var(--display); font-weight: 900; text-transform: uppercase;
-  font-size: clamp(3.4rem, 9.6vw, 9.6rem); line-height: 0.72; letter-spacing: 0.018em; color: var(--ivory);
-  font-stretch: condensed; transform: scaleX(1.08); transform-origin: left center;
-  max-width: 9.8ch;
+  font-size: clamp(3.4rem, 9.6vw, 9.6rem); line-height: 0.72; letter-spacing: 0.005em; color: var(--ivory);
+  font-stretch: condensed;
+  max-width: 10ch;
 }
-.home-display .line { display: block; filter: url(#ninthLogoType); }
-.type-filters { position: absolute; width: 0; height: 0; overflow: hidden; }
-.logo-type {
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-}
+.home-display .line { display: block; }
 .home-lede { margin-top: clamp(26px, 3vw, 40px); max-width: 46ch; color: var(--ivory-dim); font-size: clamp(1.04rem, 1.4vw, 1.22rem); line-height: 1.62; text-wrap: pretty; }
 .hero-note {
   margin-top: 26px; display: flex; align-items: center; gap: 0.95em;
@@ -84,16 +79,15 @@
 .held-frame-bottom { max-width: 24ch; color: var(--ivory-dim); line-height: 1.65; }
 .held-frame h2 {
   max-width: 10ch; font-family: var(--display); font-weight: 900; text-transform: uppercase;
-  font-size: clamp(2.15rem, 5vw, 4.9rem); line-height: .74; letter-spacing: 0.015em;
-  font-stretch: condensed; transform: scaleX(1.04); transform-origin: left center;
-  filter: url(#ninthLogoType);
+  font-size: clamp(2.15rem, 5vw, 4.9rem); line-height: .76; letter-spacing: 0.005em;
+  font-stretch: condensed;
 }
 
 /* section labels */
 .lbl { display: flex; align-items: center; gap: 0.9em; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ivory-faint); }
 .lbl .ln { width: 30px; height: 1px; background: var(--line-3); }
 .lbl b { color: var(--ivory); font-weight: 500; }
-.sec-title { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.2rem, 4.9vw, 5rem); line-height: .74; letter-spacing: 0.015em; color: var(--ivory); font-stretch: condensed; transform: scaleX(1.04); transform-origin: left center; }
+.sec-title { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.2rem, 4.9vw, 5rem); line-height: .76; letter-spacing: 0.005em; color: var(--ivory); font-stretch: condensed; }
 
 /* ====== architectural plan ====== */
 .plan-head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 70px); align-items: end; margin-bottom: clamp(30px, 4vw, 48px); }
@@ -112,7 +106,7 @@
 .plan-bottom .zone:last-child { border-left: 1px solid var(--line-2); }
 .zone-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
 .zone-no { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory); margin-top: 4px; }
-.zone h3 { font-family: var(--display); font-weight: 900; text-transform: uppercase; letter-spacing: 0.012em; font-size: clamp(1.45rem, 2.1vw, 1.95rem); line-height: .78; color: var(--ivory); margin-top: 16px; font-stretch: condensed; }
+.zone h3 { font-family: var(--display); font-weight: 900; text-transform: uppercase; letter-spacing: 0.005em; font-size: clamp(1.45rem, 2.1vw, 1.95rem); line-height: .8; color: var(--ivory); margin-top: 16px; font-stretch: condensed; }
 .zone p { color: var(--ivory-dim); font-size: 0.96rem; margin-top: 12px; max-width: 34ch; text-wrap: pretty; }
 .zone .z-arr { margin-top: auto; padding-top: 22px; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-faint); display: inline-flex; align-items: center; gap: 0.6em; transition: color .3s ease, gap .3s ease; }
 .zone:hover .z-arr { color: var(--ivory); gap: 0.95em; }
@@ -130,7 +124,7 @@
 .index-list a { display: grid; grid-template-columns: 78px 0.85fr 1.7fr auto; gap: clamp(14px, 3vw, 44px); align-items: baseline; padding: clamp(24px, 3vw, 36px) 6px; border-bottom: 1px solid var(--line-2); transition: padding-left .3s ease, background .3s ease; }
 .index-list a:hover { background: var(--ink-raise); padding-left: 18px; }
 .ix-no { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--ivory-faint); }
-.ix-name { font-family: var(--display); font-weight: 900; text-transform: uppercase; letter-spacing: 0.012em; font-size: clamp(1.65rem, 2.7vw, 2.55rem); color: var(--ivory); line-height: .78; font-stretch: condensed; }
+.ix-name { font-family: var(--display); font-weight: 900; text-transform: uppercase; letter-spacing: 0.005em; font-size: clamp(1.65rem, 2.7vw, 2.55rem); color: var(--ivory); line-height: .8; font-stretch: condensed; }
 .ix-desc { color: var(--ivory-dim); font-size: 0.98rem; max-width: 46ch; text-wrap: pretty; }
 .ix-arr { justify-self: end; font-family: var(--mono); color: var(--ivory-faint); transition: transform .3s ease, color .3s ease; }
 .index-list a:hover .ix-arr { transform: translateX(6px); color: var(--ivory); }
@@ -155,9 +149,8 @@
 /* why alliance band */
 .alliance { text-align: center; }
 .alliance .big {
-  font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.55rem, 6vw, 6.2rem); line-height: .74;
-  letter-spacing: 0.015em; color: var(--ink); margin: 26px auto 0; max-width: 14ch; font-stretch: condensed;
-  transform: scaleX(1.04);
+  font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.55rem, 6vw, 6.2rem); line-height: .76;
+  letter-spacing: 0.005em; color: var(--ink); margin: 26px auto 0; max-width: 14ch; font-stretch: condensed;
 }
 .alliance p { margin: clamp(26px, 3vw, 38px) auto 0; max-width: 52ch; color: #4c473e; text-wrap: pretty; }
 .alliance .lbl { justify-content: center; }
@@ -171,7 +164,7 @@
 .pgrid > article:first-child { border-left: none; }
 .pgrid > article:hover { background: var(--ink-raise); transform: translateY(-3px); }
 .pgrid .p-k { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
-.pgrid h3 { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.75rem, 2.6vw, 2.65rem); line-height: .76; letter-spacing: 0.012em; color: var(--ivory); margin-top: 16px; font-stretch: condensed; }
+.pgrid h3 { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(1.75rem, 2.6vw, 2.65rem); line-height: .78; letter-spacing: 0.005em; color: var(--ivory); margin-top: 16px; font-stretch: condensed; }
 .pgrid p { color: var(--ivory-dim); font-size: 0.95rem; margin-top: 12px; text-wrap: pretty; }
 .pgrid .tlink { margin-top: auto; align-self: flex-start; }
 @media (max-width: 720px) {
@@ -181,7 +174,7 @@
 }
 
 /* final cta */
-.home-final h2 { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.65rem, 6.3vw, 6.2rem); line-height: 0.74; letter-spacing: 0.015em; font-stretch: condensed; transform: scaleX(1.04); }
+.home-final h2 { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.65rem, 6.3vw, 6.2rem); line-height: 0.76; letter-spacing: 0.005em; font-stretch: condensed; }
 .home-final h2 .line { display: block; }
 
 @media (max-width: 760px) {
@@ -199,13 +192,6 @@
 </style>
 </head>
 <body>
-
-<svg class="type-filters" width="0" height="0" aria-hidden="true" focusable="false">
-  <filter id="ninthLogoType">
-    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.045" numOctaves="1" seed="9" result="noise"/>
-    <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
-  </filter>
-</svg>
 
 <div class="topbar"><span><span class="dot"></span>Coming soon to Downtown Alliance. Space secured. Residents not announced yet.</span></div>
 
@@ -264,7 +250,7 @@
   </div>
   <div class="home-hero-grid">
     <div class="hero-copy reveal">
-      <h1 class="home-display logo-type"><span class="line">A CAFE FOR PEOPLE.</span><span class="line">A SANCTUARY FOR CATS.</span></h1>
+      <h1 class="home-display"><span class="line">A CAFE FOR PEOPLE.</span><span class="line">A SANCTUARY FOR CATS.</span></h1>
       <p class="home-lede">Ninth Life Cafe is a mission-driven, community-supported cafe and protected resident cat sanctuary coming to Downtown Alliance, Ohio. The cafe opens first. The Sanctuary opens when the room, the care plan, and the first resident are ready.</p>
       <p class="hero-note"><span class="r"></span> Our first resident has not been revealed yet.</p>
       <div class="btn-row">
