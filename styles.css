@@ -525,11 +525,11 @@ a.card:hover .more .arr { transform: translateX(4px); }
 /* ============================================================
    menu cards
    ============================================================ */
-.menu-card { border: 1px solid var(--line-2); padding: clamp(24px, 2.8vw, 34px); display: flex; flex-direction: column; }
-.menu-card .mc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
-.menu-card h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); }
+.menu-card { border: 1px solid var(--line-2); padding: clamp(24px, 2.8vw, 34px); display: flex; flex-direction: column; min-height: 230px; }
+.menu-card .mc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.menu-card h3 { font-size: clamp(1.32rem, 1.7vw, 1.65rem); line-height: .98; text-transform: uppercase; letter-spacing: -0.01em; }
 .menu-card .mc-price { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.08em; color: var(--ember); }
-.menu-card p { color: var(--ivory-dim); margin-top: 14px; }
+.menu-card p { color: var(--ivory-dim); margin-top: auto; padding-top: 28px; line-height: 1.55; }
 
 /* ============================================================
    timeline / steps
