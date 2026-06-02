@@ -71,13 +71,14 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 .display {
-  font-family: var(--serif);
-  font-weight: 380;
+  font-family: var(--sans);
+  font-weight: 800;
+  text-transform: uppercase;
   font-size: clamp(2.9rem, 6.6vw, 6.2rem);
-  line-height: 0.98;
-  letter-spacing: -0.018em;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
 }
-.h-xl { font-size: clamp(2.3rem, 4.6vw, 4rem); line-height: 1.0; letter-spacing: -0.015em; }
+.h-xl { font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(2.3rem, 4.6vw, 4rem); line-height: 0.9; letter-spacing: -0.04em; }
 .h-lg { font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: 1.02; }
 .h-md { font-size: clamp(1.45rem, 2.2vw, 2rem); }
 .serif-it { font-family: var(--serif); font-style: italic; font-weight: 380; }

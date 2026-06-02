@@ -15,22 +15,27 @@
 .home-main { --rule: var(--line-2); }
 .brk { display: none; }
 @media (min-width: 760px) { .brk { display: inline; } }
-.cond { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.005em; line-height: 0.98; }
+.cond { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -0.015em; line-height: 0.9; }
 
 /* hero */
 .home-hero { padding-top: clamp(26px, 3.5vw, 46px); padding-bottom: clamp(60px, 8vw, 120px); }
 .hero-rule {
-  display: flex; justify-content: space-between; gap: 18px 30px; flex-wrap: wrap;
+  display: grid; grid-template-columns: auto repeat(4, 1fr); gap: 0;
   border-top: 1px solid var(--line-3); border-bottom: 1px solid var(--line);
-  padding: 13px 0; margin-bottom: clamp(40px, 6vw, 84px);
+  margin-bottom: clamp(40px, 6vw, 84px);
 }
-.hero-rule span { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ivory-faint); }
-.hero-rule span:first-child { color: var(--ivory); }
-.home-hero-grid { display: grid; grid-template-columns: 1.38fr 0.62fr; gap: clamp(40px, 5vw, 84px); align-items: stretch; }
+.hero-rule span {
+  min-height: 48px; display: flex; align-items: center; padding: 12px 16px;
+  border-left: 1px solid var(--line); font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ivory-faint);
+}
+.hero-rule span:first-child { border-left: none; color: var(--ivory); }
+.home-hero-grid { display: grid; grid-template-columns: 1.18fr 0.82fr; gap: clamp(40px, 5vw, 84px); align-items: stretch; }
 @media (max-width: 920px) { .home-hero-grid { grid-template-columns: 1fr; gap: 48px; } }
 .home-display {
-  font-family: var(--serif); font-weight: 380; text-transform: uppercase;
-  font-size: clamp(2.55rem, 6.6vw, 6rem); line-height: 0.96; letter-spacing: 0.006em; color: var(--ivory);
+  font-family: var(--sans); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(3.2rem, 8.8vw, 8.4rem); line-height: 0.82; letter-spacing: -0.045em; color: var(--ivory);
+  max-width: 10ch;
 }
 .home-display .line { display: block; }
 .home-lede { margin-top: clamp(26px, 3vw, 40px); max-width: 46ch; color: var(--ivory-dim); font-size: clamp(1.04rem, 1.4vw, 1.22rem); line-height: 1.62; text-wrap: pretty; }
@@ -41,38 +46,46 @@
 .hero-note .r { width: 26px; height: 1px; background: var(--line-3); flex: none; }
 .home-hero .btn-row { margin-top: clamp(30px, 3.5vw, 42px); }
 
-/* dossier archive artifact */
-.dossier { display: grid; grid-template-columns: 38px 1fr; border: 1px solid var(--line-2); background: var(--ink-1); min-height: 540px; }
-.dossier-rail { border-right: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; }
-.dossier-rail span { writing-mode: vertical-rl; transform: rotate(180deg); font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--ivory-faint); }
-.dossier-frame { display: flex; flex-direction: column; }
-.dossier-head { display: flex; justify-content: space-between; gap: 12px; padding: 13px 18px; border-bottom: 1px solid var(--line-2); }
-.dossier-head span { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
-.dossier-body { position: relative; padding: clamp(24px, 3vw, 34px); flex: 1; display: flex; flex-direction: column; }
-.dossier-kicker { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ivory-faint); }
-.dossier-no { font-family: var(--serif); font-weight: 340; font-size: clamp(5rem, 11vw, 8.6rem); line-height: 0.76; letter-spacing: -0.02em; color: var(--ivory); margin-top: 6px; }
-.dossier-class { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-dim); margin-top: 16px; }
-.dossier-bars { margin-top: 18px; display: grid; gap: 6px; max-width: 210px; }
-.dossier-bars i { height: 9px; background: rgba(241,234,217,.085); }
-.dossier-bars i:nth-child(1) { width: 90%; }
-.dossier-bars i:nth-child(2) { width: 58%; }
-.dossier-bars i:nth-child(3) { width: 76%; }
-.dossier-rows { margin-top: auto; padding-top: 26px; }
-.dossier-rows > div { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.dossier-rows dt { color: var(--ivory-faint); }
-.dossier-rows dd { color: var(--ivory); }
-.dossier-stamp { position: absolute; top: clamp(22px, 3vw, 32px); right: clamp(20px, 3vw, 28px); transform: rotate(-8deg); border: 1px solid var(--line-3); padding: 8px 12px; }
-.dossier-stamp::before { content: ""; position: absolute; inset: 3px; border: 1px solid var(--line); }
-.dossier-stamp span { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ivory-dim); }
-.dossier-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 18px; border-top: 1px solid var(--line-2); }
-.dossier-foot span { font-family: var(--mono); font-size: 0.57rem; letter-spacing: 0.2em; color: var(--ivory-faint); }
-.barcode { height: 20px; flex: 1; max-width: 150px; opacity: 0.5; background: repeating-linear-gradient(90deg, var(--ivory-faint) 0 1px, transparent 1px 3px, var(--ivory-faint) 3px 4px, transparent 4px 8px); }
+/* quiet held frame: a place, not a database */
+.held-frame {
+  min-height: 540px; position: relative; border: 1px solid var(--line-2);
+  background:
+    linear-gradient(90deg, transparent 0 49.8%, var(--line) 49.8% 50.2%, transparent 50.2%),
+    linear-gradient(180deg, transparent 0 55%, var(--line) 55% calc(55% + 1px), transparent calc(55% + 1px)),
+    var(--ink-1);
+  overflow: hidden;
+}
+.held-frame::before {
+  content: ""; position: absolute; inset: clamp(28px, 4vw, 52px);
+  border: 1px solid var(--line-2);
+}
+.held-frame::after {
+  content: ""; position: absolute; right: clamp(32px, 4vw, 58px); bottom: clamp(34px, 4vw, 62px);
+  width: clamp(96px, 14vw, 154px); height: clamp(118px, 18vw, 198px);
+  border: 1px solid var(--line-3); border-radius: 999px 999px 8px 8px;
+  opacity: .72;
+}
+.held-frame-inner {
+  position: absolute; inset: clamp(28px, 4vw, 52px);
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: clamp(20px, 3vw, 34px);
+}
+.held-frame-top,
+.held-frame-bottom {
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ivory-faint);
+}
+.held-frame-bottom { max-width: 24ch; color: var(--ivory-dim); line-height: 1.65; }
+.held-frame h2 {
+  max-width: 10ch; font-family: var(--sans); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(2rem, 4.8vw, 4.6rem); line-height: .84; letter-spacing: -0.04em;
+}
 
 /* section labels */
 .lbl { display: flex; align-items: center; gap: 0.9em; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ivory-faint); }
 .lbl .ln { width: 30px; height: 1px; background: var(--line-3); }
 .lbl b { color: var(--ivory); font-weight: 500; }
-.sec-title { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.6vw, 3.3rem); line-height: 1.0; letter-spacing: -0.005em; color: var(--ivory); }
+.sec-title { font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(2.15rem, 4.4vw, 4.4rem); line-height: .86; letter-spacing: -0.04em; color: var(--ivory); }
 
 /* ====== architectural plan ====== */
 .plan-head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 70px); align-items: end; margin-bottom: clamp(30px, 4vw, 48px); }
@@ -134,8 +147,8 @@
 /* why alliance band */
 .alliance { text-align: center; }
 .alliance .big {
-  font-family: var(--serif); font-weight: 380; font-size: clamp(2.3rem, 5.2vw, 4.8rem); line-height: 1.02;
-  letter-spacing: -0.012em; color: var(--ink); margin: 26px auto 0; max-width: 20ch;
+  font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(2.4rem, 5.4vw, 5.4rem); line-height: .88;
+  letter-spacing: -0.045em; color: var(--ink); margin: 26px auto 0; max-width: 16ch;
 }
 .alliance p { margin: clamp(26px, 3vw, 38px) auto 0; max-width: 52ch; color: #4c473e; text-wrap: pretty; }
 .alliance .lbl { justify-content: center; }
@@ -145,21 +158,30 @@
 
 /* partners line grid */
 .pgrid { border: 1px solid var(--line-2); display: grid; grid-template-columns: repeat(3, 1fr); }
-.pgrid > div { padding: clamp(26px, 3vw, 40px); border-left: 1px solid var(--line); min-height: 200px; display: flex; flex-direction: column; transition: background .3s ease; }
-.pgrid > div:first-child { border-left: none; }
-.pgrid > div:hover { background: var(--ink-raise); }
+.pgrid > article { padding: clamp(26px, 3vw, 40px); border-left: 1px solid var(--line); min-height: 300px; display: flex; flex-direction: column; transition: background .3s ease, transform .3s ease; }
+.pgrid > article:first-child { border-left: none; }
+.pgrid > article:hover { background: var(--ink-raise); transform: translateY(-3px); }
 .pgrid .p-k { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
-.pgrid h3 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; font-size: 1.3rem; color: var(--ivory); margin-top: 14px; }
+.pgrid h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(1.65rem, 2.3vw, 2.25rem); line-height: .92; letter-spacing: -0.03em; color: var(--ivory); margin-top: 16px; }
 .pgrid p { color: var(--ivory-dim); font-size: 0.95rem; margin-top: 12px; text-wrap: pretty; }
+.pgrid .tlink { margin-top: auto; align-self: flex-start; }
 @media (max-width: 720px) {
   .pgrid { grid-template-columns: 1fr; }
-  .pgrid > div { border-left: none; border-top: 1px solid var(--line); }
-  .pgrid > div:first-child { border-top: none; }
+  .pgrid > article { border-left: none; border-top: 1px solid var(--line); min-height: 240px; }
+  .pgrid > article:first-child { border-top: none; }
 }
 
 /* final cta */
-.home-final h2 { font-family: var(--serif); font-weight: 380; text-transform: uppercase; font-size: clamp(2.2rem, 4.6vw, 4rem); line-height: 0.98; letter-spacing: 0.004em; }
+.home-final h2 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; font-size: clamp(2.45rem, 5.8vw, 5.4rem); line-height: 0.86; letter-spacing: -0.045em; }
 .home-final h2 .line { display: block; }
+
+@media (max-width: 760px) {
+  .hero-rule { grid-template-columns: 1fr 1fr; }
+  .hero-rule span { min-height: 42px; }
+  .hero-rule span:first-child { grid-column: 1 / -1; border-bottom: 1px solid var(--line); }
+  .home-display { font-size: clamp(3.15rem, 15vw, 5.2rem); }
+  .held-frame { min-height: 380px; }
+}
 
 /* staggered reveal */
 .stagger { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
@@ -218,13 +240,15 @@
 <!-- ============ HERO ============ -->
 <section class="home-hero wrap">
   <div class="hero-rule reveal">
-    <span>Ninth Life Cafe</span>
-    <span>Downtown Alliance, Ohio</span>
-    <span>File 001 · Sealed</span>
+    <span>Status</span>
+    <span>Space secured</span>
+    <span>Sanctuary in preparation</span>
+    <span>First resident not revealed</span>
+    <span>Support open</span>
   </div>
   <div class="home-hero-grid">
     <div class="hero-copy reveal">
-      <h1 class="home-display"><span class="line">A cafe for people.</span><span class="line">A sanctuary for cats.</span></h1>
+      <h1 class="home-display"><span class="line">A CAFE FOR PEOPLE.</span><span class="line">A SANCTUARY FOR CATS.</span></h1>
       <p class="home-lede">Ninth Life Cafe is a mission-driven, community-supported cafe and protected resident cat sanctuary coming to Downtown Alliance, Ohio. The cafe opens first. The Sanctuary opens when the room, the care plan, and the first resident are ready.</p>
       <p class="hero-note"><span class="r"></span> Our first resident has not been revealed yet.</p>
       <div class="btn-row">
@@ -233,23 +257,11 @@
         <a class="btn btn-ghost" href="contact.html?interest=join-waitlist">Join the List</a>
       </div>
     </div>
-    <aside class="dossier reveal" aria-label="Resident file 001 — sealed">
-      <div class="dossier-rail"><span>Resident File · Ninth Life Archive</span></div>
-      <div class="dossier-frame">
-        <div class="dossier-head"><span>Ninth Life / Resident</span><span>File 001</span></div>
-        <div class="dossier-body">
-          <div class="dossier-stamp"><span>Sealed</span></div>
-          <div class="dossier-kicker">Founding Resident</div>
-          <div class="dossier-no">001</div>
-          <div class="dossier-class">Portrait Withheld</div>
-          <div class="dossier-bars" aria-hidden="true"><i></i><i></i><i></i></div>
-          <dl class="dossier-rows">
-            <div><dt>Status</dt><dd>Not announced</dd></div>
-            <div><dt>Focus</dt><dd>Maine Coon care</dd></div>
-            <div><dt>Reveal</dt><dd>When settled</dd></div>
-          </dl>
-        </div>
-        <div class="dossier-foot" aria-hidden="true"><span>NL — 001</span><div class="barcode"></div></div>
+    <aside class="held-frame reveal" aria-label="First resident not revealed">
+      <div class="held-frame-inner">
+        <div class="held-frame-top">Held room / no portrait</div>
+        <h2>First resident not revealed.</h2>
+        <div class="held-frame-bottom">No stock cats. No fake names. No rushed reveal.</div>
       </div>
     </aside>
   </div>
@@ -376,30 +388,29 @@
   <div class="split lean" style="align-items:end;margin-bottom:clamp(28px,4vw,44px);gap:clamp(28px,4vw,70px);">
     <div class="reveal">
       <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>05</b> Support &amp; partners</div>
-      <h2 class="sec-title" style="max-width:16ch;">The room comes<br class="brk">before the reveal.</h2>
+      <h2 class="sec-title" style="max-width:17ch;">The room needs<br class="brk">its first believers.</h2>
     </div>
-    <p class="body reveal" style="max-width:40ch;">We're looking for aligned people and partners — founding supporters, breeders, sponsors, and local makers who understand care comes first.</p>
+    <p class="body reveal" style="max-width:48ch;">Before the first resident is announced, Ninth Life needs the people and partners who help make the room real: care, supplies, local goods, launch support, and thoughtful visibility.</p>
   </div>
   <div class="pgrid reveal">
-    <div>
-      <div class="p-k">A / Breeders</div>
-      <h3>Breeders</h3>
-      <p>Founding resident conversations, care-first visibility, and thoughtful updates.</p>
-    </div>
-    <div>
-      <div class="p-k">B / Sponsors</div>
-      <h3>Sponsors</h3>
-      <p>Support resident care, launch supplies, livestream, or the room itself.</p>
-    </div>
-    <div>
-      <div class="p-k">C / Local partners</div>
-      <h3>Local Partners</h3>
-      <p>Pastries, drinks, partner-supported goods, buildout, care, and daily operations.</p>
-    </div>
-  </div>
-  <div class="btn-row reveal" style="margin-top:34px;">
-    <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
-    <a class="btn btn-ghost" href="contact.html?interest=founding-breeder-partnership">Discuss a founding breeder partnership</a>
+    <article>
+      <div class="p-k">01 / The Founding Breeder</div>
+      <h3>The Founding Breeder</h3>
+      <p>For the right Maine Coon breeder, this is not a handoff. It is a long-term resident story built around care, visibility, and trust.</p>
+      <a class="tlink" href="contact.html?interest=founding-breeder-partnership">Begin Breeder Conversation <span class="arr">&rarr;</span></a>
+    </article>
+    <article>
+      <div class="p-k">02 / The Room Backer</div>
+      <h3>The Room Backer</h3>
+      <p>For supporters and sponsors who want to help fund The Sanctuary, resident care, supplies, livestream setup, and the first months of operation.</p>
+      <a class="tlink" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
+    </article>
+    <article>
+      <div class="p-k">03 / The Local Piece</div>
+      <h3>The Local Piece</h3>
+      <p>For bakeries, drink partners, product partners, care partners, operators, and local businesses that can help the first version feel real.</p>
+      <a class="tlink" href="contact.html?interest=partner-with-us">Partner With Us <span class="arr">&rarr;</span></a>
+    </article>
   </div>
 </section>
 
