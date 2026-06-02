@@ -3,237 +3,454 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ninth Life Cafe - Resident cat lounge coming soon</title>
-<meta name="description" content="Ninth Life Cafe is a public light cafe and resident cat lounge coming soon to Downtown Alliance, Ohio, built around timed visits, simple drinks, future residents, and The Window Seat Live.">
+<title>Ninth Life Cafe — A cafe for people. A sanctuary for cats.</title>
+<meta name="description" content="Ninth Life Cafe is a mission-driven, community-supported cafe and protected resident cat sanctuary coming to Downtown Alliance, Ohio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360;0,6..72,420;0,6..72,500;1,6..72,360;1,6..72,420&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/nineth-logo.png?v=logo">
-<link rel="stylesheet" href="styles.css?v=home-rhythm-20260601">
+<link rel="icon" type="image/png" href="assets/nineth-logo.png">
+<link rel="stylesheet" href="styles.css">
+<style id="home-style">
+/* ============ homepage — architectural refinement ============ */
+.home-main { --rule: var(--line-2); }
+.brk { display: none; }
+@media (min-width: 760px) { .brk { display: inline; } }
+.cond { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.005em; line-height: 0.98; }
+
+/* hero */
+.home-hero { padding-top: clamp(26px, 3.5vw, 46px); padding-bottom: clamp(60px, 8vw, 120px); }
+.hero-rule {
+  display: flex; justify-content: space-between; gap: 18px 30px; flex-wrap: wrap;
+  border-top: 1px solid var(--line-3); border-bottom: 1px solid var(--line);
+  padding: 13px 0; margin-bottom: clamp(40px, 6vw, 84px);
+}
+.hero-rule span { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ivory-faint); }
+.hero-rule span:first-child { color: var(--ivory); }
+.home-hero-grid { display: grid; grid-template-columns: 1.38fr 0.62fr; gap: clamp(40px, 5vw, 84px); align-items: stretch; }
+@media (max-width: 920px) { .home-hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+.home-display {
+  font-family: var(--serif); font-weight: 380; text-transform: uppercase;
+  font-size: clamp(2.55rem, 6.6vw, 6rem); line-height: 0.96; letter-spacing: 0.006em; color: var(--ivory);
+}
+.home-display .line { display: block; }
+.home-lede { margin-top: clamp(26px, 3vw, 40px); max-width: 46ch; color: var(--ivory-dim); font-size: clamp(1.04rem, 1.4vw, 1.22rem); line-height: 1.62; text-wrap: pretty; }
+.hero-note {
+  margin-top: 26px; display: flex; align-items: center; gap: 0.95em;
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ivory-dim);
+}
+.hero-note .r { width: 26px; height: 1px; background: var(--line-3); flex: none; }
+.home-hero .btn-row { margin-top: clamp(30px, 3.5vw, 42px); }
+
+/* dossier archive artifact */
+.dossier { display: grid; grid-template-columns: 38px 1fr; border: 1px solid var(--line-2); background: var(--ink-1); min-height: 540px; }
+.dossier-rail { border-right: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; }
+.dossier-rail span { writing-mode: vertical-rl; transform: rotate(180deg); font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--ivory-faint); }
+.dossier-frame { display: flex; flex-direction: column; }
+.dossier-head { display: flex; justify-content: space-between; gap: 12px; padding: 13px 18px; border-bottom: 1px solid var(--line-2); }
+.dossier-head span { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
+.dossier-body { position: relative; padding: clamp(24px, 3vw, 34px); flex: 1; display: flex; flex-direction: column; }
+.dossier-kicker { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ivory-faint); }
+.dossier-no { font-family: var(--serif); font-weight: 340; font-size: clamp(5rem, 11vw, 8.6rem); line-height: 0.76; letter-spacing: -0.02em; color: var(--ivory); margin-top: 6px; }
+.dossier-class { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-dim); margin-top: 16px; }
+.dossier-bars { margin-top: 18px; display: grid; gap: 6px; max-width: 210px; }
+.dossier-bars i { height: 9px; background: rgba(241,234,217,.085); }
+.dossier-bars i:nth-child(1) { width: 90%; }
+.dossier-bars i:nth-child(2) { width: 58%; }
+.dossier-bars i:nth-child(3) { width: 76%; }
+.dossier-rows { margin-top: auto; padding-top: 26px; }
+.dossier-rows > div { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.dossier-rows dt { color: var(--ivory-faint); }
+.dossier-rows dd { color: var(--ivory); }
+.dossier-stamp { position: absolute; top: clamp(22px, 3vw, 32px); right: clamp(20px, 3vw, 28px); transform: rotate(-8deg); border: 1px solid var(--line-3); padding: 8px 12px; }
+.dossier-stamp::before { content: ""; position: absolute; inset: 3px; border: 1px solid var(--line); }
+.dossier-stamp span { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ivory-dim); }
+.dossier-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 18px; border-top: 1px solid var(--line-2); }
+.dossier-foot span { font-family: var(--mono); font-size: 0.57rem; letter-spacing: 0.2em; color: var(--ivory-faint); }
+.barcode { height: 20px; flex: 1; max-width: 150px; opacity: 0.5; background: repeating-linear-gradient(90deg, var(--ivory-faint) 0 1px, transparent 1px 3px, var(--ivory-faint) 3px 4px, transparent 4px 8px); }
+
+/* section labels */
+.lbl { display: flex; align-items: center; gap: 0.9em; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ivory-faint); }
+.lbl .ln { width: 30px; height: 1px; background: var(--line-3); }
+.lbl b { color: var(--ivory); font-weight: 500; }
+.sec-title { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.6vw, 3.3rem); line-height: 1.0; letter-spacing: -0.005em; color: var(--ivory); }
+
+/* ====== architectural plan ====== */
+.plan-head { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 70px); align-items: end; margin-bottom: clamp(30px, 4vw, 48px); }
+@media (max-width: 820px) { .plan-head { grid-template-columns: 1fr; gap: 22px; } }
+.plan-head .sec-title { text-transform: none; }
+.plan-head p { color: var(--ivory-dim); max-width: 42ch; text-wrap: pretty; }
+.plan { border: 1px solid var(--line-2); position: relative; }
+.plan::before { content: ""; position: absolute; inset: 7px; border: 1px solid var(--line); pointer-events: none; z-index: 2; }
+.plan-top { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+.plan-bottom { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-2); }
+.zone { position: relative; padding: clamp(26px, 3.4vw, 46px); min-height: 250px; display: flex; flex-direction: column; transition: background .3s ease; }
+.zone:hover { background: var(--ink-raise); }
+.zone::after { content: ""; position: absolute; inset: 0; border: 1px solid transparent; pointer-events: none; transition: border-color .3s ease; }
+.zone:hover::after { border-color: var(--line-2); }
+.plan-top .zone:last-child { border-left: 1px solid var(--line-2); }
+.plan-bottom .zone:last-child { border-left: 1px solid var(--line-2); }
+.zone-tag { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
+.zone-no { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory); margin-top: 4px; }
+.zone h3 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.005em; font-size: clamp(1.3rem, 1.9vw, 1.7rem); color: var(--ivory); margin-top: 16px; }
+.zone p { color: var(--ivory-dim); font-size: 0.96rem; margin-top: 12px; max-width: 34ch; text-wrap: pretty; }
+.zone .z-arr { margin-top: auto; padding-top: 22px; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-faint); display: inline-flex; align-items: center; gap: 0.6em; transition: color .3s ease, gap .3s ease; }
+.zone:hover .z-arr { color: var(--ivory); gap: 0.95em; }
+/* threshold line */
+.plan-threshold { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); z-index: 3; background: linear-gradient(var(--line-3) 0 36%, transparent 36% 64%, var(--line-3) 64% 100%); }
+.plan-threshold span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--ink); padding: 7px 9px; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ivory-dim); white-space: nowrap; }
+@media (max-width: 720px) {
+  .plan-top, .plan-bottom { grid-template-columns: 1fr; }
+  .plan-top .zone:last-child, .plan-bottom .zone:last-child { border-left: none; border-top: 1px solid var(--line-2); }
+  .plan-threshold { left: 0; right: 0; top: 50%; bottom: auto; width: auto; height: 1px; transform: translateY(-50%); background: linear-gradient(90deg, var(--line-3) 0 36%, transparent 36% 64%, var(--line-3) 64% 100%); }
+}
+
+/* ====== index list ====== */
+.index-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
+.index-list a { display: grid; grid-template-columns: 78px 0.85fr 1.7fr auto; gap: clamp(14px, 3vw, 44px); align-items: baseline; padding: clamp(24px, 3vw, 36px) 6px; border-bottom: 1px solid var(--line-2); transition: padding-left .3s ease, background .3s ease; }
+.index-list a:hover { background: var(--ink-raise); padding-left: 18px; }
+.ix-no { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--ivory-faint); }
+.ix-name { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.005em; font-size: clamp(1.5rem, 2.5vw, 2.3rem); color: var(--ivory); line-height: 1; }
+.ix-desc { color: var(--ivory-dim); font-size: 0.98rem; max-width: 46ch; text-wrap: pretty; }
+.ix-arr { justify-self: end; font-family: var(--mono); color: var(--ivory-faint); transition: transform .3s ease, color .3s ease; }
+.index-list a:hover .ix-arr { transform: translateX(6px); color: var(--ivory); }
+@media (max-width: 780px) {
+  .index-list a { grid-template-columns: 50px 1fr; gap: 6px 16px; }
+  .ix-desc { grid-column: 1 / -1; margin-top: 6px; }
+  .ix-arr { display: none; }
+}
+
+/* first resident ledger */
+.ledger { border: 1px solid var(--line-2); display: grid; grid-template-columns: repeat(4, 1fr); }
+.ledger > div { padding: clamp(18px, 2vw, 24px) clamp(18px, 2vw, 24px); border-left: 1px solid var(--line); }
+.ledger > div:first-child { border-left: none; }
+.ledger span { font-family: var(--mono); font-size: 0.57rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ivory-faint); }
+.ledger b { display: block; margin-top: 10px; font-family: var(--serif); font-weight: 400; font-size: clamp(1.25rem, 1.8vw, 1.5rem); color: var(--ivory); }
+@media (max-width: 600px) {
+  .ledger { grid-template-columns: 1fr 1fr; }
+  .ledger > div:nth-child(odd) { border-left: none; }
+  .ledger > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+/* why alliance band */
+.alliance { text-align: center; }
+.alliance .big {
+  font-family: var(--serif); font-weight: 380; font-size: clamp(2.3rem, 5.2vw, 4.8rem); line-height: 1.02;
+  letter-spacing: -0.012em; color: var(--ink); margin: 26px auto 0; max-width: 20ch;
+}
+.alliance p { margin: clamp(26px, 3vw, 38px) auto 0; max-width: 52ch; color: #4c473e; text-wrap: pretty; }
+.alliance .lbl { justify-content: center; }
+.alliance .lbl .ln { background: var(--cream-line-2); }
+.alliance .lbl { color: #8a8475; }
+.alliance .lbl b { color: var(--ink); }
+
+/* partners line grid */
+.pgrid { border: 1px solid var(--line-2); display: grid; grid-template-columns: repeat(3, 1fr); }
+.pgrid > div { padding: clamp(26px, 3vw, 40px); border-left: 1px solid var(--line); min-height: 200px; display: flex; flex-direction: column; transition: background .3s ease; }
+.pgrid > div:first-child { border-left: none; }
+.pgrid > div:hover { background: var(--ink-raise); }
+.pgrid .p-k { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ivory-faint); }
+.pgrid h3 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; font-size: 1.3rem; color: var(--ivory); margin-top: 14px; }
+.pgrid p { color: var(--ivory-dim); font-size: 0.95rem; margin-top: 12px; text-wrap: pretty; }
+@media (max-width: 720px) {
+  .pgrid { grid-template-columns: 1fr; }
+  .pgrid > div { border-left: none; border-top: 1px solid var(--line); }
+  .pgrid > div:first-child { border-top: none; }
+}
+
+/* final cta */
+.home-final h2 { font-family: var(--serif); font-weight: 380; text-transform: uppercase; font-size: clamp(2.2rem, 4.6vw, 4rem); line-height: 0.98; letter-spacing: 0.004em; }
+.home-final h2 .line { display: block; }
+
+/* staggered reveal */
+.stagger { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.stagger.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .stagger { opacity: 1; transform: none; } }
+</style>
 </head>
 <body>
+
+<div class="topbar"><span><span class="dot"></span>Coming soon to Downtown Alliance. Space secured. Residents not announced yet.</span></div>
+
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-label="Ninth Life, home"><img class="brand-logo" src="assets/nineth-logo.png?v=logo" alt="Ninth Life"></a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="cats.html">Cats</a><a href="cafe.html">Cafe</a><a href="visit.html">Visit</a><a href="live.html">Live</a><a href="support.html">Support</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+    <a class="brand" href="index.html" aria-label="Ninth Life, home"><img class="brand-logo" src="assets/nineth-logo.png" alt="Ninth Life"></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="sanctuary.html">Sanctuary</a>
+      <a href="cafe.html">Cafe</a>
+      <a href="visit.html">Visit</a>
+      <a href="live.html">Live</a>
+      <a href="support.html">Support</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <div class="header-cta"><a class="btn btn-primary" href="contact.html?interest=visit-waitlist">Join Waitlist</a></div>
+    <div class="header-cta">
+      <a class="btn btn-line" href="support.html">Support the Mission</a>
+    </div>
     <button class="nav-toggle" aria-label="Open menu"><span></span></button>
   </div>
-  <div class="prelaunch-banner">Coming soon to Downtown Alliance. Room not open yet. Residents not announced yet.</div>
 </header>
+
 <div class="drawer" id="drawer">
   <div class="drawer-scrim" data-close></div>
   <aside class="drawer-panel" role="dialog" aria-label="Menu">
-    <div class="drawer-head"><a class="brand" href="index.html"><img class="brand-logo" src="assets/nineth-logo.png?v=logo" alt="Ninth Life"></a><button class="drawer-close" data-close aria-label="Close menu">&#10005;</button></div>
+    <div class="drawer-head">
+      <a class="brand" href="index.html"><img class="brand-logo" src="assets/nineth-logo.png" alt="Ninth Life"></a>
+      <button class="drawer-close" data-close aria-label="Close menu">&#10005;</button>
+    </div>
     <nav class="drawer-nav">
-      <a href="cats.html">Cats<span class="i">01</span></a><a href="cafe.html">Cafe<span class="i">02</span></a><a href="visit.html">Visit<span class="i">03</span></a><a href="live.html">Live<span class="i">04</span></a><a href="support.html">Support<span class="i">05</span></a><a href="faq.html">FAQ<span class="i">06</span></a><a href="contact.html">Contact<span class="i">07</span></a>
+      <a href="sanctuary.html">Sanctuary<span class="i">01</span></a>
+      <a href="cafe.html">Cafe<span class="i">02</span></a>
+      <a href="visit.html">Visit<span class="i">03</span></a>
+      <a href="live.html">Live<span class="i">04</span></a>
+      <a href="support.html">Support<span class="i">05</span></a>
+      <a href="faq.html">FAQ<span class="i">06</span></a>
+      <a href="contact.html">Contact<span class="i">07</span></a>
     </nav>
-    <div class="drawer-foot"><a class="btn btn-primary" href="contact.html?interest=visit-waitlist" style="width:100%;justify-content:center;">Join Waitlist</a></div>
+    <div class="drawer-foot">
+      <a class="btn btn-solid" href="support.html">Support the Mission</a>
+      <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
+    </div>
   </aside>
 </div>
 
-<main class="home-page home-v2">
-  <section class="home-hero-v2 wrap">
-    <div class="home-hero-copy reveal">
-      <span class="hero-tag"><span class="dot"></span> Ninth Life Cafe</span>
-      <p class="home-brand">Ninth Life Cafe</p>
-      <h1>A small cafe for a future Maine Coon resident.</h1>
-      <p class="home-subhead">Public light cafe. Timed resident visits. A future window online.</p>
-      <p class="home-body">Coming soon to Downtown Alliance, Ohio. The cafe comes first: simple drinks, custom cups, and a reason to stop in. The resident room opens carefully, after the space is ready and the first cat is settled.</p>
-      <div class="home-actions">
-        <a class="btn btn-primary" href="contact.html?interest=visit-waitlist">Join Waitlist</a>
-        <a class="btn btn-ghost" href="support.html">Support the Room</a>
-        <a class="home-link" href="contact.html?interest=livestream-updates">Get Live Updates</a>
-      </div>
-      <div class="hero-proof-strip" aria-label="Ninth Life operating notes">
-        <span>Public counter</span>
-        <span>Timed resident room</span>
-        <span>Live after settled</span>
-      </div>
-    </div>
-    <div class="home-hero-world home-opening-board reveal" aria-label="Ninth Life opening model">
-      <div class="board-kicker">Opening model</div>
-      <div class="board-main">
-        <span>01</span>
-        <h2>Cafe first. Resident room carefully.</h2>
-        <p>A public light cafe gives people a reason to stop in. Timed resident visits keep the cat room calm, managed, and worth booking.</p>
-      </div>
-      <div class="board-grid">
-        <div>
-          <span>Cafe</span>
-          <strong>Simple drinks, custom cups, local pastries.</strong>
-        </div>
-        <div>
-          <span>Visit</span>
-          <strong>45-minute resident sessions planned at $12.</strong>
-        </div>
-        <div>
-          <span>Live</span>
-          <strong>Ninth Life Live begins after the resident is settled.</strong>
-        </div>
-        <div>
-          <span>Care</span>
-          <strong>The first resident is announced only when the room is ready.</strong>
-        </div>
-      </div>
-      <div class="board-note">The first Maine Coon resident has not been selected yet.</div>
-    </div>
-  </section>
+<main class="home-main">
 
-  <section class="home-section home-paths-v2">
-    <div class="wrap">
-      <div class="home-section-head reveal">
-        <span class="eyebrow">Start here</span>
-        <h2>Start here.</h2>
+<!-- ============ HERO ============ -->
+<section class="home-hero wrap">
+  <div class="hero-rule reveal">
+    <span>Ninth Life Cafe</span>
+    <span>Downtown Alliance, Ohio</span>
+    <span>File 001 · Sealed</span>
+  </div>
+  <div class="home-hero-grid">
+    <div class="hero-copy reveal">
+      <h1 class="home-display"><span class="line">A cafe for people.</span><span class="line">A sanctuary for cats.</span></h1>
+      <p class="home-lede">Ninth Life Cafe is a mission-driven, community-supported cafe and protected resident cat sanctuary coming to Downtown Alliance, Ohio. The cafe opens first. The Sanctuary opens when the room, the care plan, and the first resident are ready.</p>
+      <p class="hero-note"><span class="r"></span> Our first resident has not been revealed yet.</p>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
+        <a class="btn btn-line" href="contact.html?interest=partner-with-us">Partner With Us</a>
+        <a class="btn btn-ghost" href="contact.html?interest=join-waitlist">Join the List</a>
       </div>
-      <div class="path-v2-grid">
-        <a class="path-v2-card reveal" href="contact.html?interest=visit-waitlist">
-          <span>01 / Visit</span>
-          <h3>Visit.</h3>
-          <p>Book timed resident visits once the room opens. 45-minute visits are planned at $12 per guest.</p>
-          <strong>Join visit list</strong>
-        </a>
-        <a class="path-v2-card reveal" href="cafe.html">
-          <span>02 / Cafe</span>
-          <h3>Cafe.</h3>
-          <p>Stop in for simple drinks when the cafe opens: chai, matcha, lemonade, house drinks, and local pastries.</p>
-          <strong>See cafe preview</strong>
-        </a>
-        <a class="path-v2-card reveal live" href="contact.html?interest=livestream-updates">
-          <span>03 / Live</span>
-          <h3>Live.</h3>
-          <p>Follow Ninth Life Live after the resident is settled. The internet gets the window seat.</p>
-          <strong>Get live updates</strong>
-        </a>
-        <a class="path-v2-card reveal" href="support.html">
-          <span>04 / Support</span>
-          <h3>Support.</h3>
-          <p>Help prepare the room, resident care, supplies, and livestream before opening. Monthly support starts at $25.</p>
-          <strong>Support the room</strong>
-        </a>
-      </div>
-      <p class="partner-underlink reveal"><a href="contact.html?interest=founding-breeder-partnership">For breeders and partners: start a conversation.</a></p>
     </div>
-  </section>
-
-  <section class="home-section home-resident-live">
-    <div class="wrap resident-live-grid">
-      <div class="resident-poster reveal">
-        <span>Future Residents</span>
-        <h2>The first resident has not met the room yet.</h2>
-        <p>No fake names. No stock photos. No rushed reveal. The first resident will be introduced only when the room is ready, the care plan is real, and the story can begin honestly.</p>
-        <div class="resident-mini-grid">
-          <div><span>Resident 001</span><strong>Future Maine Coon Resident</strong><em>Status: not selected yet</em></div>
-          <div><span>Resident 002</span><strong>Future Resident</strong><em>Status: not announced</em></div>
-          <div><span>Resident 003</span><strong>Future Resident</strong><em>Status: not announced</em></div>
+    <aside class="dossier reveal" aria-label="Resident file 001 — sealed">
+      <div class="dossier-rail"><span>Resident File · Ninth Life Archive</span></div>
+      <div class="dossier-frame">
+        <div class="dossier-head"><span>Ninth Life / Resident</span><span>File 001</span></div>
+        <div class="dossier-body">
+          <div class="dossier-stamp"><span>Sealed</span></div>
+          <div class="dossier-kicker">Founding Resident</div>
+          <div class="dossier-no">001</div>
+          <div class="dossier-class">Portrait Withheld</div>
+          <div class="dossier-bars" aria-hidden="true"><i></i><i></i><i></i></div>
+          <dl class="dossier-rows">
+            <div><dt>Status</dt><dd>Not announced</dd></div>
+            <div><dt>Focus</dt><dd>Maine Coon care</dd></div>
+            <div><dt>Reveal</dt><dd>When settled</dd></div>
+          </dl>
         </div>
-        <div class="mini-actions">
-          <a href="contact.html?interest=general-updates">Get Resident Updates</a>
-          <a href="contact.html?interest=founding-breeder-partnership">Discuss a Founding Breeder Partnership</a>
+        <div class="dossier-foot" aria-hidden="true"><span>NL — 001</span><div class="barcode"></div></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURAL PLAN ============ -->
+<section class="pad tone-ink2">
+  <div class="wrap">
+    <div class="plan-head">
+      <div class="reveal">
+        <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>01</b> The model</div>
+        <h2 class="sec-title">A public counter.<br>A protected room.</h2>
+      </div>
+      <p class="reveal">Ninth Life is built in two layers. The cafe gives people a reason to walk in. The Sanctuary gives the resident a room worth protecting. One opens to the street. One opens on the cat's terms.</p>
+    </div>
+
+    <div class="plan">
+      <div class="plan-top">
+        <div class="zone stagger" style="transition-delay:0s">
+          <div class="zone-tag">Public · Opens to the street</div>
+          <div class="zone-no">01 / The Counter</div>
+          <h3>The Counter</h3>
+          <p>Simple drinks, good cups, local pastries, limited merch, and partner goods. The part of Ninth Life anyone can walk toward first.</p>
+          <span class="z-arr">Public room &rarr;</span>
+        </div>
+        <div class="zone stagger" style="transition-delay:.09s">
+          <div class="zone-tag">Protected · Opens on the cat's terms</div>
+          <div class="zone-no">02 / The Sanctuary</div>
+          <h3>The Sanctuary</h3>
+          <p>A protected room behind the cafe, built for resident care, limited visits, rest, and slow trust.</p>
+          <span class="z-arr">Protected room &rarr;</span>
+        </div>
+        <div class="plan-threshold" aria-hidden="true"><span>Threshold</span></div>
+      </div>
+      <div class="plan-bottom">
+        <div class="zone stagger" style="transition-delay:.16s">
+          <div class="zone-tag">The boundary</div>
+          <div class="zone-no">03 / The Threshold</div>
+          <h3>The Threshold</h3>
+          <p>Sanctuary access is timed, intentional, and separate from cafe purchases. No casual walk-throughs. No free-for-all.</p>
+          <span class="z-arr">Timed access &rarr;</span>
+        </div>
+        <div class="zone stagger" style="transition-delay:.24s">
+          <div class="zone-tag">The pace</div>
+          <div class="zone-no">04 / The Rhythm</div>
+          <h3>The Rhythm</h3>
+          <p>The resident decides the pace. The room opens slowly, after the care plan, daily routine, and first cat are ready.</p>
+          <span class="z-arr">Cat sets the pace &rarr;</span>
         </div>
       </div>
-      <div class="live-poster reveal">
-        <span><i></i> The Window Seat Live</span>
-        <h2>The internet gets the window seat.</h2>
-        <p>Ninth Life Live will become a quiet online view into the resident room after the cat is settled. No forced show. No fake content. Just a window into the room when the room is ready.</p>
-        <div class="mini-actions">
-          <a href="contact.html?interest=livestream-updates">Get Live Updates</a>
-          <a href="contact.html?interest=sponsor-window-seat-live">Sponsor The Window Seat</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW NINTH LIFE BEGINS ============ -->
+<section class="pad wrap">
+  <div class="reveal" style="margin-bottom:clamp(26px,4vw,44px);">
+    <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>02</b> The first version</div>
+    <h2 class="sec-title" style="max-width:18ch;">How Ninth Life begins.</h2>
+  </div>
+  <ol class="index-list reveal">
+    <li><a href="cafe.html">
+      <span class="ix-no">01</span>
+      <span class="ix-name">Cafe</span>
+      <span class="ix-desc">Simple drinks, local pastries, limited merch, and partner-supported goods — a calm reason to stop in.</span>
+      <span class="ix-arr">&rarr;</span>
+    </a></li>
+    <li><a href="sanctuary.html">
+      <span class="ix-no">02</span>
+      <span class="ix-name">Sanctuary</span>
+      <span class="ix-desc">A protected resident room with limited visits, opened carefully around the cat's comfort.</span>
+      <span class="ix-arr">&rarr;</span>
+    </a></li>
+    <li><a href="live.html">
+      <span class="ix-no">03</span>
+      <span class="ix-name">Live</span>
+      <span class="ix-desc">A future window into The Sanctuary, once the room and resident are ready.</span>
+      <span class="ix-arr">&rarr;</span>
+    </a></li>
+    <li><a href="support.html">
+      <span class="ix-no">04</span>
+      <span class="ix-name">Support</span>
+      <span class="ix-desc">Founding support prepares the room, care systems, supplies, livestream, and first months of operation.</span>
+      <span class="ix-arr">&rarr;</span>
+    </a></li>
+  </ol>
+</section>
+
+<!-- ============ FIRST RESIDENT ============ -->
+<section class="pad tone-ink2">
+  <div class="wrap">
+    <div class="split lean" style="align-items:start;gap:clamp(34px,5vw,80px);margin-bottom:clamp(30px,4vw,46px);">
+      <div class="reveal">
+        <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>03</b> First resident</div>
+        <h2 class="sec-title" style="max-width:16ch;">The first resident<br class="brk">has not been revealed.</h2>
+      </div>
+      <div class="reveal" style="align-self:center;">
+        <p class="body" style="max-width:44ch;">No stock cats. No fake names. No rushed reveal. Ninth Life will begin with one carefully selected resident, with a special focus on Maine Coon care and storytelling.</p>
+        <div class="btn-row" style="margin-top:26px;">
+          <a class="btn btn-line" href="sanctuary.html">Inside the Sanctuary <span class="arr">&rarr;</span></a>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="home-section home-visit-cafe">
-    <div class="wrap visit-cafe-grid">
-      <div class="home-section-head reveal">
-        <span class="eyebrow">Visit + cafe</span>
-        <h2>Simple drinks. Good cups.</h2>
-        <p>The cafe stays light so the room can stay focused: chai, matcha, lemonade, sparkling strawberry lemonade, matcha lemonade, strawberry matcha, The Window Seat, and local pastries.</p>
-        <p class="price-note">Cafe drinks are separate from resident visit pricing.</p>
-        <a class="btn btn-ghost cafe-preview-link" href="cafe.html">See the Cafe</a>
-      </div>
-      <div class="visit-price-board reveal">
-        <div><span>Standard Resident Visit</span><strong>$12</strong><em>45 minutes</em></div>
-        <div><span>Kids 12 and under</span><strong>$8</strong><em>with adult</em></div>
-        <div><span>Private Resident Visit</span><strong>$100</strong><em>60 minutes, up to 6 guests</em></div>
-        <div><span>Simple Drinks</span><strong>$5-$6</strong><em>preview menu</em></div>
-      </div>
+    <div class="ledger reveal">
+      <div><span>Resident</span><b>001</b></div>
+      <div><span>Designation</span><b>Founding</b></div>
+      <div><span>Status</span><b>Not announced</b></div>
+      <div><span>Portrait</span><b>Sealed</b></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="home-section home-storyline">
-    <div class="wrap home-story-grid">
-      <div class="home-section-head reveal">
-        <span class="eyebrow">The reason</span>
-        <h2>Downtown Alliance deserves rooms people remember.</h2>
-      </div>
-      <div class="story-copy reveal">
-        <p>Ninth Life is being built because a small town does not need another empty room. It needs places people are curious enough to walk toward.</p>
-        <p>A real counter. A good cup. A future resident with presence. A window people check because they care what happens inside.</p>
-        <p>The cafe gives people a reason to stop in. Timed visits protect the resident room. Ninth Life Live lets people follow along from anywhere.</p>
-        <p>Small, careful, and real.</p>
-        <a class="btn btn-primary" href="support.html">Support the Room</a>
-      </div>
-    </div>
-  </section>
+<!-- ============ WHY ALLIANCE ============ -->
+<section class="pad tone-cream on-cream">
+  <div class="wrap-narrow alliance">
+    <div class="lbl reveal"><span class="ln"></span><b>04</b> Why Alliance</div>
+    <h2 class="big reveal">Downtown Alliance deserves<br class="brk">rooms people remember.</h2>
+    <p class="reveal">Ninth Life begins in Alliance because small towns deserve places with presence. A real counter. A good cup. A protected room. A reason to walk in and care what happens next.</p>
+  </div>
+</section>
 
-  <section class="home-section partner-tease">
-    <div class="wrap mission-grid">
-      <div class="home-section-head reveal">
-        <span class="eyebrow">Partners</span>
-        <h2>For breeders, sponsors, and care partners.</h2>
-      </div>
-      <div class="story-copy reveal">
-        <p>Ninth Life is looking for serious partners who understand that the resident comes before the content.</p>
-        <p>For the right Maine Coon breeder, sponsor, bakery, care partner, or local backer, this can become a long-term story: a prepared room, a future resident, steady media, livestream presence, thoughtful visibility, and responsible referrals.</p>
-        <div class="partner-chip-grid">
-          <div><span>Breeders</span><strong>Founding resident visibility, care-first handling, responsible referrals.</strong></div>
-          <div><span>Sponsors</span><strong>Support the room, livestream, supplies, resident care, or launch.</strong></div>
-          <div><span>Local Partners</span><strong>Bakery, drinks, supplies, care, buildout, and operations.</strong></div>
-        </div>
-        <a class="btn btn-ghost" href="contact.html?interest=founding-breeder-partnership">Start a Partnership Conversation</a>
-      </div>
+<!-- ============ SUPPORT & PARTNERS ============ -->
+<section class="pad wrap">
+  <div class="split lean" style="align-items:end;margin-bottom:clamp(28px,4vw,44px);gap:clamp(28px,4vw,70px);">
+    <div class="reveal">
+      <div class="lbl" style="margin-bottom:22px;"><span class="ln"></span><b>05</b> Support &amp; partners</div>
+      <h2 class="sec-title" style="max-width:16ch;">The room comes<br class="brk">before the reveal.</h2>
     </div>
-  </section>
+    <p class="body reveal" style="max-width:40ch;">We're looking for aligned people and partners — founding supporters, breeders, sponsors, and local makers who understand care comes first.</p>
+  </div>
+  <div class="pgrid reveal">
+    <div>
+      <div class="p-k">A / Breeders</div>
+      <h3>Breeders</h3>
+      <p>Founding resident conversations, care-first visibility, and thoughtful updates.</p>
+    </div>
+    <div>
+      <div class="p-k">B / Sponsors</div>
+      <h3>Sponsors</h3>
+      <p>Support resident care, launch supplies, livestream, or the room itself.</p>
+    </div>
+    <div>
+      <div class="p-k">C / Local partners</div>
+      <h3>Local Partners</h3>
+      <p>Pastries, drinks, partner-supported goods, buildout, care, and daily operations.</p>
+    </div>
+  </div>
+  <div class="btn-row reveal" style="margin-top:34px;">
+    <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
+    <a class="btn btn-ghost" href="contact.html?interest=founding-breeder-partnership">Discuss a founding breeder partnership</a>
+  </div>
+</section>
 
-  <section class="wrap home-final-v2">
-    <div class="final-v2-card reveal">
-      <span>Before the first reveal</span>
-      <h2>Be here before the first reveal.</h2>
-      <p>Join the list for cafe updates, resident announcements, founding visits, livestream updates, sponsor openings, and the first signs of life downtown.</p>
-      <div class="home-actions center">
-        <a class="btn btn-light" href="contact.html?interest=visit-waitlist">Join Waitlist</a>
-        <a class="btn btn-outline-light" href="support.html">Support the Room</a>
-      </div>
+<!-- ============ FINAL CTA ============ -->
+<section class="pad-sm wrap">
+  <div class="cta home-final reveal">
+    <span class="lbl" style="justify-content:center;"><span class="ln"></span>Before the first reveal</span>
+    <h2 style="margin-top:18px;"><span class="line">Be here before</span><span class="line">the first reveal.</span></h2>
+    <p>Join the list for cafe updates, resident announcements, founding visits, livestream updates, and support openings.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
+      <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
     </div>
-  </section>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-minimal">
+    <div class="footer-top">
       <div>
-        <a class="brand" href="index.html"><img class="brand-logo" src="assets/nineth-logo.png?v=logo" alt="Ninth Life"></a>
-        <p>Ninth Life Cafe. Resident cat lounge and light cafe coming soon to Downtown Alliance, Ohio.</p>
+        <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
+        <p class="footer-tag">A cafe for people. A sanctuary for cats. A window online.</p>
+        <p class="footer-meta">Coming soon · Downtown Alliance, Ohio</p>
       </div>
-      <nav aria-label="Footer navigation">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="sanctuary.html">Sanctuary</a>
+        <a href="cafe.html">Cafe</a>
         <a href="visit.html">Visit</a>
         <a href="live.html">Live</a>
         <a href="support.html">Support</a>
-        <a href="partners.html">Partners</a>
+        <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-start">
-        <a href="contact.html?interest=visit-waitlist">Join Waitlist</a>
-        <a href="contact.html?interest=local-partnership">Partner With Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Start here</h4>
+        <a href="support.html">Support the Mission</a>
+        <a href="contact.html?interest=partner-with-us">Partner With Us</a>
+        <a href="contact.html?interest=join-waitlist">Join the List</a>
+        <a href="contact.html?interest=founding-breeder-partnership">Discuss a Founding Breeder Partnership</a>
       </div>
     </div>
-    <div class="footer-bottom"><span>A cafe for people. A home for cats. A window online.</span><span>&copy; 2026 Ninth Life.</span></div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ninth Life Cafe</span>
+      <span>Resident cat sanctuary &amp; light cafe · Alliance, OH</span>
+    </div>
   </div>
 </footer>
+
 <script src="site.js"></script>
 </body>
 </html>

@@ -119,6 +119,26 @@
     });
   }
 
+  /* ---- FAQ accordion ---- */
+  function initFaq() {
+    document.querySelectorAll(".faq-item").forEach(function (item) {
+      var q = item.querySelector(".faq-q");
+      var a = item.querySelector(".faq-a");
+      if (!q || !a) return;
+      q.setAttribute("aria-expanded", "false");
+      q.addEventListener("click", function () {
+        var open = item.classList.toggle("open");
+        q.setAttribute("aria-expanded", open ? "true" : "false");
+        a.style.maxHeight = open ? a.scrollHeight + "px" : "0px";
+      });
+    });
+    window.addEventListener("resize", function () {
+      document.querySelectorAll(".faq-item.open .faq-a").forEach(function (a) {
+        a.style.maxHeight = a.scrollHeight + "px";
+      });
+    }, { passive: true });
+  }
+
   /* ---- reveal on scroll ---- */
   function initReveal() {
     var els = document.querySelectorAll(".reveal");
@@ -153,6 +173,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initDrawer(); initChips(); initContactIntent(); initForms(); initReveal();
+    initDrawer(); initChips(); initContactIntent(); initForms(); initFaq(); initReveal();
   });
 })();
