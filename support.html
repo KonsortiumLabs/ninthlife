@@ -4,12 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support - Ninth Life Cafe</title>
-<meta name="description" content="Support helps prepare The Cafe, The Sanctuary, Ninth Life Live, and the first months of Ninth Life before opening.">
+<meta name="description" content="Support Ninth Life Cafe as we build the first version: a modern cafe in front, a calm cat lounge in back, and a care-first space for cats in Downtown Alliance.">
+<meta property="og:title" content="Support - Ninth Life Cafe">
+<meta property="og:description" content="Support Ninth Life Cafe as we build the first version: a modern cafe in front, a calm cat lounge in back, and a care-first space for cats in Downtown Alliance.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Support - Ninth Life Cafe">
+<meta name="twitter:description" content="A modern cafe and calm cat lounge coming to Downtown Alliance, Ohio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360;0,6..72,420;0,6..72,500;1,6..72,360;1,6..72,420&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+.support-hero { padding-top: clamp(48px, 6vw, 84px); padding-bottom: clamp(44px, 5.8vw, 76px); }
+.support-hero .crumb {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+  margin-bottom: clamp(42px, 6vw, 76px);
+}
+.support-hero .crumb a:hover { color: var(--ivory); }
+.support-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(290px, .46fr); gap: clamp(34px, 6vw, 90px); align-items: end; }
+.support-hero .display { max-width: 11ch; }
+.hero-panel { border: 1px solid var(--line-3); padding: clamp(24px, 3vw, 38px); background: rgba(241,234,217,.018); box-shadow: inset 0 0 0 1px rgba(241,234,217,.035); }
+.hero-panel p + p { margin-top: 20px; }
+.support-status {
+  margin-top: clamp(32px, 4vw, 48px); border: 1px solid var(--line-3);
+  padding: clamp(15px, 2vw, 20px) clamp(18px, 2.6vw, 30px);
+  font-family: var(--mono); font-size: .66rem; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--ivory); background: rgba(241,234,217,.025);
+}
+.support-label { font-family: var(--mono); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ivory-faint); margin-bottom: 18px; }
+.goal-grid { display: grid; grid-template-columns: minmax(0, .78fr) minmax(360px, 1fr); gap: clamp(34px, 5vw, 78px); align-items: start; }
+.support-ledger { border: 1px solid var(--line-3); background: rgba(241,234,217,.014); box-shadow: inset 0 0 0 1px rgba(241,234,217,.035); }
+.ledger-head { padding: clamp(22px, 2.8vw, 34px); border-bottom: 1px solid var(--line-2); }
+.ledger-head h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -.025em; font-size: clamp(1.6rem, 2.2vw, 2.2rem); }
+.ledger-head p { margin-top: 10px; color: var(--ivory-dim); }
+.ledger-row { display: grid; grid-template-columns: minmax(120px,.34fr) 1fr; gap: clamp(16px, 3vw, 34px); padding: 17px clamp(20px, 2.6vw, 34px); border-bottom: 1px solid var(--line-2); transition: background .2s ease; }
+.ledger-row:hover { background: rgba(241,234,217,.028); }
+.ledger-row b { font-family: var(--sans); font-weight: 800; text-transform: uppercase; line-height: 1; letter-spacing: -.02em; }
+.ledger-row span { color: var(--ivory-dim); }
+.build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.build-card { border: 1px solid var(--line-2); padding: clamp(22px, 2.8vw, 34px); background: rgba(241,234,217,.014); transition: border-color .22s ease, background .22s ease, transform .22s ease; }
+.build-card:hover, .support-tier:hover { border-color: var(--line-3); background: rgba(241,234,217,.03); transform: translateY(-2px); }
+.build-card h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -.03em; font-size: clamp(1.6rem, 2.3vw, 2.3rem); }
+.build-card p { margin-top: 14px; color: var(--ivory-dim); }
+.support-tier-list { display: grid; gap: 10px; }
+.support-tier { display: grid; grid-template-columns: minmax(180px,.42fr) 1fr auto; gap: clamp(16px, 3vw, 34px); align-items: center; border: 1px solid var(--line-2); padding: clamp(18px, 2vw, 24px); background: rgba(241,234,217,.012); transition: border-color .22s ease, background .22s ease, transform .22s ease; }
+.support-tier h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -.02em; font-size: clamp(1.18rem, 1.7vw, 1.55rem); }
+.support-tier p { color: var(--ivory-dim); }
+.support-tier .amt { font-family: var(--mono); color: var(--ivory); white-space: nowrap; letter-spacing: .04em; text-align: right; }
+.partner-note { border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); padding-block: 18px; margin-block: 28px; color: var(--ivory-dim); }
+@media (max-width: 900px) {
+  .support-hero-grid, .goal-grid { grid-template-columns: 1fr; }
+  .build-grid { grid-template-columns: 1fr; }
+  .support-tier { grid-template-columns: 1fr auto; align-items: baseline; }
+  .support-tier p { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .support-tier, .ledger-row { grid-template-columns: 1fr; gap: 8px; }
+  .support-tier .amt { text-align: left; }
+}
+</style>
 </head>
 <body>
 
@@ -59,97 +118,96 @@
 
 <main>
 
-<!-- ============ PAGE HEAD ============ -->
-<section class="phead wrap">
+<!-- ============ HERO ============ -->
+<section class="support-hero wrap">
   <div class="crumb"><a href="index.html">Ninth Life</a> <span>/</span> Support</div>
-  <div class="phead-grid">
-    <h1 class="display reveal">Help build<br>the first version.</h1>
-    <p class="lede reveal">We have the space. Now it needs to become a place.</p>
-    <p class="lede reveal">The front needs a counter, cups, seating, light, sound, and a simple menu people can actually enjoy. The back needs to become The Sanctuary: clean, calm, furnished, and ready for cats before they arrive.</p>
-    <div class="btn-row reveal" style="margin-top:28px;">
-      <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
-      <a class="btn btn-line" href="contact.html">Partner With Us</a>
+  <div class="support-hero-grid">
+    <h1 class="display reveal">We have the space.<br>Help make it a place.</h1>
+    <div class="hero-panel reveal">
+      <p class="lede">Ninth Life has a real room to begin with. The first round of support helps turn it into something people can walk into: a counter, cups, seating, light, music, local goods, a prepared cat lounge, and the care setup behind it.</p>
+      <p class="body">The cafe opens first. The cats arrive when the room is ready.</p>
+      <div class="btn-row" style="margin-top:28px;">
+        <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
+        <a class="btn btn-line" href="contact.html">Partner With Us</a>
+      </div>
     </div>
   </div>
+  <div class="support-status reveal">Space secured · Cafe first · Cat lounge when ready · Founding support open</div>
 </section>
 
 <!-- ============ FOUNDING GOAL ============ -->
-<section class="pad tone-cream on-cream">
-  <div class="wrap">
-    <div class="split lean" style="align-items:start;">
-      <div class="stack-3 reveal">
-        <span class="eyebrow"><span class="num">01</span> Founding goal</span>
-        <h2 class="h-xl" style="color:var(--ink);">The first $10K<br>has a job.</h2>
-        <p class="body" style="color:#4c473e;">This first goal is not about making Ninth Life huge. It is about getting the first version open without cutting corners.</p>
-        <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
+<section class="pad wrap">
+  <div class="goal-grid">
+    <div class="stack-3 reveal">
+      <div class="support-label">01 / Founding goal</div>
+      <h2 class="h-xl">The first $10K gets the doors open.</h2>
+      <p class="body">This goal is not about making Ninth Life big overnight. It is about opening the first version properly, without making the room feel unfinished, cheap, or rushed.</p>
+      <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
+    </div>
+    <div class="support-ledger reveal">
+      <div class="ledger-head">
+        <h3>What it helps cover</h3>
+        <p>No pretend totals. No fake amount raised. Just the work ahead.</p>
       </div>
-      <div class="reveal" style="width:100%;">
-        <div class="linegrid c2" style="border-color:var(--cream-line-2);">
-          <div style="grid-column:1 / -1;border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">What it helps cover</div><h4 style="color:var(--ink);">What it helps cover</h4><p style="color:#4c473e;">No pretend totals. No amount raised shown. Just the work ahead.</p></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Counter</div><h4 style="color:var(--ink);">Counter setup</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Supplies</div><h4 style="color:var(--ink);">Cups + first supplies</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Menu</div><h4 style="color:var(--ink);">House teas + lemonade</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Front room</div><h4 style="color:var(--ink);">Seating + front-room details</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Buildout</div><h4 style="color:var(--ink);">Paint + floor treatment</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Sanctuary</div><h4 style="color:var(--ink);">Cat furniture</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Cleaning</div><h4 style="color:var(--ink);">Litter + cleaning setup</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Care</div><h4 style="color:var(--ink);">Food + care supplies</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Camera</div><h4 style="color:var(--ink);">Camera setup</h4></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">Opening</div><h4 style="color:var(--ink);">First month operating room</h4></div>
-        </div>
-      </div>
+      <div class="ledger-row"><b>Counter</b><span>Cafe counter setup, cups, and first supplies.</span></div>
+      <div class="ledger-row"><b>Room</b><span>Seating, lighting, sound, and front-room details.</span></div>
+      <div class="ledger-row"><b>Menu</b><span>House teas, lemonade, and opening goods.</span></div>
+      <div class="ledger-row"><b>Cat Lounge</b><span>Furniture, rest areas, enrichment, and cleaning setup.</span></div>
+      <div class="ledger-row"><b>Care</b><span>Food, litter, grooming tools, wellness checks, and daily supplies.</span></div>
+      <div class="ledger-row"><b>Opening</b><span>First month operating room and local help.</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ WHAT GETS BUILT ============ -->
-<section class="pad wrap">
-  <div class="stack-2 reveal" style="margin-bottom:34px;">
-    <span class="eyebrow"><span class="num">02</span> What gets built</span>
-    <h2 class="h-lg">What gets built first.</h2>
+<!-- ============ FIRST BUILD ============ -->
+<section class="pad-sm wrap">
+  <div class="split lean" style="align-items:end;margin-bottom:34px;">
+    <div class="stack-2 reveal">
+      <div class="support-label">02 / The first build</div>
+      <h2 class="h-lg">What support turns into.</h2>
+    </div>
   </div>
-  <div class="linegrid c3 reveal">
-    <div><div class="lg-k">01 / The Cafe</div><h4 class="h-md" style="font-family:var(--serif);">The Cafe</h4><p>The front room: drinks, seating, music, local goods, and the part people can walk into first.</p></div>
-    <div><div class="lg-k">02 / The Sanctuary</div><h4 class="h-md" style="font-family:var(--serif);">The Sanctuary</h4><p>The back room: cat furniture, rest areas, cleaning rhythm, and space the cats can trust.</p></div>
-    <div><div class="lg-k">03 / The Care</div><h4 class="h-md" style="font-family:var(--serif);">The Care</h4><p>Food, litter, grooming, cleaning, wellness checks, and the daily work after the room opens.</p></div>
+  <div class="build-grid reveal">
+    <article class="build-card"><h3>The Cafe</h3><p>The front room: drinks, seating, music, local goods, and the part people can walk into first.</p></article>
+    <article class="build-card"><h3>The Cat Lounge</h3><p>The back room: rest areas, cat furniture, cleaning rhythm, and a calm room cats can trust.</p></article>
+    <article class="build-card"><h3>The Care</h3><p>The daily work after opening: food, litter, grooming, wellness checks, and people who know what they are doing.</p></article>
   </div>
 </section>
 
-<!-- ============ HOW TO HELP ============ -->
+<!-- ============ WAYS TO HELP ============ -->
 <section class="pad tone-ink2">
   <div class="wrap">
     <div class="split lean" style="align-items:end;margin-bottom:30px;">
       <div class="stack-2 reveal">
-        <span class="eyebrow"><span class="num">03</span> How to help</span>
-        <h2 class="h-lg">How to help.</h2>
+        <div class="support-label">03 / Ways to help</div>
+        <h2 class="h-lg">Choose your part in the room.</h2>
       </div>
-      <p class="body reveal">Some people will help once. Some will stay close month to month. Both help get the first version open and keep the cats cared for after that.</p>
+      <p class="body reveal">Some people will help once. Some will stay close month to month. Some will bring goods, care, media, or local support. All of it helps Ninth Life open with more care.</p>
     </div>
 
     <div class="stack-2 reveal" style="margin-bottom:18px;">
-      <span class="eyebrow">A. One-time support</span>
-      <p class="body">For people who want to help get the first version open.</p>
+      <span class="eyebrow plain">One-time support</span>
     </div>
-    <div class="tiers reveal">
-      <div class="tier">
-        <div class="t-name">Founding Supporter</div>
-        <div class="t-desc">Early support for the first version of Ninth Life.</div>
-        <div class="t-amt"><b>$100</b> +</div>
+    <div class="support-tier-list reveal">
+      <div class="support-tier">
+        <h3>Founding Supporter</h3>
+        <p>For early backers who want to help get the first version open.</p>
+        <div class="amt">$100+</div>
       </div>
-      <div class="tier">
-        <div class="t-name">Founding Sponsor</div>
-        <div class="t-desc">Helps cover setup, supplies, opening details, and the first visible pieces of the space.</div>
-        <div class="t-amt"><b>$500</b> +</div>
+      <div class="support-tier">
+        <h3>Founding Sponsor</h3>
+        <p>Helps cover setup, supplies, opening details, and the first visible pieces of the space.</p>
+        <div class="amt">$500+</div>
       </div>
-      <div class="tier">
-        <div class="t-name">Founding Partner</div>
-        <div class="t-desc">For early believers who want visible recognition, priority updates, and a closer role in the launch.</div>
-        <div class="t-amt"><b>$1,000</b> +</div>
+      <div class="support-tier">
+        <h3>Founding Partner</h3>
+        <p>For early believers who want recognition, priority updates, and a closer role in the launch.</p>
+        <div class="amt">$1,000+</div>
       </div>
-      <div class="tier">
-        <div class="t-name">Presenting Partner</div>
-        <div class="t-desc">For businesses interested in larger launch support, sponsorship, or presented-by placement.</div>
-        <div class="t-amt"><b>Custom</b></div>
+      <div class="support-tier">
+        <h3>Presenting Partner</h3>
+        <p>For businesses interested in larger launch support, sponsorship, or presented-by placement.</p>
+        <div class="amt">Custom</div>
       </div>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;margin-bottom:54px;">
@@ -157,24 +215,23 @@
     </div>
 
     <div class="stack-2 reveal" style="margin-bottom:18px;">
-      <span class="eyebrow">B. Monthly support</span>
-      <p class="body">For people who want to help keep the cats cared for after opening.</p>
+      <span class="eyebrow plain">Monthly support</span>
     </div>
-    <div class="tiers reveal">
-      <div class="tier">
-        <div class="t-name">Friend of the House</div>
-        <div class="t-desc">Helps with small supplies, updates, and the ordinary things that add up.</div>
-        <div class="t-amt"><b>$25</b> / mo</div>
+    <div class="support-tier-list reveal">
+      <div class="support-tier">
+        <h3>Friend of the House</h3>
+        <p>Helps with small supplies, updates, and the ordinary things that add up.</p>
+        <div class="amt">$25/mo</div>
       </div>
-      <div class="tier">
-        <div class="t-name">Sanctuary Supporter</div>
-        <div class="t-desc">Supports cat care, cleaning, enrichment, comfort, and future visit access when available.</div>
-        <div class="t-amt"><b>$75</b> / mo</div>
+      <div class="support-tier">
+        <h3>Sanctuary Supporter</h3>
+        <p>Supports cat care, cleaning, enrichment, comfort, and future visit access when available.</p>
+        <div class="amt">$75/mo</div>
       </div>
-      <div class="tier">
-        <div class="t-name">Nine Lives Partner</div>
-        <div class="t-desc">For families, small businesses, and early believers who want deeper recognition and Sanctuary updates.</div>
-        <div class="t-amt"><b>$150</b> / mo</div>
+      <div class="support-tier">
+        <h3>Nine Lives Partner</h3>
+        <p>For families, small businesses, and early supporters who want deeper recognition and Sanctuary updates.</p>
+        <div class="amt">$150/mo</div>
       </div>
     </div>
     <div class="btn-row reveal" style="margin-top:28px;">
@@ -187,15 +244,16 @@
 <section class="pad wrap" id="local-partners">
   <div class="split lean" style="align-items:end;margin-bottom:30px;">
     <div class="stack-2 reveal">
-      <span class="eyebrow"><span class="num">04</span> Partners</span>
-      <h2 class="h-lg">Bring something<br>to the room.</h2>
+        <div class="support-label">04 / Partners</div>
+        <h2 class="h-lg">Bring something<br>to the room.</h2>
     </div>
-    <p class="body reveal">Drinks, goods, supplies, care guidance, rescue relationships, media, operators, sponsors. The first version needs people who can help make it real.</p>
+    <p class="body reveal">Ninth Life is looking for the right local pieces: drinks, baked goods, supplies, care guidance, rescue relationships, media, opening help, and sponsors who want to be part of the first version.</p>
   </div>
-  <p class="body reveal" style="max-width:70ch;margin-bottom:28px;color:var(--ivory-dim);">Ninth Life does not accept direct cat surrenders or general intake. Future rescue or foster activity would happen only through approved partners.</p>
+  <p class="partner-note reveal">Ninth Life does not accept direct cat surrenders or general intake. Future rescue or foster activity will happen only through approved partners.</p>
   <div class="chip-set reveal" aria-label="Partner types">
     <span class="chip">Cafe / local goods</span>
     <span class="chip">Drink partner</span>
+    <span class="chip">Bakery partner</span>
     <span class="chip">Care / vet</span>
     <span class="chip">Rescue / foster</span>
     <span class="chip">Local operator</span>
@@ -210,12 +268,11 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="pad-sm wrap">
   <div class="cta reveal">
-    <span class="eyebrow plain">Open well</span>
-    <h2 class="h-xl">Help it open well.</h2>
-    <p>Not rushed. Not crowded. Not pretending to be finished before it is.</p>
+    <h2 class="h-xl">Be here before it opens.</h2>
+    <p>Join the list for opening updates, first menu notes, cat lounge progress, and the first cats when the room is ready.</p>
     <div class="btn-row">
-      <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
-      <a class="btn btn-line" href="contact.html">Partner With Us</a>
+      <a class="btn btn-solid" href="contact.html">Join the List <span class="arr">&rarr;</span></a>
+      <a class="btn btn-line" href="contact.html">Support the Mission</a>
     </div>
   </div>
 </section>
@@ -224,14 +281,15 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-top">
+    <div class="footer-top footer-wide">
       <div>
         <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
-        <p class="footer-tag">A modern cafe in front. A protected cat Sanctuary in back.</p>
+        <p class="footer-tag"><span class="line">A modern cafe in front.</span><span class="line">A calm cat lounge in back.</span></p>
         <p class="footer-meta">Coming soon · Downtown Alliance, Ohio</p>
+        <p class="footer-note">Ninth Life Cafe · Modern cafe + calm cat lounge · Alliance, OH</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h4>Navigate</h4>
         <a href="sanctuary.html">Sanctuary</a>
         <a href="cafe.html">Cafe</a>
         <a href="visit.html">Visit</a>
@@ -241,16 +299,16 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Start here</h4>
-        <a href="contact.html?interest=join-waitlist">Join Waitlist</a>
-        <a href="contact.html">Support the Mission</a>
-        <a href="contact.html?interest=partner-with-us">Partner With Us</a>
-        <a href="contact.html">Start a Care Partner Conversation</a>
+        <h4>Start Here</h4>
+        <a href="contact.html">Join the List</a>
+        <a href="support.html">Support the Mission</a>
+        <a href="contact.html">Partner With Us</a>
+        <a href="contact.html?interest=care-partner">Start a Care Partner Conversation</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Ninth Life Cafe</span>
-      <span>Chill cafe + protected cat Sanctuary · Alliance, OH</span>
+      <span>Modern cafe + calm cat lounge · Alliance, OH</span>
     </div>
   </div>
 </footer>

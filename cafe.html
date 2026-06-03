@@ -4,12 +4,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Cafe - Ninth Life Cafe</title>
-<meta name="description" content="The cafe comes first: simple drinks, seating, limited merch, and partner-supported goods in front. The Sanctuary opens separately in back.">
+<meta name="description" content="The Cafe at Ninth Life opens first with house teas, lemonade, music, seating, and local goods in Downtown Alliance, Ohio. The cat lounge opens separately when ready.">
+<meta property="og:title" content="The Cafe - Ninth Life Cafe">
+<meta property="og:description" content="The Cafe at Ninth Life opens first with house teas, lemonade, music, seating, and local goods in Downtown Alliance, Ohio. The cat lounge opens separately when ready.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Cafe - Ninth Life Cafe">
+<meta name="twitter:description" content="A modern cafe and calm cat lounge coming to Downtown Alliance, Ohio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360;0,6..72,420;0,6..72,500;1,6..72,360;1,6..72,420&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+.cafe-page .phead {
+  padding-block-end: clamp(36px, 5vw, 70px);
+}
+.cafe-page .menu-card {
+  min-height: 205px;
+  border-color: var(--line-3);
+  transition: background .22s ease, border-color .22s ease, transform .22s ease;
+}
+.cafe-page .menu-card:hover {
+  background: rgba(241,234,217,.035);
+  border-color: rgba(241,234,217,.58);
+  transform: translateY(-2px);
+}
+.cafe-room-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line-3);
+  background: rgba(241,234,217,.014);
+  box-shadow: inset 0 0 0 1px rgba(241,234,217,.035);
+}
+.cafe-room-card {
+  min-height: 214px;
+  padding: clamp(24px, 2.8vw, 36px);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--line-2);
+  transition: background .22s ease, border-color .22s ease, transform .22s ease;
+}
+.cafe-room-card:first-child { border-left: none; }
+.cafe-room-card:hover {
+  background: rgba(241,234,217,.035);
+  box-shadow: inset 0 0 0 1px rgba(241,234,217,.08);
+  transform: translateY(-2px);
+}
+.cafe-room-card .lg-k {
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+}
+.cafe-room-card h3 {
+  margin-top: auto;
+  font-family: var(--sans);
+  font-size: clamp(1.55rem, 2.1vw, 2.15rem);
+  line-height: .9;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+}
+.cafe-room-card p { margin-top: 16px; color: var(--ivory-dim); }
+.back-room-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line-3);
+  background: rgba(241,234,217,.018);
+}
+.back-room-strip > div {
+  padding: clamp(20px, 2.5vw, 34px);
+  border-left: 1px solid var(--line-2);
+  transition: background .22s ease, border-color .22s ease, transform .22s ease;
+}
+.back-room-strip > div:first-child { border-left: none; }
+.back-room-strip > div:hover {
+  background: rgba(241,234,217,.035);
+  transform: translateY(-2px);
+}
+.back-room-strip h3 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(1.12rem, 1.55vw, 1.45rem);
+  line-height: .98;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+.back-room-strip p { color: var(--ivory-dim); margin-top: 12px; }
+@media (max-width: 940px) {
+  .cafe-room-grid { grid-template-columns: repeat(2,1fr); }
+  .cafe-room-card:nth-child(3) { border-left: none; border-top: 1px solid var(--line-2); }
+  .cafe-room-card:nth-child(4) { border-top: 1px solid var(--line-2); }
+}
+@media (max-width: 560px) {
+  .cafe-room-grid { grid-template-columns: 1fr; }
+  .cafe-room-card { min-height: 190px; border-left: none; border-top: 1px solid var(--line-2); }
+  .cafe-room-card:first-child { border-top: none; }
+  .back-room-strip { grid-template-columns: 1fr; }
+  .back-room-strip > div { border-left: none; border-top: 1px solid var(--line-2); }
+  .back-room-strip > div:first-child { border-top: none; }
+}
+</style>
 </head>
 <body>
 
@@ -57,73 +153,65 @@
   </aside>
 </div>
 
-<main>
+<main class="cafe-page">
 
 <!-- ============ PAGE HEAD ============ -->
 <section class="phead wrap">
   <div class="crumb"><a href="index.html">Ninth Life</a> <span>/</span> Cafe</div>
   <div class="phead-grid">
-    <h1 class="display reveal">The cafe comes first.</h1>
-    <p class="lede reveal">Ninth Life begins with a chill cafe in front: simple drinks, seating, limited merch, and partner-supported goods. Behind it, The Sanctuary opens separately and carefully, only when the back room and cats are ready.</p>
+    <h1 class="display reveal">The front room<br>comes first.</h1>
+    <div class="stack-2 reveal">
+      <p class="lede">Ninth Life begins with the part you can walk into first: house teas, lemonade, music, a few seats, local goods, and a reason to linger downtown. The cat lounge sits behind it, opening carefully once the room is ready.</p>
+      <p class="muted" style="font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;">Cafe in front. Cat lounge in back.</p>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="contact.html?interest=join-waitlist">Join Waitlist <span class="arr">&rarr;</span></a>
+        <a class="btn btn-line" href="#menu">See the Menu</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ HOW IT WORKS ============ -->
+<!-- ============ THE ROOM ============ -->
 <section class="pad-sm wrap">
-  <div class="stack-2 reveal" style="margin-bottom:34px;">
-    <span class="eyebrow"><span class="num">01</span> How it works</span>
+  <div class="split lean" style="align-items:end;margin-bottom:38px;">
+    <div class="stack-2 reveal">
+      <span class="eyebrow"><span class="num">01</span> The room</span>
+      <h2 class="h-xl">A good drink.<br>A good song.<br>A reason to sit down.</h2>
+    </div>
+    <p class="body reveal">The front room is small on purpose. Enough room for a drink, a conversation, a quiet hour, or a quick stop that turns into staying longer than planned. Nothing overbuilt. Nothing precious. Just a room with care in it.</p>
   </div>
-  <div class="linegrid c3 reveal">
-    <div>
-      <div class="lg-k">Step 01</div>
-      <h4 class="h-md" style="font-family:var(--serif);">Stop in for a drink.</h4>
-      <p>The cafe will offer simple drinks, partner-supported goods, and seating for paying guests during public hours.</p>
-    </div>
-    <div>
-      <div class="lg-k">Step 02</div>
-      <h4 class="h-md" style="font-family:var(--serif);">Book time for the room.</h4>
-      <p>Dedicated cat time happens through separate, paid Sanctuary visits so the back room stays calm and managed.</p>
-    </div>
-    <div>
-      <div class="lg-k">Step 03</div>
-      <h4 class="h-md" style="font-family:var(--serif);">Let the cats choose.</h4>
-      <p>The cats are never forced into interaction. A cat may be visible, absent, curious, or asleep. The room follows their rhythm.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CAFE OPEN. SANCTUARY PROTECTED ============ -->
-<section class="pad tone-ink2">
-  <div class="wrap">
-    <div class="split lean">
-      <div class="stack-3 reveal">
-        <span class="eyebrow"><span class="num">02</span> Two connected rooms</span>
-        <h2 class="h-lg">Cafe open. Sanctuary protected.</h2>
-        <p class="body">Cafe purchases and Sanctuary visits are separate. Buying a drink does not guarantee cat access. You can stop in for the cafe side, then reserve a limited Sanctuary visit when available. This keeps the front room simple and the back room care-first.</p>
-        <div class="btn-row">
-          <a class="btn btn-line" href="visit.html">Book a Sanctuary visit <span class="arr">&rarr;</span></a>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="linegrid c2">
-          <div><div class="lg-k">Front room</div><h4>The Cafe</h4><p>Simple drinks and seating for paying guests.</p></div>
-          <div><div class="lg-k">Behind it</div><h4>The Sanctuary</h4><p>Protected. Limited paid visits only. Managed around the cats.</p></div>
-          <div><div class="lg-k">Purchases</div><h4>Separate</h4><p>A drink is a drink. Sanctuary access is a separate pass, reservation, or approved visit.</p></div>
-          <div><div class="lg-k">Priority</div><h4>Care-first</h4><p>The cafe stays simple so the room stays calm.</p></div>
-        </div>
-      </div>
-    </div>
+  <div class="cafe-room-grid reveal">
+    <article class="cafe-room-card">
+      <div class="lg-k">House pours</div>
+      <h3>The Counter</h3>
+      <p>House teas, lemonade, and a short list made with care.</p>
+    </article>
+    <article class="cafe-room-card">
+      <div class="lg-k">Stay a while</div>
+      <h3>The Tables</h3>
+      <p>A few seats for one person, two friends, a book, or a slow hour out of the house.</p>
+    </article>
+    <article class="cafe-room-card">
+      <div class="lg-k">In the room</div>
+      <h3>The Sound</h3>
+      <p>Music in the room. Calm enough to sit. Alive enough to remember.</p>
+    </article>
+    <article class="cafe-room-card">
+      <div class="lg-k">Local goods</div>
+      <h3>The Shelf</h3>
+      <p>Pastries, snacks, small goods, and local pieces as the right partners come on.</p>
+    </article>
   </div>
 </section>
 
 <!-- ============ THE CAFE COUNTER PREVIEW ============ -->
-<section class="pad wrap">
+<section class="pad wrap" id="menu">
   <div class="split lean" style="align-items:end;margin-bottom:38px;">
     <div class="stack-2 reveal">
-      <span class="eyebrow"><span class="num">03</span> The Cafe Counter preview</span>
-      <h2 class="h-xl">Calm cafe in the front.<br>Sanctuary in the back.</h2>
+      <span class="eyebrow"><span class="num">02</span> The counter</span>
+      <h2 class="h-xl">A short menu,<br>done well.</h2>
     </div>
-    <p class="body reveal">The front counter stays short, clear, and easy to run well. Drinks, local goods, and limited merchandise live on the cafe side. Cat access stays separate in The Sanctuary.</p>
+    <p class="body reveal">The first menu will stay focused so the room can open cleanly and consistently.</p>
   </div>
   <div class="grid g-4 reveal">
     <div class="menu-card">
@@ -142,7 +230,7 @@
     </div>
     <div class="menu-card">
       <div class="mc-top">
-        <h3>Add a<br>House Flavor</h3>
+        <h3>House<br>Flavors</h3>
         <span class="mc-price">+$1</span>
       </div>
       <p>Strawberry, passion fruit,<br>coconut, or blueberry.</p>
@@ -150,23 +238,47 @@
     <div class="menu-card">
       <div class="mc-top">
         <h3>Local<br>Goods</h3>
-        <span class="mc-price">Market Price</span>
+        <span class="mc-price">Market</span>
       </div>
       <p>Pastries, snacks,<br>limited merch, and<br>partner-supported goods.</p>
     </div>
   </div>
-  <p class="muted reveal" style="margin-top:24px;font-family:var(--mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;">Preview counter list. Final local goods and partners confirmed closer to opening.</p>
+  <p class="muted reveal" style="margin-top:24px;font-family:var(--mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;">Preview menu. Final goods and partners confirmed closer to opening.</p>
+</section>
+
+<!-- ============ THE BACK ROOM ============ -->
+<section class="pad-sm wrap">
+  <div class="split lean" style="align-items:end;margin-bottom:34px;">
+    <div class="stack-2 reveal">
+      <span class="eyebrow"><span class="num">03</span> The back room</span>
+      <h2 class="h-xl">The cats have<br>their own room.</h2>
+    </div>
+    <p class="body reveal">The cat lounge, called The Sanctuary, opens separately from the cafe. Drinks do not include lounge access. Visits will be reserved when the room and first residents are ready.</p>
+  </div>
+  <div class="back-room-strip reveal">
+    <div>
+      <h3>Cafe</h3>
+      <p>Walk in for drinks and seating.</p>
+    </div>
+    <div>
+      <h3>Cat Lounge</h3>
+      <p>Reserved separately when available.</p>
+    </div>
+    <div>
+      <h3>The Sanctuary</h3>
+      <p>A calm back room built around the cats.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ CTA ============ -->
 <section class="pad-sm wrap">
   <div class="cta reveal">
-    <span class="eyebrow plain">Before we open</span>
-    <h2 class="h-xl">Get cafe updates first.</h2>
-    <p>Join the list for opening news, the confirmed menu, and the first signs of life downtown.</p>
+    <h2 class="h-xl">Come for the<br>front room first.</h2>
+    <p>Join the list for opening updates, menu notes, local partner announcements, and the first look at The Sanctuary.</p>
     <div class="btn-row">
       <a class="btn btn-solid" href="contact.html?interest=cafe-updates">Join Waitlist <span class="arr">&rarr;</span></a>
-      <a class="btn btn-line" href="visit.html">How a Visit Works</a>
+      <a class="btn btn-line" href="support.html">Support the Mission</a>
     </div>
   </div>
 </section>
@@ -175,14 +287,15 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-top">
+    <div class="footer-top footer-wide">
       <div>
         <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
-        <p class="footer-tag">A chill cafe in front. A protected cat Sanctuary in back.</p>
+        <p class="footer-tag"><span class="line">A modern cafe in front.</span><span class="line">A calm cat lounge in back.</span></p>
         <p class="footer-meta">Coming soon · Downtown Alliance, Ohio</p>
+        <p class="footer-note">Ninth Life Cafe · Modern cafe + calm cat lounge · Alliance, OH</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h4>Navigate</h4>
         <a href="sanctuary.html">Sanctuary</a>
         <a href="cafe.html">Cafe</a>
         <a href="visit.html">Visit</a>
@@ -192,16 +305,16 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Start here</h4>
-        <a href="contact.html?interest=join-waitlist">Join Waitlist</a>
+        <h4>Start Here</h4>
+        <a href="contact.html">Join the List</a>
         <a href="support.html">Support the Mission</a>
-        <a href="contact.html?interest=partner-with-us">Partner With Us</a>
+        <a href="contact.html">Partner With Us</a>
         <a href="contact.html?interest=care-partner">Start a Care Partner Conversation</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Ninth Life Cafe</span>
-      <span>Chill cafe + protected cat Sanctuary · Alliance, OH</span>
+      <span>Modern cafe + calm cat lounge · Alliance, OH</span>
     </div>
   </div>
 </footer>

@@ -3,13 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Visit - Ninth Life Cafe</title>
-<meta name="description" content="Cafe seating is for paying guests. Sanctuary access is separate, limited, paid, and managed around the cats' comfort.">
+<title>Visit — Ninth Life Cafe</title>
+<meta name="description" content="Plan a future visit to Ninth Life Cafe in Downtown Alliance. Cafe access and cat lounge visits are separate, with limited Sanctuary sessions planned after opening.">
+<meta property="og:title" content="Visit — Ninth Life Cafe">
+<meta property="og:description" content="Plan a future visit to Ninth Life Cafe in Downtown Alliance. Cafe access and cat lounge visits are separate, with limited Sanctuary sessions planned after opening.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Visit — Ninth Life Cafe">
+<meta name="twitter:description" content="A modern cafe and calm cat lounge coming to Downtown Alliance, Ohio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360;0,6..72,420;0,6..72,500;1,6..72,360;1,6..72,420&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* Visit page only: compact pricing ledger. */
+.visit-ledger { border-top: 1px solid var(--line-2); }
+.visit-ledger-row {
+  display: grid; grid-template-columns: minmax(210px, .8fr) 1.2fr; gap: clamp(18px, 4vw, 64px);
+  padding: clamp(20px, 2.7vw, 30px) 0; border-bottom: 1px solid var(--line-2);
+}
+.visit-ledger-row h3 {
+  font-family: var(--sans); font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1;
+  text-transform: uppercase; color: var(--ivory);
+}
+.visit-ledger-row h3 span {
+  display: block; font-family: var(--mono); font-size: .62rem; letter-spacing: .2em;
+  color: var(--ivory-faint); margin-bottom: 10px;
+}
+.visit-ledger-row p { color: var(--ivory-dim); align-self: end; }
+.visit-ledger-row strong { color: var(--ivory); font-weight: 600; }
+@media (max-width: 760px) { .visit-ledger-row { grid-template-columns: 1fr; gap: 10px; } }
+</style>
 </head>
 <body>
 
@@ -63,63 +88,55 @@
 <section class="phead wrap">
   <div class="crumb"><a href="index.html">Ninth Life</a> <span>/</span> Visit</div>
   <div class="phead-grid">
-    <h1 class="display reveal">Book the Sanctuary.</h1>
-    <p class="lede reveal">Cafe seating is for paying guests. Sanctuary access is separate. Buying a drink does not guarantee cat access. Sanctuary visits are limited and paid separately so the back room stays calm, clean, and manageable.</p>
+    <h1 class="display reveal">Visit Ninth Life.</h1>
+    <p class="lede reveal">The cafe opens first. The cat lounge opens later for limited visits. Drinks happen in front. Cats are in back.</p>
+    <div class="btn-row reveal" style="margin-top:28px;">
+      <a class="btn btn-solid" href="contact.html?interest=visit-list">Join the Visit List <span class="arr">&rarr;</span></a>
+      <a class="btn btn-line" href="cafe.html">See The Cafe</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="pad-sm wrap">
+  <div class="stack-2 reveal" style="margin-bottom:34px;">
+    <span class="eyebrow"><span class="num">01</span> How it works</span>
+  </div>
+  <div class="linegrid c3 reveal">
+    <div>
+      <div class="lg-k">Front room</div>
+      <h4>The Cafe</h4>
+      <p>Stop in for house teas, lemonade, seating, music, and local goods.</p>
+    </div>
+    <div>
+      <div class="lg-k">Back room</div>
+      <h4>The Cat Lounge</h4>
+      <p>Book a limited visit when The Sanctuary opens.</p>
+    </div>
+    <div>
+      <div class="lg-k">Purchase</div>
+      <h4>The Boundary</h4>
+      <p>A drink supports the space. It does not include cat lounge access.</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ PRICING ============ -->
-<section class="pad-sm wrap">
-  <div class="stack-2 reveal" style="margin-bottom:34px;">
-    <span class="eyebrow"><span class="num">01</span> Sanctuary visits</span>
-    <p class="muted" style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;">Planned pricing · Booking opens after the cats are settled</p>
-  </div>
-  <div class="grid g-4 reveal">
-    <div class="price-card feature">
-      <div class="pc-name">Standard Sanctuary Visit</div>
-      <div class="pc-amt">$12 <small>/ guest</small></div>
-      <div class="pc-meta">45 minutes. Dedicated time in The Sanctuary.</div>
-    </div>
-    <div class="price-card">
-      <div class="pc-name">Kids 12 &amp; Under</div>
-      <div class="pc-amt">$8</div>
-      <div class="pc-meta">With adult. Calm behavior required.</div>
-    </div>
-    <div class="price-card">
-      <div class="pc-name">Private Sanctuary Visit</div>
-      <div class="pc-amt">$100</div>
-      <div class="pc-meta">60 minutes. Up to 6 guests.</div>
-    </div>
-    <div class="price-card">
-      <div class="pc-name">Additional Private Guests</div>
-      <div class="pc-amt">$12 <small>/ each</small></div>
-      <div class="pc-meta">Subject to room capacity.</div>
-    </div>
-  </div>
-  <div class="btn-row reveal" style="margin-top:34px;">
-    <a class="btn btn-solid" href="contact.html?interest=visit-list">Join the Visit List <span class="arr">&rarr;</span></a>
-    <a class="btn btn-ghost" href="contact.html?interest=private-visit">Ask about a private visit</a>
-  </div>
-</section>
-
-<!-- ============ CAFE VS SANCTUARY ============ -->
-<section class="pad tone-cream on-cream">
+<section class="pad tone-ink2">
   <div class="wrap">
-    <div class="split lean">
-      <div class="stack-3 reveal">
-        <span class="eyebrow"><span class="num">02</span> Two connected rooms</span>
-        <h2 class="h-lg" style="color:var(--ink);">Come for a drink. Book time for the back room.</h2>
-        <p class="body" style="color:#4c473e;">The front is the cafe. The back is The Sanctuary. The cafe offers simple drinks and seating for paying guests. The Sanctuary offers limited visits with cats welcomed through the right care path, kept separate from the cafe side for comfort, cleanliness, and care.</p>
-        <a class="tlink" href="cafe.html">See the cafe <span class="arr">&rarr;</span></a>
-      </div>
-      <div class="reveal">
-        <div class="linegrid c2" style="border-color:var(--cream-line-2);">
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">The Cafe</div><h4 style="color:var(--ink);">Paying guests</h4><p style="color:#4c473e;">Simple drinks and seating in the front room.</p></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">The Sanctuary</div><h4 style="color:var(--ink);">Separate access</h4><p style="color:#4c473e;">Limited paid visits in the back room.</p></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">A drink</div><h4 style="color:var(--ink);">Not cat access</h4><p style="color:#4c473e;">Buying a drink does not guarantee cat access.</p></div>
-          <div style="border-color:var(--cream-line);"><div class="lg-k" style="color:#8a8475;">A visit</div><h4 style="color:var(--ink);">Paid, limited</h4><p style="color:#4c473e;">Reserved Sanctuary time with cats, when available.</p></div>
-        </div>
-      </div>
+    <div class="stack-2 reveal" style="margin-bottom:34px;">
+      <span class="eyebrow"><span class="num">02</span> Planned pricing</span>
+      <p class="muted" style="font-family:var(--mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;">Booking opens after the cats are settled</p>
+    </div>
+    <div class="visit-ledger reveal">
+      <div class="visit-ledger-row"><h3><span>01 /</span>Standard Cat Lounge Visit</h3><p><strong>$12 / guest</strong><br>45 minutes in The Sanctuary.</p></div>
+      <div class="visit-ledger-row"><h3><span>02 /</span>Kids 12 &amp; under</h3><p><strong>$8</strong><br>With adult.</p></div>
+      <div class="visit-ledger-row"><h3><span>03 /</span>Private Cat Lounge Visit</h3><p><strong>$100</strong><br>60 minutes. Up to 6 guests.</p></div>
+      <div class="visit-ledger-row"><h3><span>04 /</span>Additional Private Guests</h3><p><strong>$12 / each</strong><br>Capacity permitting.</p></div>
+    </div>
+    <div class="btn-row reveal" style="margin-top:34px;">
+      <a class="btn btn-solid" href="contact.html?interest=visit-list">Join the Visit List <span class="arr">&rarr;</span></a>
+      <a class="btn btn-line" href="contact.html?interest=private-visit">Ask about a private visit</a>
     </div>
   </div>
 </section>
@@ -128,18 +145,16 @@
 <section class="pad wrap">
   <div class="stack-2 reveal" style="margin-bottom:34px;max-width:34ch;">
     <span class="eyebrow"><span class="num">03</span> Room rules</span>
-    <h2 class="h-xl">A calmer room works better.</h2>
+    <h2 class="h-xl">The room has rules.</h2>
+    <p class="body">The Sanctuary is small, shared, and built around living animals. Staff may end a visit if the room stops feeling safe.</p>
   </div>
   <ul class="rules reveal">
-    <li>Let the cats come to you.</li>
-    <li>Do not pick up cats. Staff may make rare exceptions.</li>
-    <li>Do not wake, chase, crowd, or corner the cats.</li>
+    <li>Let the cats approach.</li>
+    <li>Do not pick up, wake, chase, crowd, or corner the cats.</li>
     <li>Children stay with adults.</li>
-    <li>Outside pets stay home.</li>
-    <li>Flash photography is discouraged.</li>
     <li>Food and drinks stay in approved areas.</li>
-    <li>The cats decide when they want attention.</li>
-    <li>Interaction may vary by each cat's mood and comfort.</li>
+    <li>Flash photography is discouraged.</li>
+    <li>Outside pets stay home.</li>
   </ul>
 </section>
 
@@ -147,14 +162,15 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-top">
+    <div class="footer-top footer-wide">
       <div>
         <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
-        <p class="footer-tag">A chill cafe in front. A protected cat Sanctuary in back.</p>
+        <p class="footer-tag"><span class="line">A modern cafe in front.</span><span class="line">A calm cat lounge in back.</span></p>
         <p class="footer-meta">Coming soon · Downtown Alliance, Ohio</p>
+        <p class="footer-note">Ninth Life Cafe · Modern cafe + calm cat lounge · Alliance, OH</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h4>Navigate</h4>
         <a href="sanctuary.html">Sanctuary</a>
         <a href="cafe.html">Cafe</a>
         <a href="visit.html">Visit</a>
@@ -164,16 +180,16 @@
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Start here</h4>
-        <a href="contact.html?interest=join-waitlist">Join Waitlist</a>
+        <h4>Start Here</h4>
+        <a href="contact.html">Join the List</a>
         <a href="support.html">Support the Mission</a>
-        <a href="contact.html?interest=partner-with-us">Partner With Us</a>
+        <a href="contact.html">Partner With Us</a>
         <a href="contact.html?interest=care-partner">Start a Care Partner Conversation</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Ninth Life Cafe</span>
-      <span>Chill cafe + protected cat Sanctuary · Alliance, OH</span>
+      <span>Modern cafe + calm cat lounge · Alliance, OH</span>
     </div>
   </div>
 </footer>

@@ -3,110 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ninth Life Live - Ninth Life Cafe</title>
-<meta name="description" content="Ninth Life Live will become a quiet online view from The Sanctuary after the back room is prepared and the cats are settled.">
+<title>Ninth Life Live — Ninth Life Cafe</title>
+<meta name="description" content="Ninth Life Live is a future live view from The Sanctuary, the cat lounge at Ninth Life Cafe, once the space is open and cats are settled.">
+<meta property="og:title" content="Ninth Life Live — Ninth Life Cafe">
+<meta property="og:description" content="Ninth Life Live is a future live view from The Sanctuary, the cat lounge at Ninth Life Cafe, once the space is open and cats are settled.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ninth Life Live — Ninth Life Cafe">
+<meta name="twitter:description" content="A modern cafe and calm cat lounge coming to Downtown Alliance, Ohio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,360;0,6..72,420;0,6..72,500;1,6..72,360;1,6..72,420&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Live page only: inactive signal object and protocol rows. */
-.live-hero { padding-top: clamp(46px, 6vw, 82px); padding-bottom: clamp(34px, 5vw, 70px); }
+/* Live page only: broadcast/status reset. */
+.live-hero { padding-top: clamp(48px, 6vw, 84px); padding-bottom: clamp(38px, 5vw, 72px); }
 .topbar .dot { background: var(--ivory); box-shadow: none; }
-.live-kicker { display: grid; gap: 10px; margin-bottom: clamp(20px, 3vw, 34px); }
+.live-kicker { display: grid; gap: 12px; margin-bottom: clamp(22px, 3vw, 36px); }
 .live-kicker span {
   font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--ivory-faint);
 }
 .live-kicker strong {
-  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase;
   color: var(--ivory);
 }
-.live-title { max-width: 10ch; }
+.live-title { max-width: 11ch; }
 .live-title .line { display: block; }
 .live-panel {
-  position: relative; min-height: clamp(420px, 45vw, 620px); border: 1px solid var(--line-3);
+  position: relative; min-height: clamp(470px, 46vw, 650px); border: 1px solid var(--line-3);
   background:
-    linear-gradient(90deg, transparent 0 49.8%, rgba(241,234,217,.1) 49.8% 50.2%, transparent 50.2%),
-    linear-gradient(180deg, transparent 0 50%, rgba(241,234,217,.08) 50% calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(90deg, transparent 0 49.85%, rgba(241,234,217,.12) 49.85% 50.15%, transparent 50.15%),
+    linear-gradient(180deg, transparent 0 49.85%, rgba(241,234,217,.1) 49.85% 50.15%, transparent 50.15%),
     #050505;
   overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(241,234,217,.04);
 }
 .live-panel::before {
   content: ""; position: absolute; inset: 0;
-  background: repeating-linear-gradient(180deg, rgba(241,234,217,.08) 0 1px, transparent 1px 7px);
-  opacity: .28; animation: scanlineDrift 7s linear infinite; pointer-events: none;
+  background:
+    repeating-linear-gradient(180deg, rgba(241,234,217,.075) 0 1px, transparent 1px 8px),
+    radial-gradient(circle at 50% 44%, rgba(241,234,217,.08), transparent 30%);
+  opacity: .3; animation: scanlineDrift 8s linear infinite; pointer-events: none;
 }
 .live-panel::after {
-  content: ""; position: absolute; inset: -20%;
-  background:
-    radial-gradient(circle at 25% 25%, rgba(241,234,217,.08), transparent 18%),
-    radial-gradient(circle at 72% 62%, rgba(241,234,217,.05), transparent 22%);
-  opacity: .34; filter: blur(8px); animation: signalPulse 5.8s ease-in-out infinite; pointer-events: none;
+  content: ""; position: absolute; inset: 18px;
+  border: 1px solid rgba(241,234,217,.18);
+  pointer-events: none;
 }
 .live-panel-inner {
   position: relative; z-index: 1; min-height: inherit; display: flex; flex-direction: column;
-  justify-content: space-between; padding: clamp(22px, 3.2vw, 38px);
+  justify-content: space-between; padding: clamp(24px, 3.2vw, 42px);
 }
-.live-panel-top, .live-panel-bottom {
+.live-panel-top {
   display: flex; justify-content: space-between; gap: 18px; align-items: flex-start;
   font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--ivory-faint);
 }
+.live-panel-name {
+  font-family: var(--sans); font-size: clamp(2.2rem, 6vw, 6.4rem); font-weight: 800;
+  line-height: .82; letter-spacing: -0.055em; text-transform: uppercase; color: var(--ivory);
+  max-width: 7ch;
+}
 .live-panel-status {
-  display: grid; gap: 16px; width: min(100%, 470px); margin-inline: auto;
+  display: grid; gap: 14px; width: min(100%, 500px);
   border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2);
-  padding-block: clamp(22px, 3vw, 34px);
+  padding-block: clamp(20px, 2.8vw, 30px);
 }
 .live-status-row {
-  display: grid; grid-template-columns: minmax(92px, .62fr) 1fr; gap: 18px; align-items: baseline;
+  display: grid; grid-template-columns: minmax(110px, .72fr) 1fr; gap: 18px; align-items: baseline;
   font-family: var(--mono); text-transform: uppercase;
 }
 .live-status-row span { color: var(--ivory-faint); font-size: 0.62rem; letter-spacing: 0.18em; }
 .live-status-row b { color: var(--ivory); font-size: clamp(0.84rem, 1.1vw, 1rem); letter-spacing: 0.12em; font-weight: 500; }
 .signal-dot {
   width: 8px; height: 8px; border-radius: 50%; background: var(--ivory); display: inline-block;
-  margin-right: 10px; box-shadow: 0 0 0 0 rgba(241,234,217,.34); animation: whitePulse 2.6s ease-in-out infinite;
+  margin-right: 10px; box-shadow: 0 0 0 0 rgba(241,234,217,.34); animation: whitePulse 2.8s ease-in-out infinite;
 }
-.protocol-section { padding-top: clamp(44px, 6vw, 84px); padding-bottom: clamp(44px, 6vw, 84px); }
-.protocol-head { max-width: 58ch; margin-bottom: clamp(28px, 4vw, 44px); }
-.protocol-head h2 { margin-top: 16px; }
-.protocol-head p { color: var(--ivory-dim); margin-top: 18px; }
-.protocol-list { border-top: 1px solid var(--line-2); }
-.protocol-row {
-  display: grid; grid-template-columns: 0.7fr 1.5fr; gap: clamp(20px, 4vw, 70px);
+.live-block { padding-top: clamp(48px, 6vw, 82px); padding-bottom: clamp(48px, 6vw, 82px); }
+.live-head { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(24px, 5vw, 80px); align-items: end; margin-bottom: clamp(28px, 4vw, 48px); }
+.live-head p { color: var(--ivory-dim); max-width: 48ch; }
+.live-list { border-top: 1px solid var(--line-2); }
+.live-row {
+  display: grid; grid-template-columns: minmax(180px, .7fr) 1.3fr; gap: clamp(18px, 4vw, 64px);
   padding: clamp(22px, 3vw, 32px) 0; border-bottom: 1px solid var(--line-2);
 }
-.protocol-row h3 {
+.live-row h3 {
   font-family: var(--sans); font-size: clamp(1.15rem, 1.8vw, 1.45rem); line-height: 1;
   text-transform: uppercase; letter-spacing: 0; color: var(--ivory);
 }
-.protocol-row h3 span {
+.live-row h3 span {
   display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.2em;
   color: var(--ivory-faint); margin-bottom: 10px;
 }
-.protocol-row p { color: var(--ivory-dim); max-width: 56ch; align-self: end; }
+.live-row p { color: var(--ivory-dim); max-width: 46ch; align-self: end; }
+.setup-panel {
+  display: grid; grid-template-columns: 1fr auto; gap: clamp(22px, 5vw, 78px); align-items: center;
+  border: 1px solid var(--line-3); padding: clamp(28px, 4vw, 56px); background: #050505;
+}
+.setup-panel p { color: var(--ivory-dim); max-width: 54ch; margin-top: 18px; }
 .live-final { padding-top: clamp(42px, 6vw, 76px); padding-bottom: clamp(54px, 7vw, 96px); }
 .live-final h2 {
   font-family: var(--sans); font-weight: 800; text-transform: uppercase;
-  font-size: clamp(2.8rem, 7vw, 6.2rem); line-height: .86; letter-spacing: -0.045em; color: var(--ivory);
+  font-size: clamp(3rem, 8vw, 7.6rem); line-height: .84; letter-spacing: -0.055em; color: var(--ivory);
 }
 .live-final h2 .line { display: block; }
 .live-final p { color: var(--ivory-dim); margin: 22px auto 0; max-width: 32ch; }
 @keyframes scanlineDrift { from { transform: translateY(-18px); } to { transform: translateY(18px); } }
-@keyframes signalPulse { 0%,100% { opacity: .22; } 50% { opacity: .42; } }
 @keyframes whitePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(241,234,217,.3); opacity: .86; } 50% { box-shadow: 0 0 0 10px rgba(241,234,217,0); opacity: 1; } }
 @media (max-width: 880px) {
-  .live-panel { min-height: 420px; }
-  .protocol-row { grid-template-columns: 1fr; gap: 12px; }
+  .live-panel { min-height: 430px; }
+  .live-head, .live-row, .setup-panel { grid-template-columns: 1fr; gap: 14px; }
 }
 @media (max-width: 560px) {
-  .live-panel-top, .live-panel-bottom { display: grid; gap: 10px; }
+  .live-hero .split { gap: 34px; }
+  .live-panel { min-height: 380px; }
+  .live-panel-top { display: grid; gap: 10px; }
   .live-status-row { grid-template-columns: 1fr; gap: 6px; }
+  .setup-panel { padding: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .live-panel::before, .live-panel::after, .signal-dot { animation: none; }
+  .live-panel::before, .signal-dot { animation: none; }
 }
 </style>
 </head>
@@ -163,11 +181,11 @@
   <div class="split lean" style="align-items:center;">
     <div class="stack-3 reveal">
       <div class="live-kicker">
-        <span>Ninth Life / Live</span>
+        <span>Status</span>
         <strong>Ninth Life Live</strong>
       </div>
-      <h1 class="display live-title"><span class="line">The Sanctuary</span><span class="line">goes live</span><span class="line">when it is ready.</span></h1>
-      <p class="lede">Ninth Life Live will be a quiet online view from The Sanctuary after the back room is prepared and the cats are settled. No forced show. No rushed camera. The cats come first.</p>
+      <h1 class="display live-title"><span class="line">The cat lounge,</span><span class="line">on camera.</span></h1>
+      <p class="lede">When Ninth Life opens and the cats are settled, Ninth Life Live will turn on as a quiet live view from The Sanctuary.</p>
       <div class="btn-row">
         <a class="btn btn-solid" href="contact.html">Get Live Updates <span class="arr">&rarr;</span></a>
         <a class="btn btn-line" href="support.html">Support the Mission</a>
@@ -177,19 +195,16 @@
       <div class="live-panel" aria-label="Ninth Life Live inactive feed status">
         <div class="live-panel-inner">
           <div class="live-panel-top">
-            <span><span class="signal-dot"></span>Status object</span>
+            <span><span class="signal-dot"></span>Offline</span>
             <span>Ninth Life Live</span>
           </div>
+          <div class="live-panel-name">Ninth Life Live</div>
           <div class="live-panel-status">
-            <div class="live-status-row"><span>Status:</span><b>Standby</b></div>
+            <div class="live-status-row"><span>Status:</span><b>Offline</b></div>
             <div class="live-status-row"><span>Feed:</span><b>Not live</b></div>
-            <div class="live-status-row"><span>Room:</span><b>The Sanctuary</b></div>
-            <div class="live-status-row"><span>Cats:</span><b>Not settled</b></div>
-            <div class="live-status-row"><span>Signal:</span><b>Waiting</b></div>
-          </div>
-          <div class="live-panel-bottom">
-            <span>No fake stream</span>
-            <span>No camera until ready</span>
+            <div class="live-status-row"><span>Location:</span><b>The Sanctuary</b></div>
+            <div class="live-status-row"><span>Launch:</span><b>After opening</b></div>
+            <div class="live-status-row"><span>Camera:</span><b>Coming soon</b></div>
           </div>
         </div>
       </div>
@@ -197,42 +212,52 @@
   </div>
 </section>
 
-<!-- ============ PROTOCOL ============ -->
-<section class="protocol-section tone-ink2">
+<!-- ============ WHAT GOES LIVE ============ -->
+<section class="live-block tone-ink2">
   <div class="wrap">
-    <div class="protocol-head reveal">
-      <span class="eyebrow">The feed has rules.</span>
-      <h2 class="h-lg">The camera does not lead the care plan.</h2>
-      <p>The Sanctuary comes first. The cats settle first. The live feed opens after.</p>
+    <div class="live-head reveal">
+      <h2 class="h-lg">What goes live.</h2>
+      <p>The feed starts after the space is open, the cameras are installed, and the cats are settled.</p>
     </div>
-    <div class="protocol-list reveal">
-      <div class="protocol-row">
-        <h3><span>01 /</span>Not live yet</h3>
-        <p>The feed stays dark until The Sanctuary and cats are ready.</p>
+    <div class="live-list reveal">
+      <div class="live-row">
+        <h3><span>01 /</span>The room</h3>
+        <p>A view into The Sanctuary once it is built and open.</p>
       </div>
-      <div class="protocol-row">
-        <h3><span>02 /</span>Comfort before content</h3>
-        <p>The cats' rhythm decides when the camera matters.</p>
+      <div class="live-row">
+        <h3><span>02 /</span>The cats</h3>
+        <p>The cats, once they are settled in the space.</p>
       </div>
-      <div class="protocol-row">
-        <h3><span>03 /</span>Supporters get the first signal</h3>
-        <p>Updates begin before the feed opens.</p>
+      <div class="live-row">
+        <h3><span>03 /</span>The routine</h3>
+        <p>Quiet moments from the room: rest, movement, care, and everyday life.</p>
       </div>
-      <div class="protocol-row">
-        <h3><span>04 /</span>Sponsors can support Ninth Life Live</h3>
-        <p>Partners can help fund cameras, setup, equipment, and online updates.</p>
-      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPORT SETUP ============ -->
+<section class="live-block wrap">
+  <div class="setup-panel reveal">
+    <div>
+      <span class="eyebrow">Setup</span>
+      <h2 class="h-lg" style="margin-top:16px;">Help set up Ninth Life Live.</h2>
+      <p>The live view needs cameras, mounting, lighting, internet, and the basic setup to work well when The Sanctuary opens.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-solid" href="support.html">Support the Mission <span class="arr">&rarr;</span></a>
+      <a class="btn btn-line" href="contact.html">Partner With Us</a>
     </div>
   </div>
 </section>
 
 <!-- ============ FINAL CTA ============ -->
 <section class="live-final wrap" style="text-align:center;">
-  <h2 class="reveal"><span class="line">A quiet live feed.</span><span class="line">Not a performance.</span></h2>
-  <p class="reveal">The camera waits. The cats come first.</p>
+  <h2 class="reveal"><span class="line">Get the</span><span class="line">first notice.</span></h2>
+  <p class="reveal">Join the list for opening updates, Sanctuary progress, and the first notice when Ninth Life Live is ready.</p>
   <div class="btn-row reveal" style="justify-content:center;margin-top:30px;">
     <a class="btn btn-solid" href="contact.html">Get Live Updates <span class="arr">&rarr;</span></a>
-    <a class="btn btn-line" href="support.html">Support the Mission</a>
+    <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
   </div>
 </section>
 
@@ -240,7 +265,38 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-top">
+    <div class="footer-top footer-wide">
       <div>
         <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
-        <p class="footer-tag">A chill cafe in front. A protected cat Sanctuary in back.</p>
+        <p class="footer-tag"><span class="line">A modern cafe in front.</span><span class="line">A calm cat lounge in back.</span></p>
+        <p class="footer-meta">Coming soon · Downtown Alliance, Ohio</p>
+        <p class="footer-note">Ninth Life Cafe · Modern cafe + calm cat lounge · Alliance, OH</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="sanctuary.html">Sanctuary</a>
+        <a href="cafe.html">Cafe</a>
+        <a href="visit.html">Visit</a>
+        <a href="live.html">Live</a>
+        <a href="support.html">Support</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Start Here</h4>
+        <a href="contact.html">Join the List</a>
+        <a href="support.html">Support the Mission</a>
+        <a href="contact.html">Partner With Us</a>
+        <a href="contact.html?interest=care-partner">Start a Care Partner Conversation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ninth Life Cafe</span>
+      <span>Modern cafe + calm cat lounge · Alliance, OH</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
