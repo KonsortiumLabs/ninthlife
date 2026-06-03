@@ -127,8 +127,15 @@
 .member-intro {
   max-width: 820px;
 }
+#membership,
 #house-membership {
   scroll-margin-top: 110px;
+}
+.anchor-offset {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 .member-rule {
   margin-top: 26px;
@@ -221,7 +228,7 @@
 </head>
 <body>
 
-<div class="topbar"><span><span class="dot"></span>Coming soon to Downtown Alliance. Cafe opens first. Sanctuary opens carefully.</span></div>
+<a class="topbar" href="support.html#membership" aria-label="Join House Membership"><span class="topbar-inner"><span class="dot"></span><span class="topbar-full">OPENING SOON · FOUNDING MEMBERSHIPS LIVE · JOIN THE HOUSE <span class="arr">&rarr;</span></span><span class="topbar-short">FOUNDING MEMBERSHIPS LIVE · JOIN THE HOUSE <span class="arr">&rarr;</span></span></span></a>
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -281,7 +288,7 @@
       </div>
       <div class="btn-row">
         <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
-        <a class="btn btn-line" href="#house-membership">House Membership</a>
+        <a class="btn btn-line" href="#membership">House Membership</a>
         <a class="btn btn-line" href="contact.html">Partner With Us</a>
       </div>
     </div>
@@ -322,7 +329,8 @@
 </section>
 
 <!-- ============ HOUSE MEMBERSHIP ============ -->
-<section class="pad tone-ink2" id="house-membership">
+<section class="pad tone-ink2" id="membership">
+  <span class="anchor-offset" id="house-membership" aria-hidden="true"></span>
   <div class="wrap">
     <div class="member-intro reveal">
       <div class="support-label">House Membership</div>
@@ -465,7 +473,7 @@
       <div class="footer-col">
         <h4>Start Here</h4>
         <a href="contact.html?interest=join-waitlist">Join the List</a>
-        <a href="support.html#house-membership">House Membership</a>
+        <a href="support.html#membership">House Membership</a>
         <a href="support.html">Support the Mission</a>
         <a href="contact.html?interest=partner-sponsor">Partner With Us</a>
         <a href="contact.html?interest=care-partner">Care Partner Conversation</a>

@@ -180,21 +180,48 @@ section { position: relative; }
 /* ============================================================
    announcement bar + header
    ============================================================ */
-.topbar {
+.topbar,
+.prelaunch-banner {
   background: var(--ink);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(241,234,217,.22);
   min-height: var(--bar-h);
   display: flex; align-items: center; justify-content: center;
   text-align: center; padding: 8px 16px;
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(241,234,217,.76); line-height: 1.4;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
 }
-.topbar span {
-  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.15em;
-  text-transform: uppercase; color: var(--ivory-faint); line-height: 1.4;
+.topbar:hover,
+.prelaunch-banner:hover {
+  color: var(--ivory);
+  border-bottom-color: rgba(241,234,217,.36);
+  background: rgba(241,234,217,.018);
 }
-@media (max-width: 560px) { .topbar span { letter-spacing: 0.1em; } }
-.topbar .dot {
+.topbar-inner {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0;
+}
+.topbar .dot,
+.prelaunch-banner .dot {
   display: inline-block; width: 5px; height: 5px; border-radius: 50%;
-  background: var(--ember); margin-right: 0.9em; vertical-align: middle;
+  background: #C8A86A; margin-right: 0.9em; vertical-align: middle;
+}
+.topbar .arr,
+.prelaunch-banner .arr {
+  display: inline-block;
+  transition: transform .18s ease;
+}
+.topbar:hover .arr,
+.prelaunch-banner:hover .arr { transform: translateX(3px); }
+.topbar-short { display: none; }
+@media (max-width: 640px) {
+  .topbar,
+  .prelaunch-banner {
+    font-size: 0.58rem;
+    letter-spacing: 0.09em;
+    padding-inline: 12px;
+  }
+  .topbar-full { display: none; }
+  .topbar-short { display: inline; }
 }
 
 .site-header {
