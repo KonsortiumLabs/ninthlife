@@ -117,11 +117,7 @@
 .ledger-row:hover { background: rgba(241,234,217,.032); border-bottom-color: rgba(241,234,217,.34); }
 .ledger-row b { font-family: var(--sans); font-weight: 800; text-transform: uppercase; line-height: 1; letter-spacing: -.02em; }
 .ledger-row span { color: var(--ivory-dim); }
-.build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.build-card { border: 1px solid rgba(241,234,217,.3); padding: clamp(22px, 2.8vw, 34px); background: rgba(241,234,217,.014); transition: border-color .22s ease, background .22s ease, transform .22s ease; }
-.build-card:hover, .support-tier:hover { border-color: var(--line-3); background: rgba(241,234,217,.03); transform: translateY(-2px); }
-.build-card h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -.03em; font-size: clamp(1.6rem, 2.3vw, 2.3rem); }
-.build-card p { margin-top: 14px; color: var(--ivory-dim); }
+.support-tier:hover { border-color: var(--line-3); background: rgba(241,234,217,.03); transform: translateY(-2px); }
 .support-tier-list { display: grid; gap: 10px; }
 .support-tier { display: grid; grid-template-columns: minmax(180px,.42fr) 1fr auto; gap: clamp(16px, 3vw, 34px); align-items: center; border: 1px solid var(--line-2); padding: clamp(18px, 2vw, 24px); background: rgba(241,234,217,.012); transition: border-color .22s ease, background .22s ease, transform .22s ease; }
 .support-tier h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -.02em; font-size: clamp(1.18rem, 1.7vw, 1.55rem); }
@@ -208,7 +204,6 @@
   .support-hero-grid, .goal-grid { grid-template-columns: 1fr; }
   .support-hero .display { max-width: 12ch; }
   .support-placard { min-height: 360px; }
-  .build-grid { grid-template-columns: 1fr; }
   .support-tier { grid-template-columns: 1fr auto; align-items: baseline; }
   .support-tier p { grid-column: 1 / -1; }
   .member-tier { grid-template-columns: 1fr auto; align-items: start; }
@@ -278,7 +273,7 @@
   <div class="support-hero-grid">
     <div class="support-copy reveal">
       <h1 class="display">Help open<br>the room right.</h1>
-      <p class="lede">Ninth Life has the space. The first round of support helps turn it into the kind of room people can actually feel: a good counter, a few seats, warm light, music, local goods, a prepared cat lounge, and the care setup behind it.</p>
+      <p class="lede">Ninth Life has the space. The first round of support helps turn it into the kind of room people can actually feel: a good counter, a few seats, warm light, sound, local goods, a prepared cat lounge, and the care setup behind it.</p>
       <div class="support-kicker" aria-label="Support status">
         <span>Cafe first.</span>
         <span>Sanctuary when ready.</span>
@@ -286,6 +281,7 @@
       </div>
       <div class="btn-row">
         <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
+        <a class="btn btn-line" href="#house-membership">House Membership</a>
         <a class="btn btn-line" href="contact.html">Partner With Us</a>
       </div>
     </div>
@@ -325,28 +321,13 @@
   <div class="ticket-strip reveal"><strong>First build</strong> · Counter · Cups · Seating · Light · Cat furniture · Cleaning setup</div>
 </section>
 
-<!-- ============ FIRST BUILD ============ -->
-<section class="pad-sm wrap">
-  <div class="split lean" style="align-items:end;margin-bottom:34px;">
-    <div class="stack-2 reveal">
-      <div class="support-label">02 / First build</div>
-      <h2 class="h-lg">What support turns into.</h2>
-    </div>
-  </div>
-  <div class="build-grid reveal">
-    <article class="build-card"><h3>The Cafe</h3><p>A front room with drinks, seating, music, local goods, and enough care to feel worth coming back to.</p></article>
-    <article class="build-card"><h3>The Sanctuary</h3><p>A calm back room with cat furniture, rest areas, cleaning rhythm, and room for the first residents to settle.</p></article>
-    <article class="build-card"><h3>The Care</h3><p>Food, litter, grooming, cleaning, wellness checks, and the daily work that keeps the cats safe after opening.</p></article>
-  </div>
-</section>
-
 <!-- ============ HOUSE MEMBERSHIP ============ -->
 <section class="pad tone-ink2" id="house-membership">
   <div class="wrap">
     <div class="member-intro reveal">
       <div class="support-label">House Membership</div>
       <h2 class="h-xl">A closer place<br>in the house.</h2>
-      <p class="body">Some people will come once. Some will come back often. House Membership is for the people who want to stay close as Ninth Life opens, support the first residents, and get early access to the room before it becomes obvious.</p>
+      <p class="body">Some people will come once. Some will come back often. House Membership is for people who want to stay close as Ninth Life opens, support the first residents, and get early access to scheduled cafe and Sanctuary moments.</p>
       <p class="member-rule">Membership is scheduled, not unlimited. The cafe stays simple. The cat lounge stays limited. The cats come first.</p>
     </div>
 
@@ -355,7 +336,7 @@
         <h3>The House List</h3>
         <div class="member-price">Free</div>
         <div class="member-copy">
-          <p>Opening updates, first menu notes, cat announcements, and booking alerts.</p>
+          <p>Opening updates, first menu notes, resident announcements, and booking alerts.</p>
         </div>
         <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
       </article>
@@ -389,70 +370,51 @@
         <a class="btn btn-solid" href="contact.html?interest=house-family-pass">Get the Family Pass <span class="arr">&rarr;</span></a>
       </article>
 
-      <article class="member-tier">
-        <h3>House Partner</h3>
-        <div class="member-price">Custom</div>
-        <div class="member-copy">
-          <p>For local brands, sponsors, bakeries, drink partners, pet brands, media, and businesses.</p>
-        </div>
-        <a class="btn btn-line" href="contact.html?interest=partner-sponsor">Partner With Us</a>
-      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ WAYS TO HELP ============ -->
-<section class="pad tone-ink2">
-  <div class="wrap">
-    <div class="split lean" style="align-items:end;margin-bottom:30px;">
-      <div class="stack-2 reveal">
-        <div class="support-label">04 / Ways to help</div>
-        <h2 class="h-lg">Choose your part in the room.</h2>
-      </div>
-      <p class="body reveal">Some people will help once. Some will bring goods, care, media, or local support. House Membership handles the closer ongoing layer.</p>
+<!-- ============ ONE-TIME SUPPORT ============ -->
+<section class="pad wrap">
+  <div class="split lean" style="align-items:end;margin-bottom:30px;">
+    <div class="stack-2 reveal">
+      <div class="support-label">One-time support</div>
+      <h2 class="h-lg">Help with the<br>first build.</h2>
     </div>
-
-    <div class="stack-2 reveal" style="margin-bottom:18px;">
-      <span class="eyebrow plain">One-time support</span>
+  </div>
+  <div class="support-tier-list reveal">
+    <div class="support-tier">
+      <h3>Founding Supporter</h3>
+      <p>For early backers helping the first version open with care.</p>
+      <div class="amt">$100+</div>
     </div>
-    <div class="support-tier-list reveal">
-      <div class="support-tier">
-        <h3>Founding Supporter</h3>
-        <p>For early backers helping the first version open with care.</p>
-        <div class="amt">$100+</div>
-      </div>
-      <div class="support-tier">
-        <h3>Founding Sponsor</h3>
-        <p>Helps cover setup, supplies, opening details, and visible pieces of the room.</p>
-        <div class="amt">$500+</div>
-      </div>
-      <div class="support-tier">
-        <h3>Founding Partner</h3>
-        <p>For early believers who want recognition, priority updates, and a closer role in the launch.</p>
-        <div class="amt">$1,000+</div>
-      </div>
-      <div class="support-tier">
-        <h3>Presenting Partner</h3>
-        <p>For businesses interested in larger launch support, sponsorship, or presented-by placement.</p>
-        <div class="amt">Custom</div>
-      </div>
+    <div class="support-tier">
+      <h3>Founding Sponsor</h3>
+      <p>Helps cover setup, supplies, opening details, and visible pieces of the room.</p>
+      <div class="amt">$500+</div>
     </div>
-    <div class="btn-row reveal" style="margin-top:28px;margin-bottom:54px;">
-      <a class="btn btn-solid" href="contact.html">Become a Founding Supporter <span class="arr">&rarr;</span></a>
+    <div class="support-tier">
+      <h3>Founding Partner</h3>
+      <p>For early believers who want recognition, priority updates, and a closer role in the launch.</p>
+      <div class="amt">$1,000+</div>
+    </div>
+    <div class="support-tier">
+      <h3>Presenting Partner</h3>
+      <p>For businesses interested in larger launch support, sponsorship, or presented-by placement.</p>
+      <div class="amt">Custom</div>
     </div>
   </div>
 </section>
 
 <!-- ============ PARTNERS ============ -->
 <section class="pad wrap" id="local-partners">
-    <div class="split lean" style="align-items:end;margin-bottom:30px;">
+  <div class="split lean" style="align-items:end;margin-bottom:30px;">
     <div class="stack-2 reveal">
-      <div class="support-label">05 / Partners</div>
+      <div class="support-label">Partners</div>
       <h2 class="h-lg">Bring the first<br>pieces.</h2>
     </div>
     <p class="body reveal">Ninth Life is looking for the right local pieces: drinks, baked goods, supplies, care guidance, rescue relationships, media, opening help, and sponsors who want to be part of the first version.</p>
   </div>
-  <p class="partner-note reveal">Ninth Life does not accept direct cat surrenders or general intake. Future rescue or foster activity will happen only through approved partners.</p>
   <div class="chip-set reveal" aria-label="Partner types">
     <span class="chip">Cafe / local goods</span>
     <span class="chip">Drink partner</span>
