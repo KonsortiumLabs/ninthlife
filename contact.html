@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — Ninth Life Cafe</title>
+<title>Contact - Ninth Life Cafe</title>
 <meta name="description" content="Contact Ninth Life Cafe to join the list, support the mission, discuss partnerships, or follow updates before opening in Downtown Alliance, Ohio.">
-<meta property="og:title" content="Contact — Ninth Life Cafe">
+<meta property="og:title" content="Contact - Ninth Life Cafe">
 <meta property="og:description" content="Contact Ninth Life Cafe to join the list, support the mission, discuss partnerships, or follow updates before opening in Downtown Alliance, Ohio.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Contact — Ninth Life Cafe">
+<meta name="twitter:title" content="Contact - Ninth Life Cafe">
 <meta name="twitter:description" content="A modern cafe and calm cat lounge coming to Downtown Alliance, Ohio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,29 +17,75 @@
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Contact page only: cleaner intake spacing and mail draft behavior. */
-.contact-panel { position: sticky; top: 120px; }
-.entry-lanes { display: grid; gap: 12px; margin-top: 24px; }
-.entry-lane { border: 1px solid var(--line-2); padding: 18px; }
-.entry-lane h3 { font-family: var(--mono); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ivory); margin-bottom: 8px; }
-.entry-lane p { color: var(--ivory-dim); font-size: .96rem; }
-.contact-form { display: grid; gap: clamp(22px, 3vw, 30px); }
+/* Contact page only: premium start-here page and mail draft behavior. */
+.contact-head { padding-bottom: clamp(46px, 6vw, 82px); border-bottom: 1px solid var(--line-2); }
+.contact-head .phead-grid { align-items: end; }
+.contact-status {
+  margin-top: clamp(24px, 3vw, 34px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ivory-dim);
+}
+.contact-main { padding-top: clamp(54px, 7vw, 96px); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(380px, .82fr);
+  gap: clamp(36px, 6vw, 88px);
+  align-items: start;
+}
+.contact-left { max-width: 680px; }
+.entry-lanes { display: grid; gap: 0; margin-top: clamp(28px, 4vw, 44px); border-top: 1px solid var(--line-3); }
+.entry-lane {
+  display: grid;
+  grid-template-columns: minmax(160px, .34fr) 1fr;
+  gap: clamp(18px, 3vw, 34px);
+  border-bottom: 1px solid var(--line-2);
+  padding: clamp(18px, 2.4vw, 24px) 0;
+  transition: border-color .2s ease, background .2s ease, padding-inline .2s ease;
+}
+.entry-lane:hover {
+  border-bottom-color: var(--line-3);
+  background: rgba(241,234,217,.022);
+  padding-inline: 12px;
+}
+.entry-lane h3 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+  line-height: .95;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  color: var(--ivory);
+}
+.entry-lane p { color: var(--ivory-dim); font-size: 1rem; line-height: 1.5; }
+.contact-form { display: grid; gap: clamp(22px, 3vw, 30px); border-color: rgba(241,234,217,.44); box-shadow: inset 0 0 0 1px rgba(241,234,217,.04); }
 .contact-form .field { gap: 12px; }
 .contact-form .chip-set { gap: 10px 12px; align-items: flex-start; }
-.contact-form .chip { line-height: 1.15; padding: 10px 14px; }
+.contact-form .chip { line-height: 1.15; padding: 11px 14px; transition: border-color .18s ease, color .18s ease, background .18s ease, transform .18s ease; }
+.contact-form .chip:hover { transform: translateY(-1px); }
 .contact-form .chip input {
   position: absolute; opacity: 0; pointer-events: none;
   width: 1px; height: 1px; min-width: 0; padding: 0; border: 0;
 }
-.contact-form textarea { min-height: 170px; }
+.contact-form textarea { min-height: 210px; }
 .contact-actions { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
 .contact-actions .btn { min-width: 132px; justify-content: center; }
 .mail-note {
   font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--ivory-faint); line-height: 1.55;
 }
-@media (max-width: 880px) { .contact-panel { position: static; } }
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 560px) {
+  .contact-status { display: grid; gap: 8px; }
+  .entry-lane { grid-template-columns: 1fr; gap: 8px; }
+  .entry-lane:hover { padding-inline: 0; background: transparent; }
   .contact-actions { display: grid; gap: 14px; }
   .contact-actions .btn { width: 100%; }
 }
@@ -94,43 +140,50 @@
 <main>
 
 <!-- ============ PAGE HEAD ============ -->
-<section class="phead wrap">
+<section class="phead wrap contact-head">
   <div class="crumb"><a href="index.html">Ninth Life</a> <span>/</span> Contact</div>
   <div class="phead-grid">
     <h1 class="display reveal">Start here.</h1>
-    <p class="lede reveal">Ninth Life is still being built. Join the list, support the mission, start a partnership conversation, or reach us directly.</p>
+    <div class="reveal">
+      <p class="lede">For updates, partnerships, care conversations, local goods, media, or opening questions, use the form below. Ninth Life is coming soon to Downtown Alliance.</p>
+      <div class="contact-status" aria-label="Opening status">
+        <span>Cafe first</span>
+        <span>Sanctuary when ready</span>
+        <span>Downtown Alliance, OH</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ FORM ============ -->
-<section class="pad-sm wrap">
-  <div class="split lean" style="align-items:start;gap:clamp(34px,5vw,72px);">
+<section class="pad-sm wrap contact-main">
+  <div class="contact-grid">
 
-    <div class="reveal contact-panel">
-      <div class="stack-3">
-        <div>
-          <div class="faq-cat-label" style="padding-bottom:8px;">Direct</div>
-          <p class="body">The cafe opens first. The cat lounge opens when The Sanctuary is ready. Use this page to get on the list or start the right conversation now.</p>
-          <div class="entry-lanes">
-            <div class="entry-lane">
-              <h3>Join the List</h3>
-              <p>For opening updates, visit details, and first announcements.</p>
-            </div>
-            <div class="entry-lane">
-              <h3>Support the Mission</h3>
-              <p>For people who want to help prepare the first version.</p>
-            </div>
-            <div class="entry-lane">
-              <h3>Partner With Us</h3>
-              <p>For local goods, drink partners, care partners, operators, sponsors, and media.</p>
-            </div>
-          </div>
+    <div class="reveal contact-left">
+      <div class="stack-2">
+        <h2 class="h-lg">Choose the right door.</h2>
+        <p class="body">The right message helps us move faster. Pick the lane that fits best, then send a short note.</p>
+      </div>
+      <div class="entry-lanes" aria-label="Contact reasons">
+        <div class="entry-lane">
+          <h3>Join the List</h3>
+          <p>Opening updates, first announcements, and early access.</p>
         </div>
-        <div class="linegrid c2">
-          <div><div class="lg-k">Location</div><h4 style="font-size:1.05rem;">Downtown Alliance, OH</h4></div>
-          <div><div class="lg-k">Status</div><h4 style="font-size:1.05rem;">Pre-opening</h4></div>
-          <div><div class="lg-k">Sanctuary</div><h4 style="font-size:1.05rem;">Not open yet</h4></div>
-          <div><div class="lg-k">Best for</div><h4 style="font-size:1.05rem;">Support · Partners · Updates</h4></div>
+        <div class="entry-lane">
+          <h3>Support the Mission</h3>
+          <p>Supporters, founding backers, and people who want to help the first version open well.</p>
+        </div>
+        <div class="entry-lane">
+          <h3>Partner / Sponsor</h3>
+          <p>Brands, local businesses, bakeries, drink partners, sponsors, and media.</p>
+        </div>
+        <div class="entry-lane">
+          <h3>Care Partner</h3>
+          <p>Breeders, rescues, fosters, vets, and people connected to responsible cat care.</p>
+        </div>
+        <div class="entry-lane">
+          <h3>Local Operator / Team</h3>
+          <p>People interested in helping operate, volunteer, host, create, or work with Ninth Life.</p>
         </div>
       </div>
     </div>
@@ -154,9 +207,8 @@
             <label class="chip"><input type="checkbox" name="interest" value="Join the List">Join the List</label>
             <label class="chip"><input type="checkbox" name="interest" value="Support the Mission">Support the Mission</label>
             <label class="chip"><input type="checkbox" name="interest" value="Partner / Sponsor">Partner / Sponsor</label>
-            <label class="chip"><input type="checkbox" name="interest" value="Care / Rescue Partner">Care / Rescue Partner</label>
-            <label class="chip"><input type="checkbox" name="interest" value="Cafe / Local Goods">Cafe / Local Goods</label>
-            <label class="chip"><input type="checkbox" name="interest" value="Local Operator">Local Operator</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Care Partner">Care Partner</label>
+            <label class="chip"><input type="checkbox" name="interest" value="Local Operator / Team">Local Operator / Team</label>
             <label class="chip"><input type="checkbox" name="interest" value="Press / Media">Press / Media</label>
             <label class="chip"><input type="checkbox" name="interest" value="General Question">General Question</label>
           </div>
@@ -168,7 +220,7 @@
         </div>
 
         <div class="contact-actions">
-          <button class="btn btn-solid" type="submit">Send <span class="arr">&rarr;</span></button>
+          <button class="btn btn-solid" type="submit">Send Message <span class="arr">&rarr;</span></button>
           <span class="mail-note">Opens an email draft with your message.</span>
         </div>
       </form>
@@ -184,9 +236,8 @@
     <div class="footer-top footer-wide">
       <div>
         <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
-        <p class="footer-tag"><span class="line">A modern cafe in front.</span><span class="line">A calm cat lounge in back.</span></p>
-        <p class="footer-meta">Coming soon · Downtown Alliance, Ohio</p>
-        <p class="footer-note">Ninth Life Cafe · Modern cafe + calm cat lounge · Alliance, OH</p>
+        <p class="footer-tag"><span class="line">A cafe for people.</span><span class="line">A sanctuary for cats.</span></p>
+        <p class="footer-meta">Downtown Alliance, Ohio</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -200,15 +251,16 @@
       </div>
       <div class="footer-col">
         <h4>Start Here</h4>
-        <a href="contact.html">Join the List</a>
+        <a href="contact.html?interest=join-waitlist">Join the List</a>
+        <a href="support.html#house-membership">House Membership</a>
         <a href="support.html">Support the Mission</a>
-        <a href="contact.html">Partner With Us</a>
-        <a href="contact.html?interest=care-partner">Start a Care Partner Conversation</a>
+        <a href="contact.html?interest=partner-sponsor">Partner With Us</a>
+        <a href="contact.html?interest=care-partner">Care Partner Conversation</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Ninth Life Cafe</span>
-      <span>Modern cafe + calm cat lounge · Alliance, OH</span>
+      <span>Cafe first · Sanctuary when ready</span>
     </div>
   </div>
 </footer>
@@ -234,16 +286,18 @@
     "partnership": "Partner / Sponsor",
     "local partnership": "Partner / Sponsor",
     "presenting partner": "Partner / Sponsor",
-    "bakery partnership": "Cafe / Local Goods",
-    "cafe updates": "Cafe / Local Goods",
-    "cafe": "Cafe / Local Goods",
-    "care partner": "Care / Rescue Partner",
-    "care vet partner": "Care / Rescue Partner",
-    "rescue partnership": "Care / Rescue Partner",
-    "rescue foster partner": "Care / Rescue Partner",
-    "breeder conversation": "Care / Rescue Partner",
-    "founding breeder partnership": "Care / Rescue Partner",
-    "local operator": "Local Operator",
+    "bakery partnership": "Partner / Sponsor",
+    "cafe updates": "Partner / Sponsor",
+    "cafe": "Partner / Sponsor",
+    "cafe local goods": "Partner / Sponsor",
+    "care partner": "Care Partner",
+    "care vet partner": "Care Partner",
+    "rescue partnership": "Care Partner",
+    "rescue foster partner": "Care Partner",
+    "breeder conversation": "Care Partner",
+    "founding breeder partnership": "Care Partner",
+    "local operator": "Local Operator / Team",
+    "help operate": "Local Operator / Team",
     "press local media": "Press / Media",
     "general question": "General Question"
   };

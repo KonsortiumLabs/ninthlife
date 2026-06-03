@@ -17,20 +17,90 @@
 <link rel="icon" type="image/png" href="assets/nineth-logo.png">
 <link rel="stylesheet" href="styles.css">
 <style>
-.support-hero { padding-top: clamp(48px, 6vw, 84px); padding-bottom: clamp(44px, 5.8vw, 76px); }
+.support-hero { padding-top: clamp(38px, 5vw, 68px); padding-bottom: clamp(38px, 5vw, 68px); }
 .support-hero .crumb {
   font-family: var(--mono);
   font-size: .66rem;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--ivory-faint);
-  margin-bottom: clamp(42px, 6vw, 76px);
+  margin-bottom: clamp(28px, 4vw, 52px);
 }
 .support-hero .crumb a:hover { color: var(--ivory); }
-.support-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(290px, .46fr); gap: clamp(34px, 6vw, 90px); align-items: end; }
-.support-hero .display { max-width: 11ch; }
-.hero-panel { border: 1px solid var(--line-3); padding: clamp(24px, 3vw, 38px); background: rgba(241,234,217,.018); box-shadow: inset 0 0 0 1px rgba(241,234,217,.035); }
+.support-hero-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(300px, .42fr); gap: clamp(34px, 6vw, 90px); align-items: center; }
+.support-hero .display { max-width: 10ch; }
+.support-copy { max-width: 760px; }
+.support-copy .body { max-width: 760px; }
+.support-copy .btn-row { margin-top: 30px; }
+.support-kicker {
+  margin-top: clamp(22px, 3vw, 34px);
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ivory);
+}
+.support-kicker span { border-bottom: 1px solid var(--line-3); padding-bottom: 6px; }
+.hero-panel { border: 1px solid rgba(241,234,217,.44); padding: clamp(24px, 3vw, 38px); background: rgba(241,234,217,.018); box-shadow: inset 0 0 0 1px rgba(241,234,217,.045); }
 .hero-panel p + p { margin-top: 20px; }
+.support-placard {
+  position: relative;
+  min-height: clamp(360px, 40vw, 520px);
+  border: 1px solid rgba(241,234,217,.54);
+  background:
+    linear-gradient(180deg, rgba(241,234,217,.055), rgba(241,234,217,.01)),
+    #050505;
+  padding: clamp(22px, 3vw, 34px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(241,234,217,.055);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.support-placard:hover { transform: translateY(-3px); border-color: rgba(241,234,217,.72); background: rgba(241,234,217,.025); }
+.support-placard::before {
+  content: "";
+  position: absolute;
+  right: clamp(18px, 2.6vw, 32px);
+  top: clamp(18px, 2.4vw, 30px);
+  width: clamp(82px, 10vw, 132px);
+  height: clamp(82px, 10vw, 132px);
+  border: 1px solid rgba(241,234,217,.08);
+  border-radius: 50%;
+}
+.placard-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ivory-dim);
+}
+.placard-ledger {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0;
+}
+.placard-row {
+  display: grid;
+  grid-template-columns: minmax(92px, .42fr) 1fr;
+  gap: 18px;
+  border-top: 1px solid rgba(241,234,217,.28);
+  padding: 18px 0;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.placard-row:first-child { border-top-color: rgba(241,234,217,.56); }
+.placard-row b { color: var(--ivory-faint); font-weight: 500; }
+.placard-row span { color: var(--ivory); }
 .support-status {
   margin-top: clamp(32px, 4vw, 48px); border: 1px solid var(--line-3);
   padding: clamp(15px, 2vw, 20px) clamp(18px, 2.6vw, 30px);
@@ -38,17 +108,17 @@
   color: var(--ivory); background: rgba(241,234,217,.025);
 }
 .support-label { font-family: var(--mono); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ivory-faint); margin-bottom: 18px; }
-.goal-grid { display: grid; grid-template-columns: minmax(0, .78fr) minmax(360px, 1fr); gap: clamp(34px, 5vw, 78px); align-items: start; }
-.support-ledger { border: 1px solid var(--line-3); background: rgba(241,234,217,.014); box-shadow: inset 0 0 0 1px rgba(241,234,217,.035); }
-.ledger-head { padding: clamp(22px, 2.8vw, 34px); border-bottom: 1px solid var(--line-2); }
+.goal-grid { display: grid; grid-template-columns: minmax(0, .72fr) minmax(380px, 1fr); gap: clamp(34px, 5vw, 78px); align-items: start; }
+.support-ledger { border: 1px solid rgba(241,234,217,.48); background: rgba(241,234,217,.014); box-shadow: inset 0 0 0 1px rgba(241,234,217,.045); }
+.ledger-head { padding: clamp(22px, 2.8vw, 34px); border-bottom: 1px solid rgba(241,234,217,.28); }
 .ledger-head h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -.025em; font-size: clamp(1.6rem, 2.2vw, 2.2rem); }
 .ledger-head p { margin-top: 10px; color: var(--ivory-dim); }
-.ledger-row { display: grid; grid-template-columns: minmax(120px,.34fr) 1fr; gap: clamp(16px, 3vw, 34px); padding: 17px clamp(20px, 2.6vw, 34px); border-bottom: 1px solid var(--line-2); transition: background .2s ease; }
-.ledger-row:hover { background: rgba(241,234,217,.028); }
+.ledger-row { display: grid; grid-template-columns: minmax(120px,.34fr) 1fr; gap: clamp(16px, 3vw, 34px); padding: 17px clamp(20px, 2.6vw, 34px); border-bottom: 1px solid rgba(241,234,217,.2); transition: background .2s ease, border-color .2s ease; }
+.ledger-row:hover { background: rgba(241,234,217,.032); border-bottom-color: rgba(241,234,217,.34); }
 .ledger-row b { font-family: var(--sans); font-weight: 800; text-transform: uppercase; line-height: 1; letter-spacing: -.02em; }
 .ledger-row span { color: var(--ivory-dim); }
 .build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.build-card { border: 1px solid var(--line-2); padding: clamp(22px, 2.8vw, 34px); background: rgba(241,234,217,.014); transition: border-color .22s ease, background .22s ease, transform .22s ease; }
+.build-card { border: 1px solid rgba(241,234,217,.3); padding: clamp(22px, 2.8vw, 34px); background: rgba(241,234,217,.014); transition: border-color .22s ease, background .22s ease, transform .22s ease; }
 .build-card:hover, .support-tier:hover { border-color: var(--line-3); background: rgba(241,234,217,.03); transform: translateY(-2px); }
 .build-card h3 { font-family: var(--sans); font-weight: 800; text-transform: uppercase; letter-spacing: -.03em; font-size: clamp(1.6rem, 2.3vw, 2.3rem); }
 .build-card p { margin-top: 14px; color: var(--ivory-dim); }
@@ -58,15 +128,99 @@
 .support-tier p { color: var(--ivory-dim); }
 .support-tier .amt { font-family: var(--mono); color: var(--ivory); white-space: nowrap; letter-spacing: .04em; text-align: right; }
 .partner-note { border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); padding-block: 18px; margin-block: 28px; color: var(--ivory-dim); }
+.member-intro {
+  max-width: 820px;
+}
+#house-membership {
+  scroll-margin-top: 110px;
+}
+.member-rule {
+  margin-top: 26px;
+  border: 1px solid rgba(241,234,217,.38);
+  padding: 15px clamp(16px, 2.4vw, 24px);
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .13em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: var(--ivory-dim);
+  background: rgba(241,234,217,.018);
+}
+.member-board {
+  display: grid;
+  gap: 12px;
+  margin-top: clamp(28px, 4vw, 46px);
+}
+.member-tier {
+  display: grid;
+  grid-template-columns: minmax(190px, .34fr) minmax(90px, .16fr) 1fr minmax(150px, auto);
+  gap: clamp(16px, 2.6vw, 32px);
+  align-items: center;
+  border: 1px solid rgba(241,234,217,.36);
+  background:
+    linear-gradient(90deg, rgba(241,234,217,.035) 0 1px, transparent 1px 100%),
+    rgba(241,234,217,.012);
+  background-size: 25% 100%;
+  padding: clamp(18px, 2.2vw, 26px);
+  transition: border-color .22s ease, background .22s ease, transform .22s ease;
+}
+.member-tier:hover {
+  border-color: rgba(241,234,217,.68);
+  background-color: rgba(241,234,217,.026);
+  transform: translateY(-2px);
+}
+.member-tier h3 {
+  font-family: var(--sans);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -.025em;
+  font-size: clamp(1.15rem, 1.65vw, 1.55rem);
+  line-height: 1;
+}
+.member-price {
+  font-family: var(--mono);
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  white-space: nowrap;
+}
+.member-copy p {
+  color: var(--ivory-dim);
+  margin: 0;
+}
+.member-terms {
+  display: block;
+  margin-top: 9px;
+  font-family: var(--mono);
+  font-size: .58rem;
+  letter-spacing: .1em;
+  line-height: 1.55;
+  text-transform: uppercase;
+  color: var(--ivory-faint);
+}
+.member-tier .btn {
+  min-width: 146px;
+  justify-content: center;
+  padding-inline: 18px;
+}
 @media (max-width: 900px) {
   .support-hero-grid, .goal-grid { grid-template-columns: 1fr; }
+  .support-hero .display { max-width: 12ch; }
+  .support-placard { min-height: 360px; }
   .build-grid { grid-template-columns: 1fr; }
   .support-tier { grid-template-columns: 1fr auto; align-items: baseline; }
   .support-tier p { grid-column: 1 / -1; }
+  .member-tier { grid-template-columns: 1fr auto; align-items: start; }
+  .member-copy, .member-tier .btn { grid-column: 1 / -1; }
+  .member-tier .btn { width: max-content; }
 }
 @media (max-width: 560px) {
-  .support-tier, .ledger-row { grid-template-columns: 1fr; gap: 8px; }
+  .support-tier, .ledger-row, .member-tier { grid-template-columns: 1fr; gap: 10px; }
   .support-tier .amt { text-align: left; }
+  .placard-row { grid-template-columns: 1fr; gap: 7px; }
+  .support-copy .btn-row { align-items: stretch; }
+  .member-tier .btn { width: 100%; }
 }
 </style>
 </head>
@@ -122,55 +276,128 @@
 <section class="support-hero wrap">
   <div class="crumb"><a href="index.html">Ninth Life</a> <span>/</span> Support</div>
   <div class="support-hero-grid">
-    <h1 class="display reveal">We have the space.<br>Help make it a place.</h1>
-    <div class="hero-panel reveal">
-      <p class="lede">Ninth Life has a real room to begin with. The first round of support helps turn it into something people can walk into: a counter, cups, seating, light, music, local goods, a prepared cat lounge, and the care setup behind it.</p>
-      <p class="body">The cafe opens first. The cats arrive when the room is ready.</p>
-      <div class="btn-row" style="margin-top:28px;">
+    <div class="support-copy reveal">
+      <h1 class="display">Help open<br>the room right.</h1>
+      <p class="lede">Ninth Life has the space. The first round of support helps turn it into the kind of room people can actually feel: a good counter, a few seats, warm light, music, local goods, a prepared cat lounge, and the care setup behind it.</p>
+      <div class="support-kicker" aria-label="Support status">
+        <span>Cafe first.</span>
+        <span>Sanctuary when ready.</span>
+        <span>Downtown Alliance, OH.</span>
+      </div>
+      <div class="btn-row">
         <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
         <a class="btn btn-line" href="contact.html">Partner With Us</a>
       </div>
     </div>
+    <div class="support-placard reveal" aria-label="Ninth Life support status">
+      <div class="placard-title">Ninth Life / Support</div>
+      <div class="placard-ledger">
+        <div class="placard-row"><b>Status</b><span>Pre-opening</span></div>
+        <div class="placard-row"><b>Room</b><span>Secured</span></div>
+        <div class="placard-row"><b>First goal</b><span>$10K</span></div>
+        <div class="placard-row"><b>Focus</b><span>Open well</span></div>
+      </div>
+    </div>
   </div>
-  <div class="support-status reveal">Space secured · Cafe first · Cat lounge when ready · Founding support open</div>
 </section>
 
 <!-- ============ FOUNDING GOAL ============ -->
 <section class="pad wrap">
   <div class="goal-grid">
     <div class="stack-3 reveal">
-      <div class="support-label">01 / Founding goal</div>
-      <h2 class="h-xl">The first $10K gets the doors open.</h2>
-      <p class="body">This goal is not about making Ninth Life big overnight. It is about opening the first version properly, without making the room feel unfinished, cheap, or rushed.</p>
+      <div class="support-label">01 / First goal</div>
+      <h2 class="h-xl">The first $10K<br>sets the tone.</h2>
+      <p class="body">This is the opening layer: the counter, cups, seating, light, sound, supplies, cat furniture, cleaning setup, and enough room to open without cutting the parts people will notice.</p>
       <a class="btn btn-solid" href="contact.html">Support the Mission <span class="arr">&rarr;</span></a>
     </div>
     <div class="support-ledger reveal">
       <div class="ledger-head">
-        <h3>What it helps cover</h3>
-        <p>No pretend totals. No fake amount raised. Just the work ahead.</p>
+        <h3>What it builds</h3>
       </div>
-      <div class="ledger-row"><b>Counter</b><span>Cafe counter setup, cups, and first supplies.</span></div>
+      <div class="ledger-row"><b>Counter</b><span>Cups, first supplies, and cafe setup.</span></div>
       <div class="ledger-row"><b>Room</b><span>Seating, lighting, sound, and front-room details.</span></div>
       <div class="ledger-row"><b>Menu</b><span>House teas, lemonade, and opening goods.</span></div>
       <div class="ledger-row"><b>Cat Lounge</b><span>Furniture, rest areas, enrichment, and cleaning setup.</span></div>
       <div class="ledger-row"><b>Care</b><span>Food, litter, grooming tools, wellness checks, and daily supplies.</span></div>
-      <div class="ledger-row"><b>Opening</b><span>First month operating room and local help.</span></div>
+      <div class="ledger-row"><b>Opening</b><span>Local help, launch details, and first-month breathing room.</span></div>
     </div>
   </div>
+  <div class="ticket-strip reveal"><strong>First build</strong> · Counter · Cups · Seating · Light · Cat furniture · Cleaning setup</div>
 </section>
 
 <!-- ============ FIRST BUILD ============ -->
 <section class="pad-sm wrap">
   <div class="split lean" style="align-items:end;margin-bottom:34px;">
     <div class="stack-2 reveal">
-      <div class="support-label">02 / The first build</div>
+      <div class="support-label">02 / First build</div>
       <h2 class="h-lg">What support turns into.</h2>
     </div>
   </div>
   <div class="build-grid reveal">
-    <article class="build-card"><h3>The Cafe</h3><p>The front room: drinks, seating, music, local goods, and the part people can walk into first.</p></article>
-    <article class="build-card"><h3>The Cat Lounge</h3><p>The back room: rest areas, cat furniture, cleaning rhythm, and a calm room cats can trust.</p></article>
-    <article class="build-card"><h3>The Care</h3><p>The daily work after opening: food, litter, grooming, wellness checks, and people who know what they are doing.</p></article>
+    <article class="build-card"><h3>The Cafe</h3><p>A front room with drinks, seating, music, local goods, and enough care to feel worth coming back to.</p></article>
+    <article class="build-card"><h3>The Sanctuary</h3><p>A calm back room with cat furniture, rest areas, cleaning rhythm, and room for the first residents to settle.</p></article>
+    <article class="build-card"><h3>The Care</h3><p>Food, litter, grooming, cleaning, wellness checks, and the daily work that keeps the cats safe after opening.</p></article>
+  </div>
+</section>
+
+<!-- ============ HOUSE MEMBERSHIP ============ -->
+<section class="pad tone-ink2" id="house-membership">
+  <div class="wrap">
+    <div class="member-intro reveal">
+      <div class="support-label">House Membership</div>
+      <h2 class="h-xl">A closer place<br>in the house.</h2>
+      <p class="body">Some people will come once. Some will come back often. House Membership is for the people who want to stay close as Ninth Life opens, support the first residents, and get early access to the room before it becomes obvious.</p>
+      <p class="member-rule">Membership is scheduled, not unlimited. The cafe stays simple. The cat lounge stays limited. The cats come first.</p>
+    </div>
+
+    <div class="member-board reveal">
+      <article class="member-tier">
+        <h3>The House List</h3>
+        <div class="member-price">Free</div>
+        <div class="member-copy">
+          <p>Opening updates, first menu notes, cat announcements, and booking alerts.</p>
+        </div>
+        <a class="btn btn-line" href="contact.html?interest=join-waitlist">Join the List</a>
+      </article>
+
+      <article class="member-tier">
+        <h3>Friend of the House</h3>
+        <div class="member-price">$25/mo</div>
+        <div class="member-copy">
+          <p>For people who want to support the build and stay close. Includes member notes, priority booking alerts, early resident updates, digital recognition, and member cafe hours when scheduled.</p>
+        </div>
+        <a class="btn btn-line" href="contact.html?interest=friend-of-the-house">Become a Friend</a>
+      </article>
+
+      <article class="member-tier">
+        <h3>Cat Lounge Pass</h3>
+        <div class="member-price">$49/mo</div>
+        <div class="member-copy">
+          <p>For regulars who want to come back. Includes 4 monthly Cat Lounge visits, priority booking, guest use with passes, and member updates.</p>
+          <span class="member-terms">One pass admits one person. Passes reset monthly. Cafe purchases separate.</span>
+        </div>
+        <a class="btn btn-solid" href="contact.html?interest=cat-lounge-pass">Get the Lounge Pass <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="member-tier">
+        <h3>House Family Pass</h3>
+        <div class="member-price">$100/mo</div>
+        <div class="member-copy">
+          <p>For families, couples, and small groups. Includes 1 private Cat Lounge booking per month for up to 6 guests, priority booking, early resident updates, member cafe hours when scheduled, and additional private bookings at $80, up to 2 per month.</p>
+          <span class="member-terms">Reservation-only. Credits do not roll over. Additional guests are $15 each, max 8 total.</span>
+        </div>
+        <a class="btn btn-solid" href="contact.html?interest=house-family-pass">Get the Family Pass <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="member-tier">
+        <h3>House Partner</h3>
+        <div class="member-price">Custom</div>
+        <div class="member-copy">
+          <p>For local brands, sponsors, bakeries, drink partners, pet brands, media, and businesses.</p>
+        </div>
+        <a class="btn btn-line" href="contact.html?interest=partner-sponsor">Partner With Us</a>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -179,10 +406,10 @@
   <div class="wrap">
     <div class="split lean" style="align-items:end;margin-bottom:30px;">
       <div class="stack-2 reveal">
-        <div class="support-label">03 / Ways to help</div>
+        <div class="support-label">04 / Ways to help</div>
         <h2 class="h-lg">Choose your part in the room.</h2>
       </div>
-      <p class="body reveal">Some people will help once. Some will stay close month to month. Some will bring goods, care, media, or local support. All of it helps Ninth Life open with more care.</p>
+      <p class="body reveal">Some people will help once. Some will bring goods, care, media, or local support. House Membership handles the closer ongoing layer.</p>
     </div>
 
     <div class="stack-2 reveal" style="margin-bottom:18px;">
@@ -191,12 +418,12 @@
     <div class="support-tier-list reveal">
       <div class="support-tier">
         <h3>Founding Supporter</h3>
-        <p>For early backers who want to help get the first version open.</p>
+        <p>For early backers helping the first version open with care.</p>
         <div class="amt">$100+</div>
       </div>
       <div class="support-tier">
         <h3>Founding Sponsor</h3>
-        <p>Helps cover setup, supplies, opening details, and the first visible pieces of the space.</p>
+        <p>Helps cover setup, supplies, opening details, and visible pieces of the room.</p>
         <div class="amt">$500+</div>
       </div>
       <div class="support-tier">
@@ -213,39 +440,15 @@
     <div class="btn-row reveal" style="margin-top:28px;margin-bottom:54px;">
       <a class="btn btn-solid" href="contact.html">Become a Founding Supporter <span class="arr">&rarr;</span></a>
     </div>
-
-    <div class="stack-2 reveal" style="margin-bottom:18px;">
-      <span class="eyebrow plain">Monthly support</span>
-    </div>
-    <div class="support-tier-list reveal">
-      <div class="support-tier">
-        <h3>Friend of the House</h3>
-        <p>Helps with small supplies, updates, and the ordinary things that add up.</p>
-        <div class="amt">$25/mo</div>
-      </div>
-      <div class="support-tier">
-        <h3>Sanctuary Supporter</h3>
-        <p>Supports cat care, cleaning, enrichment, comfort, and future visit access when available.</p>
-        <div class="amt">$75/mo</div>
-      </div>
-      <div class="support-tier">
-        <h3>Nine Lives Partner</h3>
-        <p>For families, small businesses, and early supporters who want deeper recognition and Sanctuary updates.</p>
-        <div class="amt">$150/mo</div>
-      </div>
-    </div>
-    <div class="btn-row reveal" style="margin-top:28px;">
-      <a class="btn btn-solid" href="contact.html">Become a Monthly Supporter <span class="arr">&rarr;</span></a>
-    </div>
   </div>
 </section>
 
 <!-- ============ PARTNERS ============ -->
 <section class="pad wrap" id="local-partners">
-  <div class="split lean" style="align-items:end;margin-bottom:30px;">
+    <div class="split lean" style="align-items:end;margin-bottom:30px;">
     <div class="stack-2 reveal">
-        <div class="support-label">04 / Partners</div>
-        <h2 class="h-lg">Bring something<br>to the room.</h2>
+      <div class="support-label">05 / Partners</div>
+      <h2 class="h-lg">Bring the first<br>pieces.</h2>
     </div>
     <p class="body reveal">Ninth Life is looking for the right local pieces: drinks, baked goods, supplies, care guidance, rescue relationships, media, opening help, and sponsors who want to be part of the first version.</p>
   </div>
@@ -284,9 +487,8 @@
     <div class="footer-top footer-wide">
       <div>
         <a class="brand" href="index.html"><img class="brand-logo foot" src="assets/nineth-logo.png" alt="Ninth Life"></a>
-        <p class="footer-tag"><span class="line">A modern cafe in front.</span><span class="line">A calm cat lounge in back.</span></p>
-        <p class="footer-meta">Coming soon · Downtown Alliance, Ohio</p>
-        <p class="footer-note">Ninth Life Cafe · Modern cafe + calm cat lounge · Alliance, OH</p>
+        <p class="footer-tag"><span class="line">A cafe for people.</span><span class="line">A sanctuary for cats.</span></p>
+        <p class="footer-meta">Downtown Alliance, Ohio</p>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -300,15 +502,16 @@
       </div>
       <div class="footer-col">
         <h4>Start Here</h4>
-        <a href="contact.html">Join the List</a>
+        <a href="contact.html?interest=join-waitlist">Join the List</a>
+        <a href="support.html#house-membership">House Membership</a>
         <a href="support.html">Support the Mission</a>
-        <a href="contact.html">Partner With Us</a>
-        <a href="contact.html?interest=care-partner">Start a Care Partner Conversation</a>
+        <a href="contact.html?interest=partner-sponsor">Partner With Us</a>
+        <a href="contact.html?interest=care-partner">Care Partner Conversation</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Ninth Life Cafe</span>
-      <span>Modern cafe + calm cat lounge · Alliance, OH</span>
+      <span>Cafe first · Sanctuary when ready</span>
     </div>
   </div>
 </footer>
